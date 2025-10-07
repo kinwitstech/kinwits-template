@@ -1,0 +1,125 @@
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+const Navigation = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const sections = ['hero', 'about', 'services', 'work', 'contact'];
+    
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const navLinks = [
+    { label: 'HOME', id: 'hero' },
+    { label: 'ABOUT', id: 'about' },
+    { label: 'SERVICES', id: 'services' },
+    { label: 'WORK', id: 'work' },
+    { label: 'CONTACT', id: 'contact' },
+  ];
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
+        isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'
+      }`}
+    >
+      <nav className="container mx-auto px-6 lg:px-12 py-6">
+        <div className="flex items-center justify-between">
+          <button
+            onClick={() => scrollToSection('hero')}
+            className="text-xl font-light tracking-wider"
+          >
+            KINWITS
+          </button>
+
+          {/* Desktop Navigation */}
+          <ul className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <button
+                  onClick={() => scrollToSection(link.id)}
+                  className={`text-xs tracking-widest transition-colors ${
+                    activeSection === link.id ? 'text-foreground font-semibold' : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  {link.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </Button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-6 pb-6 animate-fade-in">
+            <ul className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className={`block text-xs tracking-widest transition-colors w-full text-left ${
+                      activeSection === link.id ? 'text-foreground font-semibold' : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+};
+
+export default Navigation;
