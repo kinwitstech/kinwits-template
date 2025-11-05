@@ -2,6 +2,13 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate, useLocation } from 'react-router-dom';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -143,45 +150,51 @@ const Navigation = () => {
             GET IN TOUCH
           </Button>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </Button>
+          {/* Mobile Menu */}
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden"
+              >
+                <Menu />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetHeader>
+                <SheetTitle className="text-left text-xl font-medium tracking-wider">
+                  KINWITS
+                </SheetTitle>
+              </SheetHeader>
+              <div className="mt-8">
+                <ul className="flex flex-col gap-6">
+                  {navLinks.map((link) => (
+                    <li key={link.id}>
+                      <button
+                        onClick={() => scrollToSection(link.id, link.isPage)}
+                        className={`block text-sm tracking-widest transition-colors w-full text-left ${
+                          activeSection === link.id ? 'text-foreground font-semibold underline underline-offset-4' : 'text-muted-foreground hover:text-foreground'
+                        }`}
+                      >
+                        {link.label}
+                      </button>
+                    </li>
+                  ))}
+                  <li className="mt-4">
+                    <Button
+                      onClick={() => scrollToSection('contact')}
+                      variant="outline"
+                      className="w-full text-xs tracking-widest"
+                    >
+                      GET IN TOUCH
+                    </Button>
+                  </li>
+                </ul>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-6 pb-6 animate-fade-in">
-            <ul className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <li key={link.id}>
-                  <button
-                    onClick={() => scrollToSection(link.id, link.isPage)}
-                    className={`block text-xs tracking-widest transition-colors w-full text-left ${
-                      activeSection === link.id ? 'text-foreground font-semibold underline underline-offset-4' : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-              <li>
-                <Button
-                  onClick={() => scrollToSection('contact')}
-                  variant="outline"
-                  className="w-full text-xs tracking-widest"
-                >
-                  GET IN TOUCH
-                </Button>
-              </li>
-            </ul>
-          </div>
-        )}
       </nav>
     </header>
   );
