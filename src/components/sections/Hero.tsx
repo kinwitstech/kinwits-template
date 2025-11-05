@@ -58,9 +58,6 @@ const Hero = () => {
       >
         <ChevronDown className="w-6 h-6 text-muted-foreground" strokeWidth={1} />
       </button>
-      
-      {/* Vertical Line Separator */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-24 bg-border z-10"></div>
     </section>
   );
 };
