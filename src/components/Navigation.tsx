@@ -83,15 +83,8 @@ const Navigation = () => {
     >
       <nav className="container mx-auto px-6 lg:px-12 py-6">
         <div className="flex items-center justify-between">
-          <button
-            onClick={() => scrollToSection('hero')}
-            className="text-xl font-medium tracking-wider"
-          >
-            KINWITS
-          </button>
-
-          {/* Desktop Navigation - Centered */}
-          <ul className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+          {/* Desktop Navigation - Left */}
+          <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
@@ -106,14 +99,22 @@ const Navigation = () => {
             ))}
           </ul>
 
-          {/* Get in Touch Button - Desktop */}
-          <Button
-            onClick={() => scrollToSection('contact')}
-            variant="outline"
-            className="hidden md:inline-flex text-xs tracking-widest px-6"
-          >
-            GET IN TOUCH
-          </Button>
+          {/* Logo and Button - Right */}
+          <div className="hidden md:flex items-center gap-6">
+            <button
+              onClick={() => scrollToSection('hero')}
+              className="text-xl font-medium tracking-wider"
+            >
+              KINWITS
+            </button>
+            <Button
+              onClick={() => scrollToSection('contact')}
+              variant="outline"
+              className="text-xs tracking-widest px-6"
+            >
+              GET IN TOUCH
+            </Button>
+          </div>
 
           {/* Mobile Menu Button */}
           <Button
