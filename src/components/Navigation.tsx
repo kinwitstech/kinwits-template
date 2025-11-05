@@ -41,8 +41,13 @@ const Navigation = () => {
       return;
     }
 
+    // Set initial state to hero when at top of page
+    if (window.scrollY < 100) {
+      setActiveSection('hero');
+    }
+
     const observerOptions = {
-      rootMargin: '-50% 0px -50% 0px',
+      rootMargin: '-10% 0px -60% 0px',
       threshold: 0
     };
 
