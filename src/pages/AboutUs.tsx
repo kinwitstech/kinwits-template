@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { ArrowLeft, Users, Target, Zap, Heart } from 'lucide-react';
+import { Users, Target, Zap, Heart } from 'lucide-react';
 import work1 from '@/assets/work-1.jpg';
 import work2 from '@/assets/work-2.jpg';
 import work3 from '@/assets/work-3.jpg';
@@ -51,23 +51,14 @@ const AboutUs = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-5xl mx-auto">
-            <Button
-              onClick={() => navigate('/')}
-              variant="ghost"
-              className="mb-8 text-xs tracking-widest"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              BACK TO HOME
-            </Button>
-            
+          <div className="max-w-5xl mx-auto text-center">
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
               About Us
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight mb-8">
               BUILDING DIGITAL<br />EXPERIENCES
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed font-normal max-w-3xl">
+            <p className="text-xl text-muted-foreground leading-relaxed font-normal max-w-3xl mx-auto">
               We are a creative digital agency specializing in creating bold brands and high-impact websites. 
               Our work is rooted in strategy, creativity, and results that matter.
             </p>
