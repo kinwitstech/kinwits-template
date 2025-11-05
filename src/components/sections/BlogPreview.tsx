@@ -63,7 +63,7 @@ const BlogPreview = () => {
               <Card 
                 key={post.id} 
                 className="overflow-hidden border-border hover:shadow-lg transition-all duration-300 cursor-pointer"
-                onClick={() => navigate('/blog')}
+                onClick={() => navigate(`/blog/${post.id}`)}
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
