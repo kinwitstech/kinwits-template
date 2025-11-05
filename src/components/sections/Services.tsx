@@ -49,10 +49,10 @@ const Services = () => {
                   <span className="absolute -bottom-1 left-0 w-3/4 h-[1px] bg-foreground"></span>
                 </p>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight leading-tight">
                 WHAT WE CAN DO FOR YOU
               </h2>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-light">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
                 We offer a <span className="underline decoration-1 underline-offset-4">full spectrum of creative services</span> designed to elevate your brand and bring your vision to life.
               </p>
             </div>
@@ -65,7 +65,7 @@ const Services = () => {
                     <AccordionTrigger className="text-left text-sm md:text-base tracking-widest py-8 hover:no-underline font-normal">
                       {service.title}
                     </AccordionTrigger>
-                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed font-light pb-8">
+                    <AccordionContent className="text-base text-muted-foreground leading-relaxed font-normal pb-8">
                       {service.description}
                     </AccordionContent>
                   </AccordionItem>
@@ -82,7 +82,7 @@ const Services = () => {
             <div className="grid md:grid-cols-3 gap-12 md:gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight mb-4">
+                  <div className="text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight mb-4">
                     {stat.number}
                   </div>
                   <p className="text-[10px] tracking-widest uppercase text-muted-foreground">

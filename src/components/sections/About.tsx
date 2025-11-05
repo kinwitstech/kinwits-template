@@ -48,7 +48,7 @@ const About = () => {
               <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
                 We Bring Your Vision To Life
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight mb-6">
                 Your partners in digital success
               </h2>
             </div>
@@ -77,7 +77,7 @@ const About = () => {
                     <value.icon className="w-12 h-12 text-foreground" strokeWidth={1} />
                   </div>
                   <h3 className="text-xs font-normal tracking-widest mb-4">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-light">
+                  <p className="text-base text-muted-foreground leading-relaxed font-normal">
                     {value.description}
                   </p>
                 </div>)}
@@ -99,10 +99,10 @@ const About = () => {
                 <p className="text-[10px] tracking-widest uppercase text-background/60">
                   WHO WE ARE
                 </p>
-                <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-background leading-tight">
+                <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-background leading-tight">
                   PASSIONATE<br />THINKERS
                 </h3>
-                <p className="text-sm md:text-base text-background/70 leading-relaxed font-light max-w-md">
+                <p className="text-base md:text-lg text-background/70 leading-relaxed font-normal max-w-md">
                   We specialize in creating bold brands and high-impact websites that cut through the noise. From visual identity to seamless digital experiences, our work is rooted in strategy, creativity, and results.
                 </p>
                 <Button onClick={navigateToAboutPage} variant="ghost" className="text-xs tracking-widest px-8 py-6 border-[0.5px] border-background text-background bg-transparent hover:bg-background hover:text-foreground transition-all">

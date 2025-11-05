@@ -52,7 +52,7 @@ const Testimonials = () => {
                 </span> TESTIMONIALS
               </p>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight mb-12 text-background">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight mb-12 text-background">
               TRUSTED BY LEADING<br />EXPERTS
             </h2>
           </div>
@@ -82,7 +82,7 @@ const Testimonials = () => {
             <div className="inline-block mb-6">
               <Quote className="w-8 h-8 text-background/40" />
             </div>
-            <p className="text-base md:text-lg text-background/80 leading-relaxed font-light max-w-3xl mx-auto transition-all duration-500">
+            <p className="text-lg md:text-xl text-background/80 leading-relaxed font-normal max-w-3xl mx-auto transition-all duration-500">
               {testimonials[activeIndex].quote}
             </p>
             <div className="pt-6">

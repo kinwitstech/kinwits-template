@@ -36,7 +36,7 @@ const Hero = () => {
         </p>
         
         <div className="relative overflow-hidden mb-8" style={{ height: '1.2em', fontSize: 'clamp(2rem, 6vw, 6rem)' }}>
-          <h1 className="absolute inset-0 flex items-center justify-center font-light tracking-tight text-foreground">
+          <h1 className="absolute inset-0 flex items-center justify-center font-medium tracking-tight text-foreground">
             <span 
               key={currentText} 
               className="animate-scroll-up inline-block whitespace-nowrap opacity-100"
@@ -46,7 +46,7 @@ const Hero = () => {
           </h1>
         </div>
         
-        <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-16 animate-fade-in-up font-light" style={{ animationDelay: '200ms' }}>
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-16 animate-fade-in-up font-normal" style={{ animationDelay: '200ms' }}>
           We build digital experiences that transform your business
         </p>
       </div>

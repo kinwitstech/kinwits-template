@@ -39,7 +39,7 @@ const Work = () => {
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
               Our Portfolio
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight mb-6">
               SELECTED WORK
             </h2>
           </div>
@@ -76,7 +76,7 @@ const Work = () => {
                         <p className="text-[10px] tracking-widest uppercase text-background/70 mb-3">
                           {project.category}
                         </p>
-                        <h3 className="text-lg md:text-xl font-light text-background">
+                        <h3 className="text-xl md:text-2xl font-medium text-background">
                           {project.title}
                         </h3>
                       </div>
@@ -104,7 +104,7 @@ const Work = () => {
                         <p className="text-[10px] tracking-widest uppercase text-background/70 mb-3">
                           {project.category}
                         </p>
-                        <h3 className="text-lg md:text-xl font-light text-background">
+                        <h3 className="text-xl md:text-2xl font-medium text-background">
                           {project.title}
                         </h3>
                       </div>
@@ -132,7 +132,7 @@ const Work = () => {
                         <p className="text-[10px] tracking-widest uppercase text-background/70 mb-3">
                           {project.category}
                         </p>
-                        <h3 className="text-lg md:text-xl font-light text-background">
+                        <h3 className="text-xl md:text-2xl font-medium text-background">
                           {project.title}
                         </h3>
                       </div>

@@ -173,7 +173,7 @@ const ContactInfo = () => {
             </nav>
 
             {/* Copyright */}
-            <p className="text-xs text-background/50 font-light">
+            <p className="text-sm text-background/60 font-normal">
               © KINWITS TECH 2025
             </p>
           </div>

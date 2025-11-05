@@ -23,10 +23,10 @@ const Contact = () => {
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
               Get In Touch
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight mb-6">
               LET'S WORK TOGETHER
             </h2>
-            <p className="text-sm text-muted-foreground font-light">
+            <p className="text-base text-muted-foreground font-normal">
               Ready to start your project? Send us a message.
             </p>
           </div>

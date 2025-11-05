@@ -26,7 +26,7 @@ const Features = () => {
           <div className="grid lg:grid-cols-4 gap-12 lg:gap-16 items-start">
             {/* Title Section */}
             <div className="lg:col-span-1">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-4">
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">
                 WHY WE ARE<br />DIFFERENT
               </h2>
               <div className="w-16 h-0.5 bg-foreground"></div>
@@ -51,7 +51,7 @@ const Features = () => {
                   <h3 className="text-xs tracking-widest uppercase mb-4 font-semibold">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                  <p className="text-base text-muted-foreground font-normal leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

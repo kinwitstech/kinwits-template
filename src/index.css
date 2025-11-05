@@ -19,7 +19,7 @@ All colors MUST be HSL.
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 10%;
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 40%;
     --accent: 0 0% 96%;
     --accent-foreground: 0 0% 10%;
     --destructive: 0 84.2% 60.2%;
@@ -29,7 +29,7 @@ All colors MUST be HSL.
     --ring: 0 0% 10%;
     --radius: 0rem;
     --heading-primary: 0 0% 10%;
-    --text-subtle: 0 0% 45%;
+    --text-subtle: 0 0% 40%;
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -75,6 +75,8 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "kern" 1;
+    font-size: 16px;
+    font-weight: 400;
   }
 
   html {
@@ -84,6 +86,7 @@ All colors MUST be HSL.
   h1, h2, h3, h4, h5, h6 {
     @apply text-[hsl(var(--heading-primary))];
     letter-spacing: 0.02em;
+    font-weight: 500;
   }
 }
 

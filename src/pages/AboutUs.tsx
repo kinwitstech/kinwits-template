@@ -59,10 +59,10 @@ const AboutUs = () => {
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
               About Us
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight mb-8">
               BUILDING DIGITAL<br />EXPERIENCES
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed font-light max-w-3xl">
+            <p className="text-xl text-muted-foreground leading-relaxed font-normal max-w-3xl">
               We are a creative digital agency specializing in creating bold brands and high-impact websites. 
               Our work is rooted in strategy, creativity, and results that matter.
             </p>
@@ -77,7 +77,7 @@ const AboutUs = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <h3 className="text-4xl md:text-5xl font-light mb-2">{stat.number}</h3>
+                  <h3 className="text-4xl md:text-5xl font-medium mb-2">{stat.number}</h3>
                   <p className="text-xs tracking-widest uppercase text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
@@ -95,14 +95,14 @@ const AboutUs = () => {
                 <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
                   Our Story
                 </p>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight mb-8">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-8">
                   PASSIONATE ABOUT INNOVATION
                 </h2>
-                <p className="text-muted-foreground leading-relaxed font-light mb-6">
+                <p className="text-base text-muted-foreground leading-relaxed font-normal mb-6">
                   Founded with a vision to transform the digital landscape, we've grown from a small team 
                   of passionate creators to a full-service digital agency serving clients worldwide.
                 </p>
-                <p className="text-muted-foreground leading-relaxed font-light">
+                <p className="text-base text-muted-foreground leading-relaxed font-normal">
                   Our journey has been defined by our commitment to pushing boundaries, embracing new 
                   technologies, and delivering exceptional results that exceed expectations.
                 </p>
@@ -135,7 +135,7 @@ const AboutUs = () => {
               <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
                 What Drives Us
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6">
                 OUR CORE VALUES
               </h2>
             </div>
@@ -146,8 +146,8 @@ const AboutUs = () => {
                   <div className="mb-6">
                     <value.icon className="w-12 h-12 text-foreground" strokeWidth={1} />
                   </div>
-                  <h3 className="text-xl font-light tracking-wide mb-4">{value.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed font-light">
+                  <h3 className="text-xl font-medium tracking-wide mb-4">{value.title}</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed font-normal">
                     {value.description}
                   </p>
                 </div>
@@ -161,10 +161,10 @@ const AboutUs = () => {
       <section className="py-32 md:py-40">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-8">
               LET'S BUILD SOMETHING AMAZING TOGETHER
             </h2>
-            <p className="text-muted-foreground leading-relaxed font-light mb-12 max-w-2xl mx-auto">
+            <p className="text-base text-muted-foreground leading-relaxed font-normal mb-12 max-w-2xl mx-auto">
               Ready to take your digital presence to the next level? Let's discuss your project 
               and explore how we can help you achieve your goals.
             </p>
