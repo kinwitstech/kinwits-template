@@ -7,7 +7,7 @@ const ContactInfo = () => {
 
   return (
     <>
-      <section className="py-32 md:py-40 bg-background">
+      <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-12">
@@ -52,7 +52,7 @@ const ContactInfo = () => {
       </section>
 
       {/* Map Toggle Section */}
-      <section className="py-16 bg-secondary/20">
+      <section className="py-12 bg-secondary/20">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="text-center">
             <button
@@ -85,7 +85,7 @@ const ContactInfo = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 bg-foreground">
+      <footer className="py-12 bg-foreground">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex flex-col items-center space-y-8">
             {/* Logo */}
