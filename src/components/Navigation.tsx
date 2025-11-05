@@ -98,7 +98,7 @@ const Navigation = () => {
                 <button
                   onClick={() => scrollToSection(link.id, link.isPage)}
                   className={`text-xs tracking-widest transition-colors ${
-                    activeSection === link.id ? 'text-foreground font-semibold' : 'text-muted-foreground hover:text-foreground'
+                    activeSection === link.id ? 'text-foreground font-semibold underline underline-offset-4' : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {link.label}
@@ -136,7 +136,7 @@ const Navigation = () => {
                   <button
                     onClick={() => scrollToSection(link.id, link.isPage)}
                     className={`block text-xs tracking-widest transition-colors w-full text-left ${
-                      activeSection === link.id ? 'text-foreground font-semibold' : 'text-muted-foreground hover:text-foreground'
+                      activeSection === link.id ? 'text-foreground font-semibold underline underline-offset-4' : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
                     {link.label}
