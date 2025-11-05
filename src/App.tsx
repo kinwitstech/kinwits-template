@@ -8,6 +8,7 @@ import AboutUs from "./pages/AboutUs";
 import Career from "./pages/Career";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
+import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/career" element={<Career />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

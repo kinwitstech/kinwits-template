@@ -4,8 +4,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
       title: 'BRAND STRATEGY',
@@ -55,6 +59,13 @@ const Services = () => {
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
                 We offer a <span className="underline decoration-1 underline-offset-4">full spectrum of creative services</span> designed to elevate your brand and bring your vision to life.
               </p>
+              <Button 
+                onClick={() => navigate('/pricing')}
+                variant="outline"
+                className="text-xs tracking-widest px-8"
+              >
+                VIEW PRICING
+              </Button>
             </div>
 
             {/* Right Side - Accordion */}
