@@ -43,7 +43,12 @@ const Navigation = () => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string, isPage?: boolean) => {
+    if (isPage) {
+      navigate(`/${id}`);
+      return;
+    }
+    
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
@@ -66,7 +71,8 @@ const Navigation = () => {
     { label: 'ABOUT', id: 'about' },
     { label: 'SERVICES', id: 'services' },
     { label: 'WORK', id: 'work' },
-    { label: 'CONTACT', id: 'contact' },
+    { label: 'CAREER', id: 'career', isPage: true },
+    { label: 'BLOG', id: 'blog', isPage: true },
   ];
 
   return (
@@ -89,7 +95,7 @@ const Navigation = () => {
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
-                  onClick={() => scrollToSection(link.id)}
+                  onClick={() => scrollToSection(link.id, link.isPage)}
                   className={`text-xs tracking-widest transition-colors ${
                     activeSection === link.id ? 'text-foreground font-semibold' : 'text-muted-foreground hover:text-foreground'
                   }`}
@@ -127,7 +133,7 @@ const Navigation = () => {
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <button
-                    onClick={() => scrollToSection(link.id)}
+                    onClick={() => scrollToSection(link.id, link.isPage)}
                     className={`block text-xs tracking-widest transition-colors w-full text-left ${
                       activeSection === link.id ? 'text-foreground font-semibold' : 'text-muted-foreground hover:text-foreground'
                     }`}
