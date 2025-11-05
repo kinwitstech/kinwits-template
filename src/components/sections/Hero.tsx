@@ -1,6 +1,7 @@
 import { ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import heroBg from '@/assets/hero-bg-new.jpg';
+import ParticleBackground from '@/components/ParticleBackground';
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -30,6 +31,7 @@ const Hero = () => {
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       <div className="absolute inset-0 bg-background/85 animate-fade-in"></div>
+      <ParticleBackground />
       <div className="container mx-auto px-6 text-center relative z-10">
         <p className="text-[10px] sm:text-xs tracking-widest uppercase text-muted-foreground mb-8 animate-fade-in opacity-0" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
           Software Development / AI Solutions / Design
