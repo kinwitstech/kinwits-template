@@ -82,10 +82,11 @@ const Navigation = () => {
       }`}
     >
       <nav className="container mx-auto px-6 lg:px-12 py-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative">
+          {/* Logo - Left End */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-medium tracking-wider"
+            className="text-xl font-medium tracking-wider z-10"
           >
             KINWITS
           </button>
@@ -106,11 +107,11 @@ const Navigation = () => {
             ))}
           </ul>
 
-          {/* Get in Touch Button - Desktop */}
+          {/* Get in Touch Button - Right End */}
           <Button
             onClick={() => scrollToSection('contact')}
             variant="outline"
-            className="hidden md:inline-flex text-xs tracking-widest px-6"
+            className="hidden md:inline-flex text-xs tracking-widest px-6 z-10"
           >
             GET IN TOUCH
           </Button>
