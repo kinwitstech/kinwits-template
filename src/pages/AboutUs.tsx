@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft, Users, Target, Zap, Heart } from 'lucide-react';
 import work1 from '@/assets/work-1.jpg';
 import work2 from '@/assets/work-2.jpg';
@@ -8,6 +9,10 @@ import work3 from '@/assets/work-3.jpg';
 
 const AboutUs = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const values = [
     {
