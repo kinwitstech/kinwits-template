@@ -19,6 +19,22 @@ const Navigation = () => {
   }, []);
 
   useEffect(() => {
+    // Set active section based on current page route
+    if (location.pathname === '/career') {
+      setActiveSection('career');
+      return;
+    }
+    
+    if (location.pathname.startsWith('/blog')) {
+      setActiveSection('blog');
+      return;
+    }
+
+    if (location.pathname === '/about') {
+      setActiveSection('about');
+      return;
+    }
+
     // Only observe sections on the home page
     if (location.pathname !== '/') {
       setActiveSection('');
