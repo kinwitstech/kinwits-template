@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import work1 from '@/assets/work-1.jpg';
 import work2 from '@/assets/work-2.jpg';
@@ -13,8 +14,11 @@ const Blog = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const navigate = useNavigate();
+
   const blogPosts = [
     {
+      id: 1,
       image: work1,
       category: 'Development',
       title: 'The Future of Web Development in 2025',
@@ -23,6 +27,7 @@ const Blog = () => {
       readTime: '5 min read'
     },
     {
+      id: 2,
       image: work2,
       category: 'Design',
       title: 'Minimalist Design Principles',
@@ -31,6 +36,7 @@ const Blog = () => {
       readTime: '4 min read'
     },
     {
+      id: 3,
       image: work3,
       category: 'AI',
       title: 'AI in Modern Software Development',
@@ -39,6 +45,7 @@ const Blog = () => {
       readTime: '6 min read'
     },
     {
+      id: 4,
       image: work4,
       category: 'Business',
       title: 'Digital Transformation Strategy',
@@ -47,6 +54,7 @@ const Blog = () => {
       readTime: '8 min read'
     },
     {
+      id: 5,
       image: work5,
       category: 'Technology',
       title: 'Cloud Computing Best Practices',
@@ -55,6 +63,7 @@ const Blog = () => {
       readTime: '7 min read'
     },
     {
+      id: 6,
       image: work6,
       category: 'Development',
       title: 'Modern JavaScript Frameworks',
@@ -123,7 +132,7 @@ const Blog = () => {
                     <span>{blogPosts[0].readTime}</span>
                   </div>
                 </div>
-                <button className="text-xs tracking-widest uppercase hover:underline inline-flex items-center gap-2 group">
+                <button onClick={() => navigate(`/blog/${blogPosts[0].id}`)} className="text-xs tracking-widest uppercase hover:underline inline-flex items-center gap-2 group">
                   READ MORE
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -148,6 +157,7 @@ const Blog = () => {
                 <article 
                   key={index}
                   className="group cursor-pointer"
+                  onClick={() => navigate(`/blog/${post.id}`)}
                 >
                   <div className="aspect-[4/3] overflow-hidden rounded-sm mb-6">
                     <img 
