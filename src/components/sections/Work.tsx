@@ -4,22 +4,38 @@ import work3 from '@/assets/work-3.jpg';
 import work4 from '@/assets/work-4.jpg';
 import work5 from '@/assets/work-5.jpg';
 import work6 from '@/assets/work-6.jpg';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState } from 'react';
 
 const Work = () => {
-  const projects = [
-    { image: work1, title: 'E-Commerce Platform', category: 'Web Development', height: 'tall' },
-    { image: work2, title: 'Brand Identity', category: 'Design', height: 'short' },
-    { image: work3, title: 'Mobile Banking App', category: 'Mobile Development', height: 'tall' },
-    { image: work4, title: 'AI Dashboard', category: 'AI Solutions', height: 'short' },
-    { image: work5, title: 'Corporate Website', category: 'Web Design', height: 'short' },
-    { image: work6, title: 'SaaS Platform', category: 'Software Development', height: 'short' }
+  const [activeTab, setActiveTab] = useState('templates');
+
+  const templatesProjects = [
+    { image: work1, title: 'Modern E-Commerce', category: 'E-Commerce Template' },
+    { image: work2, title: 'Portfolio Theme', category: 'Portfolio Template' },
+    { image: work3, title: 'SaaS Landing Page', category: 'Business Template' },
+    { image: work4, title: 'Blog Platform', category: 'Content Template' }
+  ];
+
+  const softwaresProjects = [
+    { image: work5, title: 'CRM System', category: 'Business Software' },
+    { image: work6, title: 'Project Manager', category: 'Productivity Tool' },
+    { image: work1, title: 'Invoice Generator', category: 'Finance Software' },
+    { image: work2, title: 'Team Collaboration', category: 'Communication Tool' }
+  ];
+
+  const aiAgentsProjects = [
+    { image: work3, title: 'Customer Support Bot', category: 'AI Assistant' },
+    { image: work4, title: 'Content Generator', category: 'AI Writer' },
+    { image: work5, title: 'Data Analytics Agent', category: 'AI Analytics' },
+    { image: work6, title: 'Code Review Assistant', category: 'AI Developer Tool' }
   ];
 
   return (
     <section id="work" className="py-32 md:py-40 bg-background">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
+          <div className="text-center mb-16">
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
               Our Portfolio
             </p>
@@ -28,32 +44,104 @@ const Work = () => {
             </h2>
           </div>
 
-          {/* Grid Layout with uniform cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <div 
-                key={index} 
-                className={`group relative overflow-hidden bg-secondary/10 rounded-sm aspect-[4/3]`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-foreground/85 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-8">
-                  <div className="text-center">
-                    <p className="text-[10px] tracking-widest uppercase text-background/70 mb-3">
-                      {project.category}
-                    </p>
-                    <h3 className="text-lg md:text-xl font-light text-background">
-                      {project.title}
-                    </h3>
+          {/* Tabs Section */}
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <TabsList className="w-full md:w-auto mx-auto mb-12 grid grid-cols-3 gap-2">
+              <TabsTrigger value="templates" className="text-xs tracking-widest">
+                TEMPLATES
+              </TabsTrigger>
+              <TabsTrigger value="softwares" className="text-xs tracking-widest">
+                SOFTWARES
+              </TabsTrigger>
+              <TabsTrigger value="ai-agents" className="text-xs tracking-widest">
+                AI AGENTS
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="templates" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {templatesProjects.map((project, index) => (
+                  <div 
+                    key={index} 
+                    className="group relative overflow-hidden bg-secondary/10 rounded-sm aspect-[4/3]"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-foreground/85 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-8">
+                      <div className="text-center">
+                        <p className="text-[10px] tracking-widest uppercase text-background/70 mb-3">
+                          {project.category}
+                        </p>
+                        <h3 className="text-lg md:text-xl font-light text-background">
+                          {project.title}
+                        </h3>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </TabsContent>
+
+            <TabsContent value="softwares" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {softwaresProjects.map((project, index) => (
+                  <div 
+                    key={index} 
+                    className="group relative overflow-hidden bg-secondary/10 rounded-sm aspect-[4/3]"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-foreground/85 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-8">
+                      <div className="text-center">
+                        <p className="text-[10px] tracking-widest uppercase text-background/70 mb-3">
+                          {project.category}
+                        </p>
+                        <h3 className="text-lg md:text-xl font-light text-background">
+                          {project.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="ai-agents" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {aiAgentsProjects.map((project, index) => (
+                  <div 
+                    key={index} 
+                    className="group relative overflow-hidden bg-secondary/10 rounded-sm aspect-[4/3]"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-foreground/85 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-8">
+                      <div className="text-center">
+                        <p className="text-[10px] tracking-widest uppercase text-background/70 mb-3">
+                          {project.category}
+                        </p>
+                        <h3 className="text-lg md:text-xl font-light text-background">
+                          {project.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </section>

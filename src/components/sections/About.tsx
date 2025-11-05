@@ -2,10 +2,14 @@ import { Box, Lightbulb, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import work1 from '@/assets/work-1.jpg';
 import work2 from '@/assets/work-2.jpg';
+import work3 from '@/assets/work-3.jpg';
+import work4 from '@/assets/work-4.jpg';
 import whoBg from '@/assets/who-we-are-bg.jpg';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
+  const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
       const aboutSection = document.getElementById('about');
@@ -31,11 +35,8 @@ const About = () => {
     title: 'QUALITY',
     description: 'Committed to delivering work that exceeds the highest standards.'
   }];
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({
-      behavior: 'smooth'
-    });
+  const navigateToAboutPage = () => {
+    navigate('/about');
   };
   return <section id="about" className="bg-background">
       {/* Values Section */}
@@ -50,6 +51,22 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight mb-6">
                 Your partners in digital success
               </h2>
+            </div>
+
+            {/* Images Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={work1} alt="Portfolio 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={work2} alt="Portfolio 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={work3} alt="Portfolio 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={work4} alt="Portfolio 4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-16">
@@ -88,7 +105,7 @@ const About = () => {
                 <p className="text-sm md:text-base text-background/70 leading-relaxed font-light max-w-md">
                   We specialize in creating bold brands and high-impact websites that cut through the noise. From visual identity to seamless digital experiences, our work is rooted in strategy, creativity, and results.
                 </p>
-                <Button onClick={scrollToContact} variant="ghost" className="text-xs tracking-widest px-8 py-6 border-[0.5px] border-background text-background bg-transparent hover:bg-background hover:text-foreground transition-all">
+                <Button onClick={navigateToAboutPage} variant="ghost" className="text-xs tracking-widest px-8 py-6 border-[0.5px] border-background text-background bg-transparent hover:bg-background hover:text-foreground transition-all">
                   MORE ABOUT US
                 </Button>
               </div>

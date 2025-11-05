@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,11 +44,21 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    setIsMobileMenuOpen(false);
   };
 
   const navLinks = [
@@ -71,8 +84,8 @@ const Navigation = () => {
             KINWITS
           </button>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Centered */}
+          <ul className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
@@ -86,6 +99,15 @@ const Navigation = () => {
               </li>
             ))}
           </ul>
+
+          {/* Get in Touch Button - Desktop */}
+          <Button
+            onClick={() => scrollToSection('contact')}
+            variant="outline"
+            className="hidden md:inline-flex text-xs tracking-widest px-6"
+          >
+            GET IN TOUCH
+          </Button>
 
           {/* Mobile Menu Button */}
           <Button
@@ -114,6 +136,15 @@ const Navigation = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <Button
+                  onClick={() => scrollToSection('contact')}
+                  variant="outline"
+                  className="w-full text-xs tracking-widest"
+                >
+                  GET IN TOUCH
+                </Button>
+              </li>
             </ul>
           </div>
         )}
