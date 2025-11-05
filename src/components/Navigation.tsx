@@ -19,6 +19,12 @@ const Navigation = () => {
   }, []);
 
   useEffect(() => {
+    // Only observe sections on the home page
+    if (location.pathname !== '/') {
+      setActiveSection('');
+      return;
+    }
+
     const observerOptions = {
       rootMargin: '-50% 0px -50% 0px',
       threshold: 0
@@ -41,7 +47,7 @@ const Navigation = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]);
 
   const scrollToSection = (id: string, isPage?: boolean) => {
     if (isPage) {
