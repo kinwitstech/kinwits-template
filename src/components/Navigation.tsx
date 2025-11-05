@@ -33,7 +33,7 @@ const Navigation = () => {
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const sections = ['hero', 'about', 'services', 'work', 'contact'];
+    const sections = ['hero', 'about', 'services', 'work', 'blog', 'contact'];
     
     sections.forEach((id) => {
       const element = document.getElementById(id);
@@ -71,8 +71,8 @@ const Navigation = () => {
     { label: 'ABOUT', id: 'about' },
     { label: 'SERVICES', id: 'services' },
     { label: 'WORK', id: 'work' },
+    { label: 'BLOG', id: 'blog' },
     { label: 'CAREER', id: 'career', isPage: true },
-    { label: 'BLOG', id: 'blog', isPage: true },
   ];
 
   return (

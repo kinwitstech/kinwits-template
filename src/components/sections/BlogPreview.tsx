@@ -36,7 +36,7 @@ const BlogPreview = () => {
   ];
 
   return (
-    <section className="py-32 md:py-40 bg-background">
+    <section id="blog" className="py-32 md:py-40 bg-background">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
