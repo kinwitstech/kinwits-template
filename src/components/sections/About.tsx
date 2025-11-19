@@ -56,21 +56,21 @@ const About = () => {
             </div>
 
             {/* Images Grid - Masonry Layout */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-16 max-w-5xl mx-auto">
-              {/* Image 1 - Square, smaller */}
-              <div className="overflow-hidden rounded-2xl h-48 lg:h-44">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-16 max-w-6xl mx-auto">
+              {/* Image 1 - Tall portrait */}
+              <div className="overflow-hidden rounded-2xl h-64 lg:h-80">
                 <img src={work1} alt="Portfolio 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
               {/* Image 2 - Tall portrait */}
-              <div className="overflow-hidden rounded-2xl h-72 lg:h-80">
+              <div className="overflow-hidden rounded-2xl h-64 lg:h-80">
                 <img src={work2} alt="Portfolio 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
               {/* Image 3 - Wide landscape */}
-              <div className="overflow-hidden rounded-2xl h-56 lg:h-52">
+              <div className="overflow-hidden rounded-2xl h-48 lg:h-52">
                 <img src={work3} alt="Portfolio 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              {/* Image 4 - Medium rectangle */}
-              <div className="overflow-hidden rounded-2xl h-64 lg:h-60">
+              {/* Image 4 - Medium portrait */}
+              <div className="overflow-hidden rounded-2xl h-56 lg:h-68">
                 <img src={work4} alt="Portfolio 4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
