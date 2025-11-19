@@ -93,7 +93,7 @@ const About = () => {
       </div>
 
       {/* WHO WE ARE Section - Full Width Dark Background */}
-      <div className="w-full bg-foreground text-background py-16 md:py-20 relative bg-cover bg-center bg-no-repeat" style={{
+      <div className="w-full bg-foreground text-background py-16 md:py-20 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{
       backgroundImage: `url(${whoBg})`
     }}>
         <div className="absolute inset-0 bg-foreground/85"></div>
@@ -102,16 +102,16 @@ const About = () => {
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               {/* Left Side - Text Content */}
               <div className="space-y-8 lg:pr-12">
-                <p className="text-[10px] tracking-widest uppercase text-background/60">
+                <p className="text-[12px] tracking-widest uppercase text-background/60">
                   WHO WE ARE
                 </p>
-                <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-background leading-tight">
+                <h3 className="text-[27px] font-semibold tracking-tight text-background leading-tight">
                   PASSIONATE<br />THINKERS
                 </h3>
-                <p className="text-base md:text-lg text-background/70 leading-relaxed font-normal max-w-md">
+                <p className="text-[15px] md:text-[17px] text-background/70 leading-relaxed font-normal max-w-md">
                   We specialize in creating bold brands and high-impact websites that cut through the noise. From visual identity to seamless digital experiences, our work is rooted in strategy, creativity, and results.
                 </p>
-                <Button onClick={navigateToAboutPage} variant="ghost" className="text-xs tracking-widest px-8 py-6 border-[0.5px] border-background text-background bg-transparent hover:bg-background hover:text-foreground transition-all">
+                <Button onClick={navigateToAboutPage} variant="ghost" className="text-[11px] tracking-widest px-6 py-6 border-[0.5px] border-background text-background bg-transparent hover:bg-background hover:text-foreground transition-all">
                   MORE ABOUT US
                 </Button>
               </div>
