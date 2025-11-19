@@ -55,7 +55,7 @@ const Services = () => {
                   <span className="absolute -bottom-1 left-0 w-3/4 h-[1px] bg-foreground"></span>
                 </p>
               </div>
-              <h2 className="text-[27px] font-semibold tracking-tight leading-tight">
+              <h2 className="text-[30px] font-semibold tracking-tight leading-tight">
                 WHAT WE CAN DO FOR YOU
               </h2>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">

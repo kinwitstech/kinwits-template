@@ -107,7 +107,7 @@ const About = () => {
                 <p className="text-[12px] tracking-widest uppercase text-background/60">
                   WHO WE ARE
                 </p>
-                <h3 className="text-[27px] font-semibold tracking-tight text-background leading-tight">
+                <h3 className="text-[30px] font-semibold tracking-tight text-background leading-tight">
                   PASSIONATE<br />THINKERS
                 </h3>
                 <p className="text-[15px] md:text-[17px] text-background/70 leading-relaxed font-normal max-w-md">
