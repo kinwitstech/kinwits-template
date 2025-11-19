@@ -120,18 +120,18 @@ const Navigation = () => {
           {/* Logo - Left End */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-base font-medium tracking-wider z-10"
+            className="text-base font-medium tracking-wider z-10 flex-shrink-0"
           >
             KINWITS
           </button>
 
           {/* Desktop Navigation - Centered */}
-          <ul className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
+          <ul className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2 max-w-[calc(100%-280px)]">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
                   onClick={() => scrollToSection(link.id, link.isPage)}
-                  className={`text-[10px] tracking-widest transition-colors ${
+                  className={`text-[10px] tracking-widest transition-colors whitespace-nowrap ${
                     activeSection === link.id ? 'text-foreground font-semibold underline underline-offset-4' : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
@@ -145,7 +145,7 @@ const Navigation = () => {
           <Button
             onClick={() => scrollToSection('contact')}
             variant="outline"
-            className="hidden md:inline-flex text-xs tracking-widest px-6 z-10"
+            className="hidden md:inline-flex text-[11px] tracking-widest px-6 z-10 flex-shrink-0"
           >
             GET IN TOUCH
           </Button>
@@ -185,7 +185,7 @@ const Navigation = () => {
                     <Button
                       onClick={() => scrollToSection('contact')}
                       variant="outline"
-                      className="w-full text-xs tracking-widest"
+                      className="w-full text-[11px] tracking-widest"
                     >
                       GET IN TOUCH
                     </Button>
