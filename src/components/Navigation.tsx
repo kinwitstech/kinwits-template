@@ -111,7 +111,7 @@ const Navigation = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-smooth opacity-0 animate-fade-in-down ${
         isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'
       }`}
     >
