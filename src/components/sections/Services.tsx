@@ -75,10 +75,10 @@ const Services = () => {
               <Accordion type="single" collapsible className="w-full">
                 {services.map((service, index) => (
                   <AccordionItem key={index} value={`item-${index}`} className="border-t border-border">
-                    <AccordionTrigger className="text-left text-base md:text-[17px] tracking-widest py-7 hover:no-underline font-normal">
+                    <AccordionTrigger className="text-left text-base md:text-[17px] tracking-widest py-6 hover:no-underline font-normal">
                       {service.title}
                     </AccordionTrigger>
-                    <AccordionContent className="text-base text-muted-foreground leading-relaxed font-normal pb-7">
+                    <AccordionContent className="text-base text-muted-foreground leading-relaxed font-normal pb-6">
                       {service.description}
                     </AccordionContent>
                   </AccordionItem>
