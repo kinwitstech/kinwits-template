@@ -50,12 +50,12 @@ const Services = () => {
             {/* Left Side - Heading and Description */}
             <div className="space-y-8">
               <div className="inline-block py-10">
-                <p className="text-[10px] tracking-widest uppercase text-muted-foreground relative">
+                <p className="text-xs tracking-widest uppercase text-muted-foreground relative">
                   OUR SERVICES
                   <span className="absolute -bottom-1 left-0 w-3/4 h-[1px] bg-foreground"></span>
                 </p>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight leading-tight">
+              <h2 className="text-[27px] font-semibold tracking-tight leading-tight">
                 WHAT WE CAN DO FOR YOU
               </h2>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
@@ -75,10 +75,10 @@ const Services = () => {
               <Accordion type="single" collapsible className="w-full">
                 {services.map((service, index) => (
                   <AccordionItem key={index} value={`item-${index}`} className="border-t border-border">
-                    <AccordionTrigger className="text-left text-sm md:text-base tracking-widest py-8 hover:no-underline font-normal">
+                    <AccordionTrigger className="text-left text-base md:text-[17px] tracking-widest py-7 hover:no-underline font-normal">
                       {service.title}
                     </AccordionTrigger>
-                    <AccordionContent className="text-base text-muted-foreground leading-relaxed font-normal pb-8">
+                    <AccordionContent className="text-base text-muted-foreground leading-relaxed font-normal pb-7">
                       {service.description}
                     </AccordionContent>
                   </AccordionItem>
