@@ -40,10 +40,10 @@ const Features = () => {
               {features.map((feature, index) => (
                 <div 
                   key={index} 
-                  className="text-center group"
+                  className="text-left group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex justify-center mb-6">
+                  <div className="flex justify-start mb-6">
                     <div className="w-16 h-16 flex items-center justify-center">
                       <feature.icon 
                         className="w-12 h-12 text-foreground transition-transform duration-300 group-hover:scale-110" 
