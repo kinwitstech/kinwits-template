@@ -42,7 +42,7 @@ const About = () => {
   };
   return <section id="about" ref={ref} className={`bg-background transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       {/* Values Section */}
-      <div className="py-32 md:py-40">
+      <div className="py-16 md:py-20">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             {/* Values Grid */}
@@ -55,19 +55,19 @@ const About = () => {
               </h2>
             </div>
 
-            {/* Images Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-              <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={work1} alt="Portfolio 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            {/* Images Grid - Masonry Layout */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-16 max-w-4xl mx-auto">
+              <div className="overflow-hidden rounded-sm row-span-1">
+                <img src={work1} alt="Portfolio 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/5' }} />
               </div>
-              <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={work2} alt="Portfolio 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <div className="overflow-hidden rounded-sm row-span-1">
+                <img src={work2} alt="Portfolio 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
               </div>
-              <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={work3} alt="Portfolio 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <div className="overflow-hidden rounded-sm row-span-1">
+                <img src={work3} alt="Portfolio 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/5' }} />
               </div>
-              <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={work4} alt="Portfolio 4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <div className="overflow-hidden rounded-sm row-span-1">
+                <img src={work4} alt="Portfolio 4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" style={{ aspectRatio: '4/3' }} />
               </div>
             </div>
 
@@ -89,7 +89,7 @@ const About = () => {
       </div>
 
       {/* WHO WE ARE Section - Full Width Dark Background */}
-      <div className="w-full bg-foreground text-background py-32 md:py-40 relative bg-cover bg-center bg-no-repeat" style={{
+      <div className="w-full bg-foreground text-background py-16 md:py-20 relative bg-cover bg-center bg-no-repeat" style={{
       backgroundImage: `url(${whoBg})`
     }}>
         <div className="absolute inset-0 bg-foreground/85"></div>
