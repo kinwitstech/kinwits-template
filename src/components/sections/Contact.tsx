@@ -18,7 +18,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className={`py-32 md:py-40 bg-secondary/30 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section id="contact" ref={ref} className={`py-16 md:py-20 bg-secondary/30 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
