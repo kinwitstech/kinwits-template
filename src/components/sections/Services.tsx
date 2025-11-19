@@ -49,7 +49,7 @@ const Services = () => {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-32">
             {/* Left Side - Heading and Description */}
             <div className="space-y-8">
-              <div className="inline-block">
+              <div className="inline-block py-10">
                 <p className="text-[10px] tracking-widest uppercase text-muted-foreground relative">
                   OUR SERVICES
                   <span className="absolute -bottom-1 left-0 w-3/4 h-[1px] bg-foreground"></span>
