@@ -61,11 +61,16 @@ const Work = () => {
             </TabsList>
 
             <TabsContent value="templates" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-6">
                 {templatesProjects.map((project, index) => (
                   <div 
                     key={index} 
-                    className="group relative overflow-hidden bg-secondary/10 rounded-sm aspect-[4/3]"
+                    className={`group relative overflow-hidden bg-secondary/10 rounded-sm ${
+                      index === 0 ? 'col-span-2 row-span-2' :
+                      index === 1 ? 'col-span-1 row-span-1' :
+                      index === 2 ? 'col-span-1 row-span-2' :
+                      'col-span-2 row-span-1'
+                    }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <img
@@ -89,11 +94,16 @@ const Work = () => {
             </TabsContent>
 
             <TabsContent value="softwares" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-6">
                 {softwaresProjects.map((project, index) => (
                   <div 
                     key={index} 
-                    className="group relative overflow-hidden bg-secondary/10 rounded-sm aspect-[4/3]"
+                    className={`group relative overflow-hidden bg-secondary/10 rounded-sm ${
+                      index === 0 ? 'col-span-1 row-span-2' :
+                      index === 1 ? 'col-span-2 row-span-1' :
+                      index === 2 ? 'col-span-1 row-span-1' :
+                      'col-span-2 row-span-2'
+                    }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <img
@@ -117,11 +127,16 @@ const Work = () => {
             </TabsContent>
 
             <TabsContent value="ai-agents" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-6">
                 {aiAgentsProjects.map((project, index) => (
                   <div 
                     key={index} 
-                    className="group relative overflow-hidden bg-secondary/10 rounded-sm aspect-[4/3]"
+                    className={`group relative overflow-hidden bg-secondary/10 rounded-sm ${
+                      index === 0 ? 'col-span-2 row-span-1' :
+                      index === 1 ? 'col-span-1 row-span-2' :
+                      index === 2 ? 'col-span-1 row-span-1' :
+                      'col-span-2 row-span-2'
+                    }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <img
