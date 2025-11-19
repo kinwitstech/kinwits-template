@@ -6,9 +6,11 @@ import work5 from '@/assets/work-5.jpg';
 import work6 from '@/assets/work-6.jpg';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Work = () => {
   const [activeTab, setActiveTab] = useState('templates');
+  const { ref, isVisible } = useScrollAnimation();
 
   const templatesProjects = [
     { image: work1, title: 'Modern E-Commerce', category: 'E-Commerce Template' },
@@ -32,7 +34,7 @@ const Work = () => {
   ];
 
   return (
-    <section id="work" className="py-32 md:py-40 bg-background">
+    <section id="work" ref={ref} className={`py-16 md:py-20 bg-background transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">

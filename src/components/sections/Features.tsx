@@ -1,6 +1,9 @@
 import { Trophy, ShieldCheck, Laptop } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Features = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   const features = [
     {
       icon: Trophy,
@@ -20,7 +23,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-32 md:py-40 bg-background">
+    <section id="features" ref={ref} className={`py-16 md:py-20 bg-muted/30 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-4 gap-12 lg:gap-16 items-start">
