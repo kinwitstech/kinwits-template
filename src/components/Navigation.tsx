@@ -83,18 +83,43 @@ const Navigation = () => {
       return;
     }
     
+    const smoothScroll = (element: HTMLElement) => {
+      const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      const duration = 1200; // 1.2 seconds for smoother scroll
+      let start: number | null = null;
+
+      const animation = (currentTime: number) => {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      };
+
+      const easeInOutCubic = (t: number, b: number, c: number, d: number) => {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t * t + b;
+        t -= 2;
+        return c / 2 * (t * t * t + 2) + b;
+      };
+
+      requestAnimationFrame(animation);
+    };
+    
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          smoothScroll(element);
         }
       }, 100);
     } else {
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        smoothScroll(element);
       }
     }
     setIsMobileMenuOpen(false);
@@ -112,7 +137,7 @@ const Navigation = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth opacity-0 animate-fade-in-down ${
-        isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'
+        isScrolled ? 'bg-black backdrop-blur-sm border-b border-white/10' : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-6 lg:px-12 py-6">
@@ -120,7 +145,9 @@ const Navigation = () => {
           {/* Logo - Left End */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-base font-medium tracking-wider z-10 flex-shrink-0"
+            className={`text-base font-medium tracking-wider z-10 flex-shrink-0 transition-colors ${
+              isScrolled ? 'text-white' : 'text-foreground'
+            }`}
           >
             KINWITS
           </button>
@@ -132,7 +159,9 @@ const Navigation = () => {
                 <button
                   onClick={() => scrollToSection(link.id, link.isPage)}
                   className={`text-[10px] tracking-widest transition-colors whitespace-nowrap ${
-                    activeSection === link.id ? 'text-foreground font-semibold underline underline-offset-4' : 'text-muted-foreground hover:text-foreground'
+                    activeSection === link.id 
+                      ? `font-semibold underline underline-offset-4 ${isScrolled ? 'text-white' : 'text-foreground'}` 
+                      : `${isScrolled ? 'text-white/60 hover:text-white' : 'text-muted-foreground hover:text-foreground'}`
                   }`}
                 >
                   {link.label}
@@ -145,7 +174,9 @@ const Navigation = () => {
           <Button
             onClick={() => scrollToSection('contact')}
             variant="outline"
-            className="hidden md:inline-flex text-[11px] tracking-widest px-6 z-10 flex-shrink-0"
+            className={`hidden md:inline-flex text-[11px] tracking-widest px-6 z-10 flex-shrink-0 transition-colors ${
+              isScrolled ? 'border-white text-white hover:bg-white hover:text-black' : ''
+            }`}
           >
             GET IN TOUCH
           </Button>

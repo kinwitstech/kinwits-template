@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const BlogPreview = () => {
   const navigate = useNavigate();
+  const { ref, isVisible } = useScrollAnimation();
 
   const blogPosts = [
     {
@@ -36,7 +38,7 @@ const BlogPreview = () => {
   ];
 
   return (
-    <section id="blog" className="py-32 md:py-40 bg-background">
+    <section id="blog" ref={ref} className={`py-32 md:py-40 bg-background transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
