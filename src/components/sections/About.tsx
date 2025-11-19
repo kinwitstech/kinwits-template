@@ -56,7 +56,7 @@ const About = () => {
             {/* Images Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
               <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={work1} alt="Portfolio 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <img src={work4} alt="Portfolio 4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="aspect-square overflow-hidden rounded-sm">
                 <img src={work2} alt="Portfolio 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
@@ -65,7 +65,7 @@ const About = () => {
                 <img src={work3} alt="Portfolio 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="aspect-square overflow-hidden rounded-sm">
-                <img src={work4} alt="Portfolio 4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <img src={work1} alt="Portfolio 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
 
