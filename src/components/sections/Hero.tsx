@@ -30,7 +30,7 @@ const Hero = () => {
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       <div className="absolute inset-0 bg-background/85"></div>
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-6 text-center relative z-10 -mt-16">
         <p className="text-[10px] sm:text-xs tracking-widest uppercase text-muted-foreground mb-8 opacity-0 animate-fade-in-up">
           Software Development / AI Solutions / Design
         </p>
@@ -53,7 +53,7 @@ const Hero = () => {
 
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up z-10"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up animate-float z-10"
         style={{ animationDelay: '400ms' }}
         aria-label="Scroll to about section"
       >
