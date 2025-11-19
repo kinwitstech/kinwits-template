@@ -161,4 +161,17 @@ All colors MUST be HSL.
     animation: scrollUp 3s ease-in-out forwards;
     opacity: 1;
   }
+
+  .animate-float {
+    animation: float 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 }

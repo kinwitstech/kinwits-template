@@ -126,7 +126,7 @@ const Navigation = () => {
           </button>
 
           {/* Desktop Navigation - Centered */}
-          <ul className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+          <ul className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
