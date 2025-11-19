@@ -95,7 +95,7 @@ const Services = () => {
             <div className="grid md:grid-cols-3 gap-12 md:gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-[59px] md:text-[71px] lg:text-[95px] font-medium tracking-tight mb-4">
+                  <div className="text-[58px] md:text-[70px] lg:text-[94px] font-medium tracking-tight mb-4">
                     {stat.number}
                   </div>
                   <p className="text-[14px] tracking-widest uppercase text-muted-foreground">
