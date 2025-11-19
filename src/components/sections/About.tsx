@@ -1,4 +1,4 @@
-import { Box, Lightbulb, Award } from 'lucide-react';
+import { PackageOpen, Sparkles, BadgeCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import work1 from '@/assets/work-1.jpg';
 import work2 from '@/assets/work-2.jpg';
@@ -25,15 +25,15 @@ const About = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   const values = [{
-    icon: Box,
+    icon: PackageOpen,
     title: 'INNOVATION',
     description: 'Pushing boundaries with cutting-edge technology and fresh ideas that transform businesses.'
   }, {
-    icon: Lightbulb,
+    icon: Sparkles,
     title: 'CREATIVITY',
     description: 'Turning imagination into reality through unique, inspiring solutions.'
   }, {
-    icon: Award,
+    icon: BadgeCheck,
     title: 'QUALITY',
     description: 'Committed to delivering work that exceeds the highest standards.'
   }];
