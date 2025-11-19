@@ -35,7 +35,7 @@ const Hero = () => {
           Software Development / AI Solutions / Design
         </p>
         
-        <div className="relative overflow-hidden mb-8 opacity-0 animate-fade-in-up" style={{ height: '1.2em', fontSize: 'clamp(2rem, 6vw, 6rem)', animationDelay: '200ms' }}>
+        <div className="relative overflow-hidden mb-8 opacity-0 animate-fade-in-up" style={{ height: '1.2em', fontSize: '47px', animationDelay: '200ms' }}>
           <h1 className="absolute inset-0 flex items-center justify-center font-medium tracking-tight text-foreground">
             <span 
               key={currentText} 
@@ -46,7 +46,7 @@ const Hero = () => {
           </h1>
         </div>
         
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-16 opacity-0 animate-fade-in-up font-normal" style={{ animationDelay: '400ms' }}>
+        <p className="text-[11px] text-muted-foreground max-w-2xl mx-auto mb-16 opacity-0 animate-fade-in-up font-normal" style={{ animationDelay: '400ms' }}>
           We build digital experiences that transform your business
         </p>
       </div>
