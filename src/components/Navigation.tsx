@@ -120,7 +120,7 @@ const Navigation = () => {
           {/* Logo - Left End */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-medium tracking-wider z-10"
+            className="text-base font-medium tracking-wider z-10"
           >
             KINWITS
           </button>
@@ -131,7 +131,7 @@ const Navigation = () => {
               <li key={link.id}>
                 <button
                   onClick={() => scrollToSection(link.id, link.isPage)}
-                  className={`text-xs tracking-widest transition-colors ${
+                  className={`text-[10px] tracking-widest transition-colors ${
                     activeSection === link.id ? 'text-foreground font-semibold underline underline-offset-4' : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
