@@ -118,15 +118,15 @@ const About = () => {
 
               {/* Right Side - Creative Image Collage */}
               <div className="relative w-full aspect-square max-w-[500px] mx-auto lg:mx-0 lg:max-w-none">
-                {/* Large Circular Image - Top Center-Right */}
-                <div className="absolute top-0 right-0 w-[70%] h-[70%] rounded-full overflow-hidden border-[12px] md:border-[15px] lg:border-[18px] border-background shadow-2xl transition-transform duration-100 ease-out" style={{
+                {/* Large Circular Image - Top Right */}
+                <div className="absolute top-0 right-0 w-[65%] h-[65%] rounded-full overflow-hidden border-[12px] md:border-[15px] lg:border-[18px] border-background shadow-2xl transition-transform duration-100 ease-out" style={{
                 transform: `translateY(${scrollY * 20}px)`
               }}>
                   <img src={work1} alt="Our workspace" className="w-full h-full object-cover grayscale" />
                 </div>
                 
-                {/* Rectangular Image with Dramatic Curved Top-Left - Bottom Left */}
-                <div className="absolute bottom-[3%] left-0 w-[55%] h-[55%] z-10 transition-transform duration-100 ease-out" style={{
+                {/* Rectangular Image with Curved Corner - Bottom Left */}
+                <div className="absolute bottom-0 left-0 w-[60%] h-[60%] z-10 transition-transform duration-100 ease-out" style={{
                 transform: `translateY(${scrollY * -30}px)`
               }}>
                   {/* White border wrapper */}
@@ -140,20 +140,6 @@ const About = () => {
                       <img src={work2} alt="Our team" className="w-full h-full object-cover grayscale rotate-90" />
                     </div>
                   </div>
-                </div>
-
-                {/* Decorative Flower Icon - Bottom Right */}
-                <div className="absolute bottom-16 right-4 md:bottom-20 md:right-12 z-20 transition-transform duration-100 ease-out" style={{
-                transform: `translateY(${scrollY * 15}px) rotate(${scrollY * 10}deg)`
-              }}>
-                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" className="text-background">
-                    <circle cx="40" cy="40" r="2" fill="currentColor"/>
-                    {[...Array(8)].map((_, i) => (
-                      <g key={i} transform={`rotate(${i * 45} 40 40)`}>
-                        <ellipse cx="40" cy="20" rx="6" ry="14" fill="currentColor" opacity="0.9"/>
-                      </g>
-                    ))}
-                  </svg>
                 </div>
               </div>
             </div>
