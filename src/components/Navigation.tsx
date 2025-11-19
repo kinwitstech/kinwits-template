@@ -175,7 +175,7 @@ const Navigation = () => {
             onClick={() => scrollToSection('contact')}
             variant="outline"
             className={`hidden md:inline-flex text-[11px] tracking-widest px-6 z-10 flex-shrink-0 transition-colors ${
-              isScrolled ? 'border-white text-white hover:bg-white hover:text-black' : ''
+              isScrolled ? 'bg-black border-white text-white hover:bg-white hover:text-black' : ''
             }`}
           >
             GET IN TOUCH
