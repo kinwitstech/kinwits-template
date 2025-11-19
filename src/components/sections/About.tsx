@@ -7,9 +7,11 @@ import work4 from '@/assets/work-4.jpg';
 import whoBg from '@/assets/who-we-are-bg.jpg';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
   const navigate = useNavigate();
+  const { ref, isVisible } = useScrollAnimation();
   useEffect(() => {
     const handleScroll = () => {
       const aboutSection = document.getElementById('about');
@@ -38,7 +40,7 @@ const About = () => {
   const navigateToAboutPage = () => {
     navigate('/about');
   };
-  return <section id="about" className="bg-background">
+  return <section id="about" ref={ref} className={`bg-background transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
       {/* Values Section */}
       <div className="py-32 md:py-40">
         <div className="container mx-auto px-6 lg:px-12">

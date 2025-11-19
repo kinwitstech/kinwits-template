@@ -1,9 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote } from "lucide-react";
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { ref, isVisible } = useScrollAnimation();
 
   const testimonials = [
     {
@@ -39,7 +41,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-32 md:py-40 bg-foreground text-background">
+    <section ref={ref} className={`py-32 md:py-40 bg-foreground text-background transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
           {/* Header */}
