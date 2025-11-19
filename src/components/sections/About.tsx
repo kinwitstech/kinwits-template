@@ -40,7 +40,7 @@ const About = () => {
   const navigateToAboutPage = () => {
     navigate('/about');
   };
-  return <section id="about" ref={ref} className={`bg-background transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+  return <section id="about" ref={ref} className={`bg-background transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       {/* Values Section */}
       <div className="py-32 md:py-40">
         <div className="container mx-auto px-6 lg:px-12">
