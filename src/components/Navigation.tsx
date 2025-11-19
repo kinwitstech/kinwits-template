@@ -83,43 +83,18 @@ const Navigation = () => {
       return;
     }
     
-    const smoothScroll = (element: HTMLElement) => {
-      const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
-      const duration = 1200; // 1.2 seconds for smoother scroll
-      let start: number | null = null;
-
-      const animation = (currentTime: number) => {
-        if (start === null) start = currentTime;
-        const timeElapsed = currentTime - start;
-        const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-      };
-
-      const easeInOutCubic = (t: number, b: number, c: number, d: number) => {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t * t + b;
-        t -= 2;
-        return c / 2 * (t * t * t + 2) + b;
-      };
-
-      requestAnimationFrame(animation);
-    };
-    
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          smoothScroll(element);
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, 100);
     } else {
       const element = document.getElementById(id);
       if (element) {
-        smoothScroll(element);
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
     setIsMobileMenuOpen(false);
