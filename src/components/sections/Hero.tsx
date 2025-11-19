@@ -53,7 +53,7 @@ const Hero = () => {
 
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up animate-float z-10"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 animate-fade-float z-10"
         style={{ animationDelay: '400ms' }}
         aria-label="Scroll to about section"
       >
