@@ -146,7 +146,14 @@ const About = () => {
                 <div className="absolute bottom-16 right-4 md:bottom-20 md:right-12 z-20 transition-transform duration-100 ease-out" style={{
                 transform: `translateY(${scrollY * 15}px) rotate(${scrollY * 10}deg)`
               }}>
-                  
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" className="text-background">
+                    <circle cx="40" cy="40" r="2" fill="currentColor"/>
+                    {[...Array(8)].map((_, i) => (
+                      <g key={i} transform={`rotate(${i * 45} 40 40)`}>
+                        <ellipse cx="40" cy="20" rx="6" ry="14" fill="currentColor" opacity="0.9"/>
+                      </g>
+                    ))}
+                  </svg>
                 </div>
               </div>
             </div>
