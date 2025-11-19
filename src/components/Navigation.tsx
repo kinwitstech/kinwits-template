@@ -88,13 +88,13 @@ const Navigation = () => {
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
     } else {
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     }
     setIsMobileMenuOpen(false);
@@ -111,8 +111,8 @@ const Navigation = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth opacity-0 animate-fade-in-down ${
-        isScrolled ? 'bg-black backdrop-blur-sm border-b border-white/10' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
+        isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-6 lg:px-12 py-6">
@@ -120,23 +120,19 @@ const Navigation = () => {
           {/* Logo - Left End */}
           <button
             onClick={() => scrollToSection('hero')}
-            className={`text-base font-medium tracking-wider z-10 flex-shrink-0 transition-colors ${
-              isScrolled ? 'text-white' : 'text-foreground'
-            }`}
+            className="text-xl font-medium tracking-wider z-10"
           >
             KINWITS
           </button>
 
           {/* Desktop Navigation - Centered */}
-          <ul className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2 max-w-[calc(100%-280px)]">
+          <ul className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
                   onClick={() => scrollToSection(link.id, link.isPage)}
-                  className={`text-[10px] tracking-widest transition-colors whitespace-nowrap ${
-                    activeSection === link.id 
-                      ? `font-semibold underline underline-offset-4 ${isScrolled ? 'text-white' : 'text-foreground'}` 
-                      : `${isScrolled ? 'text-white/60 hover:text-white' : 'text-muted-foreground hover:text-foreground'}`
+                  className={`text-xs tracking-widest transition-colors ${
+                    activeSection === link.id ? 'text-foreground font-semibold underline underline-offset-4' : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {link.label}
@@ -149,9 +145,7 @@ const Navigation = () => {
           <Button
             onClick={() => scrollToSection('contact')}
             variant="outline"
-            className={`hidden md:inline-flex text-[11px] tracking-widest px-6 z-10 flex-shrink-0 transition-colors ${
-              isScrolled ? 'bg-black border-white text-white hover:bg-white hover:text-black' : ''
-            }`}
+            className="hidden md:inline-flex text-xs tracking-widest px-6 z-10"
           >
             GET IN TOUCH
           </Button>
@@ -191,7 +185,7 @@ const Navigation = () => {
                     <Button
                       onClick={() => scrollToSection('contact')}
                       variant="outline"
-                      className="w-full text-[11px] tracking-widest"
+                      className="w-full text-xs tracking-widest"
                     >
                       GET IN TOUCH
                     </Button>

@@ -6,11 +6,9 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Services = () => {
   const navigate = useNavigate();
-  const { ref, isVisible } = useScrollAnimation();
 
   const services = [
     {
@@ -42,7 +40,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" ref={ref} className={`py-16 md:py-20 bg-muted/30 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section id="services" className="py-32 md:py-40 bg-background">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Main Content - Two Columns */}

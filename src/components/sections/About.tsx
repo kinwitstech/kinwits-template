@@ -7,11 +7,9 @@ import work4 from '@/assets/work-4.jpg';
 import whoBg from '@/assets/who-we-are-bg.jpg';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
   const navigate = useNavigate();
-  const { ref, isVisible } = useScrollAnimation();
   useEffect(() => {
     const handleScroll = () => {
       const aboutSection = document.getElementById('about');
@@ -40,9 +38,9 @@ const About = () => {
   const navigateToAboutPage = () => {
     navigate('/about');
   };
-  return <section id="about" ref={ref} className={`bg-background transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+  return <section id="about" className="bg-background">
       {/* Values Section */}
-      <div className="py-16 md:py-20">
+      <div className="py-32 md:py-40">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             {/* Values Grid */}
@@ -55,22 +53,18 @@ const About = () => {
               </h2>
             </div>
 
-            {/* Images Grid - Masonry Layout */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-16 max-w-6xl mx-auto">
-              {/* Image 1 - Tall portrait */}
-              <div className="overflow-hidden rounded-2xl h-64 lg:h-80">
-                <img src={work2} alt="Portfolio 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            {/* Images Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={work1} alt="Portfolio 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              {/* Image 2 - Tall portrait */}
-              <div className="overflow-hidden rounded-2xl h-64 lg:h-80">
-                <img src={work1} alt="Portfolio 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <div className="aspect-square overflow-hidden rounded-sm">
+                <img src={work2} alt="Portfolio 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              {/* Image 3 - Wide landscape */}
-              <div className="overflow-hidden rounded-2xl h-48 lg:h-52">
+              <div className="aspect-square overflow-hidden rounded-sm">
                 <img src={work3} alt="Portfolio 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              {/* Image 4 - Medium portrait */}
-              <div className="overflow-hidden rounded-2xl h-56 lg:h-68">
+              <div className="aspect-square overflow-hidden rounded-sm">
                 <img src={work4} alt="Portfolio 4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
@@ -93,7 +87,7 @@ const About = () => {
       </div>
 
       {/* WHO WE ARE Section - Full Width Dark Background */}
-      <div className="w-full bg-foreground text-background py-16 md:py-20 relative bg-cover bg-center bg-no-repeat" style={{
+      <div className="w-full bg-foreground text-background py-32 md:py-40 relative bg-cover bg-center bg-no-repeat" style={{
       backgroundImage: `url(${whoBg})`
     }}>
         <div className="absolute inset-0 bg-foreground/85"></div>
