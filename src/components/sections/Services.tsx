@@ -98,7 +98,7 @@ const Services = () => {
                   <div className="text-[59px] md:text-[71px] lg:text-[95px] font-medium tracking-tight mb-4">
                     {stat.number}
                   </div>
-                  <p className="text-[10px] tracking-widest uppercase text-muted-foreground">
+                  <p className="text-[14px] tracking-widest uppercase text-muted-foreground">
                     {stat.label}
                   </p>
                 </div>
