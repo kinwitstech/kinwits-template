@@ -91,7 +91,7 @@ const ContactInfo = () => {
             </div>
 
             {/* Navigation Links */}
-            <nav className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs tracking-widest uppercase px-4">
+            <nav className="flex flex-wrap items-center justify-center gap-2 sm:gap-6 text-[9px] sm:text-xs tracking-widest uppercase px-4">
               <a href="#" className="text-background/60 hover:text-background transition-colors">
                 HOME
               </a>
