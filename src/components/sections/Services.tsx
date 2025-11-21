@@ -89,7 +89,7 @@ const Services = () => {
 
           {/* Statistics Section */}
           <div className="pt-8">
-            <p className="text-[12px] tracking-widest uppercase text-center text-muted-foreground mb-16">
+            <p className="text-[10px] tracking-widest uppercase text-center text-muted-foreground mb-16">
               OUR WORK ISN'T JUST ABOUT CREATING - IT'S ABOUT MAKING A DIFFERENCE.
             </p>
             <div className="grid md:grid-cols-3 gap-12 md:gap-8">

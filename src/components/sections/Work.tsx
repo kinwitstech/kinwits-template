@@ -15,15 +15,22 @@ const Work = () => {
   const templatesProjects = [
     { image: work1, title: 'Modern E-Commerce', category: 'E-Commerce Template' },
     { image: work2, title: 'Portfolio Theme', category: 'Portfolio Template' },
-    { image: work3, title: 'SaaS Landing Page', category: 'Business Template' }
+    { image: work3, title: 'SaaS Landing Page', category: 'Business Template' },
+    { image: work4, title: 'Blog Platform', category: 'Content Template' }
   ];
 
   const softwaresProjects = [
-    { image: work5, title: 'CRM System', category: 'Business Software' }
+    { image: work5, title: 'CRM System', category: 'Business Software' },
+    { image: work6, title: 'Project Manager', category: 'Productivity Tool' },
+    { image: work1, title: 'Invoice Generator', category: 'Finance Software' },
+    { image: work2, title: 'Team Collaboration', category: 'Communication Tool' }
   ];
 
   const aiAgentsProjects = [
-    { image: work6, title: 'Customer Support Bot', category: 'AI Assistant' }
+    { image: work3, title: 'Customer Support Bot', category: 'AI Assistant' },
+    { image: work4, title: 'Content Generator', category: 'AI Writer' },
+    { image: work5, title: 'Data Analytics Agent', category: 'AI Analytics' },
+    { image: work6, title: 'Code Review Assistant', category: 'AI Developer Tool' }
   ];
 
   return (
@@ -54,11 +61,16 @@ const Work = () => {
             </TabsList>
 
             <TabsContent value="templates" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-6">
                 {templatesProjects.map((project, index) => (
                   <div 
                     key={index} 
-                    className="group relative overflow-hidden bg-secondary/10 rounded-sm h-[300px]"
+                    className={`group relative overflow-hidden bg-secondary/10 rounded-sm ${
+                      index === 0 ? 'col-span-2 row-span-2' :
+                      index === 1 ? 'col-span-1 row-span-1' :
+                      index === 2 ? 'col-span-1 row-span-2' :
+                      'col-span-2 row-span-1'
+                    }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <img
@@ -82,11 +94,16 @@ const Work = () => {
             </TabsContent>
 
             <TabsContent value="softwares" className="mt-0">
-              <div className="flex justify-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-6">
                 {softwaresProjects.map((project, index) => (
                   <div 
                     key={index} 
-                    className="group relative overflow-hidden bg-secondary/10 rounded-sm w-full max-w-md h-[300px]"
+                    className={`group relative overflow-hidden bg-secondary/10 rounded-sm ${
+                      index === 0 ? 'col-span-1 row-span-2' :
+                      index === 1 ? 'col-span-2 row-span-1' :
+                      index === 2 ? 'col-span-1 row-span-1' :
+                      'col-span-2 row-span-2'
+                    }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <img
@@ -110,11 +127,16 @@ const Work = () => {
             </TabsContent>
 
             <TabsContent value="ai-agents" className="mt-0">
-              <div className="flex justify-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-6">
                 {aiAgentsProjects.map((project, index) => (
                   <div 
                     key={index} 
-                    className="group relative overflow-hidden bg-secondary/10 rounded-sm w-full max-w-md h-[300px]"
+                    className={`group relative overflow-hidden bg-secondary/10 rounded-sm ${
+                      index === 0 ? 'col-span-2 row-span-1' :
+                      index === 1 ? 'col-span-1 row-span-2' :
+                      index === 2 ? 'col-span-1 row-span-1' :
+                      'col-span-2 row-span-2'
+                    }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <img

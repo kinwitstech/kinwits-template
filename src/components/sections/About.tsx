@@ -111,7 +111,7 @@ const About = () => {
                   PASSIONATE<br />THINKERS
                 </h3>
                 <p className="text-[15px] md:text-[17px] text-background/70 leading-relaxed font-normal max-w-md">
-                  At Kinwits Tech, we believe in the power of design and technology to transform businesses. With 15+ years of experience in software development and a team of seasoned professionals, we bring a unique blend of expertise and innovation to every project. Our mission is to deliver solutions that not only meet but exceed our clients' expectations, helping them thrive in the digital world.
+                  We specialize in creating bold brands and high-impact websites that cut through the noise. From visual identity to seamless digital experiences, our work is rooted in strategy, creativity, and results.
                 </p>
                 <Button onClick={navigateToAboutPage} variant="ghost" className="text-[11px] tracking-widest px-6 py-6 border-[0.5px] border-background text-background bg-transparent hover:bg-background hover:text-foreground transition-all">
                   MORE ABOUT US
