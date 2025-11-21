@@ -35,11 +35,11 @@ const Hero = () => {
           Software Development / AI Solutions / Design
         </p>
         
-        <div className="relative overflow-hidden mb-8 opacity-0 animate-fade-in-up h-[34px] sm:h-[44px] md:h-[51px] lg:h-[57px]" style={{ animationDelay: '200ms' }}>
-          <h1 className="absolute inset-0 flex items-center justify-center font-medium tracking-tight text-foreground text-[28px] sm:text-[36px] md:text-[42px] lg:text-[47px]">
+        <div className="relative overflow-hidden mb-8 opacity-0 animate-fade-in-up h-[68px] sm:h-[44px] md:h-[51px] lg:h-[57px]" style={{ animationDelay: '200ms' }}>
+          <h1 className="absolute inset-0 flex items-center justify-center font-medium tracking-tight text-foreground text-[28px] sm:text-[36px] md:text-[42px] lg:text-[47px] px-4">
             <span 
               key={currentText} 
-              className="animate-scroll-up inline-block whitespace-nowrap opacity-100"
+              className="animate-scroll-up inline-block whitespace-normal sm:whitespace-nowrap opacity-100 text-center leading-tight"
             >
               {rotatingTexts[currentText]}
             </span>

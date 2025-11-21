@@ -163,9 +163,9 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden"
+                className={`md:hidden transition-colors ${isScrolled ? 'text-white hover:text-white' : ''}`}
               >
-                <Menu />
+                <Menu className={isScrolled ? 'text-white' : ''} />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">

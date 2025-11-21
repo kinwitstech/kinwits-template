@@ -41,14 +41,14 @@ const Work = () => {
 
           {/* Tabs Section */}
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="w-full md:w-auto mx-auto mb-12 grid grid-cols-3 gap-2">
-              <TabsTrigger value="templates" className="text-xs tracking-widest">
+            <TabsList className="w-full md:w-auto mx-auto mb-12 grid grid-cols-3 gap-1 h-auto p-1">
+              <TabsTrigger value="templates" className="text-[9px] sm:text-xs tracking-widest px-2 py-2 whitespace-nowrap">
                 TEMPLATES
               </TabsTrigger>
-              <TabsTrigger value="softwares" className="text-xs tracking-widest">
+              <TabsTrigger value="softwares" className="text-[9px] sm:text-xs tracking-widest px-2 py-2 whitespace-nowrap">
                 SOFTWARES
               </TabsTrigger>
-              <TabsTrigger value="ai-agents" className="text-xs tracking-widest">
+              <TabsTrigger value="ai-agents" className="text-[9px] sm:text-xs tracking-widest px-2 py-2 whitespace-nowrap">
                 AI AGENTS
               </TabsTrigger>
             </TabsList>

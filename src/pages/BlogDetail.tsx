@@ -108,7 +108,7 @@ const BlogDetail = () => {
             </div>
 
             {/* Share Section */}
-            <div className="mt-16 pt-8 border-t border-border">
+            <div className="mt-16 pt-8 border-t border-border flex justify-center md:justify-start">
               <Button
                 variant="outline"
                 onClick={() => navigate('/blog')}
