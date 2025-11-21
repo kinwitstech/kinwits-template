@@ -22,10 +22,10 @@ const Contact = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
+            <p className="text-[12px] tracking-widest uppercase text-muted-foreground mb-8">
               Get In Touch
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight mb-6">
+            <h2 className="text-[30px] font-medium tracking-tight mb-6">
               LET'S WORK TOGETHER
             </h2>
             <p className="text-base text-muted-foreground font-normal">
