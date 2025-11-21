@@ -47,7 +47,7 @@ const Hero = () => {
         </div>
         
         <p className="text-[11px] text-muted-foreground max-w-2xl mx-auto mb-16 opacity-0 animate-fade-in-up font-normal" style={{ animationDelay: '400ms' }}>
-          We build digital experiences that transform your business
+          WE BUILD DIGITAL EXPERIENCES THAT TRANSFORM YOUR BUSINESS
         </p>
       </div>
 
