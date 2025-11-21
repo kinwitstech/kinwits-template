@@ -47,11 +47,11 @@ const About = () => {
           <div className="max-w-5xl mx-auto">
             {/* Values Grid */}
             <div className="text-center mb-24">
-              <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
+              <p className="text-[12px] tracking-widest uppercase text-muted-foreground mb-8">
                 We Bring Your Vision To Life
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight mb-6">
-                Your partners in digital success
+              <h2 className="text-[30px] font-medium tracking-tight mb-6">
+                YOUR PARTNERS IN DIGITAL SUCCESS
               </h2>
             </div>
 
