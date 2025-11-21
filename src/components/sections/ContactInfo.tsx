@@ -91,7 +91,7 @@ const ContactInfo = () => {
             </div>
 
             {/* Navigation Links */}
-            <nav className="flex items-center gap-6 text-xs tracking-widest uppercase">
+            <nav className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs tracking-widest uppercase px-4">
               <a href="#" className="text-background/60 hover:text-background transition-colors">
                 HOME
               </a>
@@ -100,7 +100,7 @@ const ContactInfo = () => {
                 SUPPORT
               </a>
               <span className="text-background/40">|</span>
-              <a href="#" className="text-background/60 hover:text-background transition-colors">
+              <a href="#" className="text-background/60 hover:text-background transition-colors whitespace-nowrap">
                 PRIVACY POLICY
               </a>
               

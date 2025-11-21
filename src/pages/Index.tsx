@@ -8,6 +8,7 @@ import Testimonials from '@/components/sections/Testimonials';
 import BlogPreview from '@/components/sections/BlogPreview';
 import Contact from '@/components/sections/Contact';
 import ContactInfo from '@/components/sections/ContactInfo';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <BlogPreview />
       <Contact />
       <ContactInfo />
+      <ScrollToTopButton />
     </main>
   );
 };
