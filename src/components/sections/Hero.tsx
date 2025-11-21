@@ -35,8 +35,8 @@ const Hero = () => {
           Software Development / AI Solutions / Design
         </p>
         
-        <div className="relative overflow-hidden mb-8 opacity-0 animate-fade-in-up" style={{ height: '1.2em', fontSize: '47px', animationDelay: '200ms' }}>
-          <h1 className="absolute inset-0 flex items-center justify-center font-medium tracking-tight text-foreground">
+        <div className="relative overflow-hidden mb-8 opacity-0 animate-fade-in-up h-[1.2em]" style={{ animationDelay: '200ms' }}>
+          <h1 className="absolute inset-0 flex items-center justify-center font-medium tracking-tight text-foreground text-[28px] sm:text-[36px] md:text-[42px] lg:text-[47px]">
             <span 
               key={currentText} 
               className="animate-scroll-up inline-block whitespace-nowrap opacity-100"
