@@ -149,7 +149,8 @@ const Navigation = () => {
           <Button
             onClick={() => scrollToSection('contact')}
             variant="outline"
-            className={`hidden md:inline-flex text-[11px] tracking-widest px-6 z-10 flex-shrink-0 transition-colors ${
+            size="sm"
+            className={`hidden md:inline-flex text-[10px] tracking-widest px-6 z-10 flex-shrink-0 transition-colors ${
               isScrolled ? 'bg-black border-white text-white hover:bg-white hover:text-black' : ''
             }`}
           >
@@ -191,7 +192,8 @@ const Navigation = () => {
                     <Button
                       onClick={() => scrollToSection('contact')}
                       variant="outline"
-                      className="w-full text-[11px] tracking-widest"
+                      size="sm"
+                      className="w-full text-[10px] tracking-widest"
                     >
                       GET IN TOUCH
                     </Button>
