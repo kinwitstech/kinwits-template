@@ -16,7 +16,7 @@ const Hero = () => {
       setCurrentText((prev) => (prev + 1) % rotatingTexts.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  });
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
@@ -56,7 +56,7 @@ const Hero = () => {
         className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-float z-10"
         aria-label="Scroll to about section"
       >
-        <ChevronDown className="w-6 h-6 text-muted-foreground" strokeWidth={1} />
+        <ChevronDown className="w-9 h-9 text-muted-foreground" strokeWidth={1} />
       </button>
       
       {/* Vertical Line Separator */}

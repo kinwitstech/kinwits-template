@@ -44,7 +44,7 @@ const About = () => {
           <div className="max-w-5xl mx-auto">
             {/* Values Grid */}
             <div className="text-center mb-24">
-              <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
+              <p className="text-[11px] tracking-widest uppercase text-muted-foreground mb-8">
                 We Bring Your Vision To Life
               </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight mb-6">
@@ -59,8 +59,8 @@ const About = () => {
                   <div className="mb-8 inline-flex items-center justify-center">
                     <value.icon className="w-12 h-12 text-foreground" strokeWidth={1} />
                   </div>
-                  <h3 className="text-xs font-normal tracking-widest mb-4">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-light">
+                  <h3 className="text-sm font-normal tracking-widest mb-4">{value.title}</h3>
+                  <p className="text-md text-muted-foreground leading-relaxed font-light">
                     {value.description}
                   </p>
                 </div>)}
@@ -79,13 +79,13 @@ const About = () => {
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               {/* Left Side - Text Content */}
               <div className="space-y-8 lg:pr-12">
-                <p className="text-[10px] tracking-widest uppercase text-background/60">
+                <p className="text-[11px] tracking-widest uppercase text-background/60">
                   WHO WE ARE
                 </p>
                 <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-background leading-tight">
                   PASSIONATE<br />THINKERS
                 </h3>
-                <p className="text-sm md:text-base text-background/70 leading-relaxed font-light max-w-md">
+                <p className="text-sm md:text-base text-background/70 leading-loose font-light max-w-md">
                   We specialize in creating bold brands and high-impact websites that cut through the noise. From visual identity to seamless digital experiences, our work is rooted in strategy, creativity, and results.
                 </p>
                 <Button onClick={scrollToContact} variant="ghost" className="text-xs tracking-widest px-8 py-6 border-[0.5px] border-background text-background bg-transparent hover:bg-background hover:text-foreground transition-all">

@@ -66,7 +66,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-light tracking-wider"
+            className="text-2xl font-light tracking-wider"
           >
             KINWITS
           </button>
