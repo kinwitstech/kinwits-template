@@ -1,37 +1,17 @@
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Briefcase, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { jobOpenings } from '@/data/jobOpenings';
+
 const Career = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const openPositions = [{
-    title: 'Senior Full Stack Developer',
-    department: 'Engineering',
-    location: 'Remote / Melbourne',
-    type: 'Full-time',
-    description: 'We are looking for an experienced full-stack developer to join our growing engineering team.'
-  }, {
-    title: 'UI/UX Designer',
-    department: 'Design',
-    location: 'Melbourne',
-    type: 'Full-time',
-    description: 'Join our design team to create beautiful and intuitive digital experiences for our clients.'
-  }, {
-    title: 'AI/ML Engineer',
-    department: 'Engineering',
-    location: 'Remote',
-    type: 'Full-time',
-    description: 'Help us build cutting-edge AI solutions and integrate machine learning into our products.'
-  }, {
-    title: 'Project Manager',
-    department: 'Operations',
-    location: 'Melbourne',
-    type: 'Full-time',
-    description: 'Lead cross-functional teams to deliver exceptional results for our clients.'
-  }];
-  const benefits = ['Competitive salary and equity', 'Flexible working hours', 'Remote work options', 'Health insurance', 'Professional development budget', 'Modern tech stack', 'Collaborative culture', 'Exciting projects'];
+
   return <main className="min-h-screen bg-background">
       <Navigation />
       
@@ -70,10 +50,20 @@ const Career = () => {
             </div>
 
             <div className="space-y-6">
-              {openPositions.map((position, index) => <div key={index} className="bg-muted/20 p-8 rounded-sm hover:bg-muted/30 transition-colors group">
+              {jobOpenings.map((position) => (
+                <div
+                  key={position.id}
+                  className={`bg-muted/20 p-8 rounded-sm transition-colors group cursor-pointer ${position.status === 'Open' ? 'hover:bg-muted/30' : 'opacity-80'}`}
+                  onClick={() => navigate(`/career/${position.id}`)}
+                >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                     <div className="flex-1">
-                      <h3 className="text-xl md:text-2xl font-medium mb-4">{position.title}</h3>
+                      <div className="flex items-center gap-3 mb-4">
+                        <h3 className="text-xl md:text-2xl font-medium">{position.title}</h3>
+                        <span className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full ${position.status === 'Open' ? 'bg-green-500/10 text-green-500/80' : 'bg-red-500/10 text-red-500/80 font-medium'}`}>
+                          {position.status}
+                        </span>
+                      </div>
                       <p className="text-base text-muted-foreground mb-4">{position.description}</p>
                       <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                         <div className="flex items-center gap-2">
@@ -90,12 +80,20 @@ const Career = () => {
                         </div>
                       </div>
                     </div>
-                    <Button variant="outline" className="text-xs tracking-widest group-hover:bg-foreground group-hover:text-background transition-colors">
-                      APPLY NOW
+                    <Button 
+                      variant="outline" 
+                      className={`text-xs tracking-widest transition-colors ${position.status === 'Open' ? 'group-hover:bg-foreground group-hover:text-background' : 'opacity-40 hover:bg-transparent'}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/career/${position.id}`);
+                      }}
+                    >
+                      VIEW DETAILS
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -112,9 +110,14 @@ const Career = () => {
               We're always interested in hearing from talented people. Send us your resume and 
               we'll get in touch if something comes up that matches your skills.
             </p>
-            <Button variant="default" size="lg" className="text-xs tracking-widest px-12">
+            <a 
+              href={`mailto:info@kinwits.com?subject=${encodeURIComponent('Resume Submission')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center h-11 px-12 text-xs tracking-widest font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+            >
               SEND YOUR RESUME
-            </Button>
+            </a>
           </div>
         </div>
       </section>

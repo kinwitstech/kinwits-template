@@ -1,13 +1,15 @@
-import { Phone, MapPin, Mail, ChevronDown, ChevronUp, Linkedin, Instagram, Twitch, Music, Twitter } from 'lucide-react';
+import { Phone, MapPin, Mail, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 import { MessageCircle } from 'lucide-react';
+import { FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa';
 const ContactInfo = () => {
   const [showMap, setShowMap] = useState(false);
   return <>
       <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-12">
+            <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+              {/* 
               <div className="text-center">
                 <div className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center mx-auto mb-6">
                   <Phone className="w-5 h-5 text-background" />
@@ -15,13 +17,16 @@ const ContactInfo = () => {
                 <h3 className="text-xs tracking-widest uppercase mb-4 font-medium">CALL US</h3>
                 <p className="text-muted-foreground mb-2">+61 383 767 284</p>
               </div>
+              */}
               
               <div className="text-center">
                 <div className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center mx-auto mb-6">
                   <MapPin className="w-5 h-5 text-background" />
                 </div>
                 <h3 className="text-xs tracking-widest uppercase mb-4 font-medium">ADDRESS</h3>
-                <p className="text-muted-foreground mb-2">245 Quigley Blvd, Ste K</p>
+                <p className="text-muted-foreground mb-2 whitespace-pre-line">
+                  Shivam Tower, 1st floor,{'\n'}Kota, Udupi District, KA{'\n'}INDIA - 576221
+                </p>
                 <button onClick={() => setShowMap(!showMap)} className="text-[10px] tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors mt-2">
                   SEE ON THE MAP
                 </button>
@@ -32,8 +37,8 @@ const ContactInfo = () => {
                   <Mail className="w-5 h-5 text-background" />
                 </div>
                 <h3 className="text-xs tracking-widest uppercase mb-4 font-medium">EMAIL</h3>
-                <p className="text-muted-foreground mb-2">+61 383 767 284</p>
-                <a href="mailto:hello@kinwitstech.com" className="text-[10px] tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors mt-2 inline-block">
+                <p className="text-muted-foreground mb-2">info@kinwits.com</p>
+                <a href="mailto:info@kinwits.com" className="text-[10px] tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors mt-2 inline-block">
                   SAY HELLO
                 </a>
               </div>
@@ -57,7 +62,7 @@ const ContactInfo = () => {
           </div>
 
           {showMap && <div className="mt-12 w-full h-[400px] bg-secondary/30 rounded-lg overflow-hidden animate-fade-in">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d144.95373531531652!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" width="100%" height="100%" style={{
+              <iframe src="https://maps.google.com/maps?q=Shivam+Tower,+1st+floor,+Kota,+Udupi+District,+KA,+INDIA+-+576221&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style={{
             border: 0
           }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
             </div>}
@@ -75,19 +80,15 @@ const ContactInfo = () => {
 
             {/* Social Media Icons */}
             <div className="flex items-center gap-4">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors">
-                <Linkedin className="w-4 h-4 text-background" />
+              <a href="https://www.linkedin.com/company/kinwits/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors">
+                <FaLinkedin className="w-4 h-4 text-background" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors">
-                <Instagram className="w-4 h-4 text-background" />
+              <a href="https://www.instagram.com/kinwitstechnologies" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors">
+                <FaInstagram className="w-4 h-4 text-background" />
               </a>
-              
-              
-              
-              
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors">
-                <Twitter className="w-4 h-4 text-background" />
-              </a>
+              {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors">
+                <FaTwitter className="w-4 h-4 text-background" />
+              </a> */}
             </div>
 
             {/* Navigation Links */}
@@ -103,8 +104,6 @@ const ContactInfo = () => {
               <a href="#" className="text-background/60 hover:text-background transition-colors whitespace-nowrap">
                 PRIVACY POLICY
               </a>
-              
-              
             </nav>
 
             {/* Copyright */}

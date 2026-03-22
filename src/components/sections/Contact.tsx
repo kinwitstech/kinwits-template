@@ -1,20 +1,55 @@
+import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useState } from 'react';
+
+const LAMBDA_URL = import.meta.env.VITE_LAMBDA_URL;
 
 const Contact = () => {
   const { toast } = useToast();
   const { ref, isVisible } = useScrollAnimation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you soon.",
-    });
-    (e.target as HTMLFormElement).reset();
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch(LAMBDA_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          subject: data.get('subject'),
+          message: data.get('message'),
+        }),
+      });
+
+      if (!res.ok) throw new Error('Failed');
+
+      toast({
+        title: (
+          <span className="flex items-center gap-2">
+            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-green-500">
+              <Check className="w-3 h-3 text-white" strokeWidth={3} />
+            </span>
+            Message sent!
+          </span>
+        ) as unknown as string,
+        description: "We'll get back to you soon.",
+      });
+      form.reset();
+    } catch {
+      toast({ title: "Something went wrong.", description: "Please try again or email us directly.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -36,44 +71,49 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <Input 
-                  type="text" 
-                  placeholder="NAME" 
-                  required 
+                <Input
+                  type="text"
+                  name="name"
+                  placeholder="NAME"
+                  required
                   className="bg-background border-border text-sm"
                 />
               </div>
               <div>
-                <Input 
-                  type="email" 
-                  placeholder="EMAIL" 
-                  required 
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="EMAIL"
+                  required
                   className="bg-background border-border text-sm"
                 />
               </div>
             </div>
             <div>
-              <Input 
-                type="text" 
-                placeholder="SUBJECT" 
-                required 
+              <Input
+                type="text"
+                name="subject"
+                placeholder="SUBJECT"
+                required
                 className="bg-background border-border text-sm"
               />
             </div>
             <div>
-              <Textarea 
-                placeholder="MESSAGE" 
-                required 
-                rows={8} 
+              <Textarea
+                name="message"
+                placeholder="MESSAGE"
+                required
+                rows={8}
                 className="bg-background border-border text-sm resize-none"
               />
             </div>
             <div className="text-center pt-4">
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
+                disabled={isSubmitting}
                 className="px-12 py-6 text-xs tracking-widest"
               >
-                SEND MESSAGE
+                {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
               </Button>
             </div>
           </form>

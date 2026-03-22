@@ -5,6 +5,8 @@ import work2 from '@/assets/work-2.jpg';
 import work3 from '@/assets/work-3.jpg';
 import work4 from '@/assets/work-4.jpg';
 import whoBg from '@/assets/who-we-are-bg.jpg';
+import aboutWorkspace from '@/assets/about-workspace.png';
+import aboutTeam from '@/assets/about-team.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
@@ -121,28 +123,25 @@ const About = () => {
               {/* Right Side - Creative Image Collage */}
               <div className="relative w-full aspect-square max-w-[500px] mx-auto lg:mx-0 lg:max-w-none">
                 {/* Large Circular Image - Top Right */}
-                <div className="absolute top-0 right-0 w-[65%] h-[65%] rounded-full overflow-hidden border-[12px] md:border-[15px] lg:border-[18px] border-background shadow-2xl transition-transform duration-100 ease-out" style={{
+                <div className="absolute top-0 right-0 w-[65%] h-[65%] rounded-full overflow-hidden border-[2px] border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-transform duration-100 ease-out" style={{
                 transform: `translateY(${scrollY * 20}px)`
               }}>
-                  <img src={work1} alt="Our workspace" className="w-full h-full object-cover grayscale" />
+                  <img src={aboutWorkspace} alt="Our workspace" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
                 </div>
                 
-                {/* Rectangular Image with Curved Corner - Bottom Left */}
-                <div className="absolute bottom-0 left-0 w-[60%] h-[60%] z-10 transition-transform duration-100 ease-out" style={{
+                {/* Rectangular Image - Bottom Left */}
+                <div className="absolute bottom-[5%] left-0 w-[58%] h-[55%] z-10 transition-transform duration-100 ease-out" style={{
                 transform: `translateY(${scrollY * -30}px)`
               }}>
-                  {/* White border wrapper */}
-                  <div className="relative w-full h-full bg-background -rotate-90" style={{
-                  borderRadius: '40% 0 0 0'
-                }}>
-                    {/* Inner image with matching curve */}
-                    <div className="absolute inset-[12px] md:inset-[15px] lg:inset-[18px] overflow-hidden" style={{
-                    borderRadius: '38% 0 0 0'
-                  }}>
-                      <img src={work2} alt="Our team" className="w-full h-full object-cover grayscale rotate-90" />
-                    </div>
+                  <div className="relative w-full h-full rounded-3xl overflow-hidden border-[2px] border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+                    <img src={aboutTeam} alt="Our team" className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   </div>
                 </div>
+
+                {/* Decorative accent dot */}
+                <div className="absolute top-[60%] left-[55%] w-3 h-3 rounded-full bg-white/30 blur-[1px]"></div>
               </div>
             </div>
           </div>

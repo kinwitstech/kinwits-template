@@ -115,12 +115,12 @@ const Navigation = () => {
         isScrolled ? 'bg-black backdrop-blur-sm border-b border-white/10' : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-6 lg:px-12 py-6">
+      <nav className="w-full px-8 lg:px-16 py-6">
         <div className="flex items-center justify-between relative">
           {/* Logo - Left End */}
           <button
             onClick={() => scrollToSection('hero')}
-            className={`text-base font-medium tracking-wider z-10 flex-shrink-0 transition-colors ${
+            className={`text-2xl md:text-3xl font-bold tracking-[0.2em] z-10 flex-shrink-0 transition-colors ${
               isScrolled ? 'text-white' : 'text-foreground'
             }`}
           >

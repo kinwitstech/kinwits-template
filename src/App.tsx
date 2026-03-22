@@ -10,6 +10,7 @@ import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
+import JobDetail from "./pages/JobDetail";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/career" element={<Career />} />
+          <Route path="/career/:id" element={<JobDetail />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/pricing" element={<Pricing />} />
