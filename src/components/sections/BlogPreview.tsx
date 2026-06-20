@@ -1,108 +1,52 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
-import work1 from "@/assets/work-1.jpg";
-import work2 from "@/assets/work-2.jpg";
-import work3 from "@/assets/work-3.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { PenLine } from "lucide-react";
 
 const BlogPreview = () => {
   const navigate = useNavigate();
   const { ref, isVisible } = useScrollAnimation();
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "The Future of Web Design",
-      excerpt: "Exploring the latest trends and innovations shaping the digital landscape.",
-      image: work1,
-      date: "March 15, 2024",
-      category: "Design"
-    },
-    {
-      id: 2,
-      title: "Building Scalable Applications",
-      excerpt: "Best practices for creating robust and maintainable software solutions.",
-      image: work2,
-      date: "March 10, 2024",
-      category: "Development"
-    },
-    {
-      id: 3,
-      title: "User Experience Matters",
-      excerpt: "How thoughtful UX design can transform your digital products.",
-      image: work3,
-      date: "March 5, 2024",
-      category: "UX/UI"
-    }
-  ];
-
   return (
-    <section id="blog" ref={ref} className={`py-16 md:py-20 bg-muted/30 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section
+      id="blog"
+      ref={ref}
+      className={`py-16 md:py-20 bg-muted/30 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <div className="inline-block mb-8">
               <p className="text-[12px] tracking-widest uppercase text-muted-foreground relative">
-                OUR <span className="relative">
+                OUR{' '}
+                <span className="relative">
                   LATEST
                   <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-foreground"></span>
-                </span> INSIGHTS
+                </span>{' '}
+                INSIGHTS
               </p>
             </div>
-            <h2 className="text-[30px] font-medium tracking-tight mb-6">
-              RECENT BLOG POSTS
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Stay updated with our latest thoughts, insights, and innovations
+            <h2 className="text-[30px] font-medium tracking-tight mb-6">BLOG & UPDATES</h2>
+          </div>
+
+          {/* Coming Soon */}
+          <div className="flex flex-col items-center justify-center py-24 border border-border">
+            <PenLine className="w-8 h-8 text-muted-foreground mb-8" strokeWidth={1} />
+            <p className="text-[12px] tracking-widest uppercase text-muted-foreground mb-3">
+              COMING SOON
             </p>
-          </div>
-
-          {/* Blog Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {blogPosts.map((post) => (
-              <Card 
-                key={post.id} 
-                className="overflow-hidden border-border hover:shadow-lg transition-all duration-300 cursor-pointer"
-                onClick={() => navigate(`/blog/${post.id}`)}
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-[10px] tracking-widest uppercase text-muted-foreground">
-                      {post.category}
-                    </span>
-                    <span className="text-[10px] text-muted-foreground">•</span>
-                    <span className="text-[10px] text-muted-foreground">
-                      {post.date}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-medium mb-2 tracking-tight">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* View More Button */}
-          <div className="text-center">
-            <Button 
+            <p className="text-base text-muted-foreground font-normal mb-10 max-w-md text-center">
+              We're working on insights about AI, software engineering, and cloud architecture. Check back soon.
+            </p>
+            <Button
               onClick={() => navigate('/blog')}
-              size="lg"
+              variant="outline"
               className="tracking-widest text-xs"
             >
-              VIEW MORE
+              VISIT BLOG
             </Button>
           </div>
         </div>
