@@ -1,24 +1,17 @@
 import { ArrowRight } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useNavigate } from "react-router-dom";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Testimonials = () => {
-  const { ref, isVisible } = useScrollAnimation();
-  const navigate = useNavigate();
-
   return (
-    <section
+    <AnimatedSection
       id="testimonials"
-      ref={ref}
-      className={`py-16 md:py-20 bg-foreground text-background transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="py-16 md:py-20 bg-foreground text-background"
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
           <div className="mb-16">
             <div className="inline-block mb-8">
-              <p className="text-[12px] tracking-widest uppercase text-background/60 relative">
+              <p className="text-[12px] tracking-widest uppercase text-background/80 relative">
                 OUR{' '}
                 <span className="relative">
                   CLIENTS
@@ -27,13 +20,13 @@ const Testimonials = () => {
                 TESTIMONIALS
               </p>
             </div>
-            <h2 className="text-[30px] font-medium tracking-tight mb-12 text-background">
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-12 text-background">
               WE LET OUR WORK<br />SPEAK FIRST
             </h2>
           </div>
 
           <div className="py-12 border border-background/10 max-w-2xl mx-auto">
-            <p className="text-lg text-background/60 tracking-wide font-normal mb-8">
+            <p className="text-lg text-background/90 tracking-wide font-normal mb-8">
               Client testimonials coming soon.
             </p>
             <button
@@ -43,7 +36,7 @@ const Testimonials = () => {
                   workSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="inline-flex items-center gap-2 text-[11px] tracking-widest uppercase text-background/70 hover:text-background transition-colors group"
+              className="inline-flex items-center gap-2 text-[11px] tracking-widest uppercase text-background/80 hover:text-background transition-colors group"
             >
               SEE OUR WORK
               <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -51,7 +44,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

@@ -35,7 +35,7 @@ const ProjectDetail = () => {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+      <section className="pt-32 pb-0 md:pt-40 md:pb-0">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <button
@@ -49,10 +49,10 @@ const ProjectDetail = () => {
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-6">
               {project.category} — {project.client}
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-8">
+            <h1 className="text-4xl/[1.1] md:text-5xl/[1.1] font-medium tracking-tight mb-8">
               {project.title.toUpperCase()}
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed font-normal max-w-3xl">
+            <p className="text-xl text-muted-foreground leading-relaxed font-normal max-w-4xl">
               {project.summary}
             </p>
           </div>
@@ -60,14 +60,14 @@ const ProjectDetail = () => {
       </section>
 
       {/* Thumbnail */}
-      <section className="bg-muted/20">
+      <section className="bg-muted/20 py-16 md:py-20">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
-            <div className="aspect-[16/7] overflow-hidden rounded-sm">
+            <div className="aspect-[16/10] overflow-hidden rounded-sm border border-border bg-muted/30">
               <img
                 src={project.thumbnail}
-                alt={project.title}
-                className="w-full h-full object-cover"
+                alt={`${project.title} — ${project.client} interface`}
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
@@ -75,9 +75,9 @@ const ProjectDetail = () => {
       </section>
 
       {/* Problem */}
-      <section className="py-24 md:py-32">
+      <section className="py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-4 md:gap-12">
             <div>
               <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-4 relative inline-block">
                 THE CHALLENGE
@@ -94,9 +94,9 @@ const ProjectDetail = () => {
       </section>
 
       {/* Solution */}
-      <section className="py-24 md:py-32 bg-muted/20">
+      <section className="py-20 md:py-24 bg-muted/20">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-4 md:gap-12">
             <div>
               <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-4 relative inline-block">
                 OUR SOLUTION
@@ -113,7 +113,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Highlights */}
-      <section className="py-24 md:py-32">
+      <section className="py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-12 relative inline-block">
@@ -135,10 +135,10 @@ const ProjectDetail = () => {
       </section>
 
       {/* Tech Stack */}
-      <section className="py-24 md:py-32 bg-foreground text-background">
+      <section className="py-20 md:py-24 bg-foreground text-background">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
-            <p className="text-[10px] tracking-widest uppercase text-background/60 mb-12 relative inline-block">
+            <p className="text-[10px] tracking-widest uppercase text-background/80 mb-12 relative inline-block">
               TECH STACK
               <span className="absolute -bottom-1 left-0 w-3/4 h-[1px] bg-background"></span>
             </p>
@@ -157,7 +157,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32">
+      <section className="py-20 md:py-24">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>

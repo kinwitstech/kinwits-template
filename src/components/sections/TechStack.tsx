@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const technologies = [
   'React & Next.js',
@@ -12,15 +12,8 @@ const technologies = [
 ];
 
 const TechStack = () => {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
-    <section
-      ref={ref}
-      className={`py-12 md:py-16 border-y border-border bg-muted/20 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-    >
+    <AnimatedSection className="py-12 md:py-16 border-y border-border bg-muted/20">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <p className="text-[10px] tracking-widest uppercase text-muted-foreground text-center mb-8">
@@ -38,7 +31,7 @@ const TechStack = () => {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

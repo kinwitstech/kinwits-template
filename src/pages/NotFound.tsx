@@ -1,15 +1,9 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 
 const NotFound = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    console.error("404: Non-existent route accessed:", location.pathname);
-  }, [location.pathname]);
 
   return (
     <main className="min-h-screen bg-background">

@@ -18,7 +18,7 @@ const BlogDetail = () => {
           <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-6">
             COMING SOON
           </p>
-          <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-8">
+          <h1 className="text-4xl/[1.1] md:text-5xl/[1.1] font-medium tracking-tight mb-8">
             ARTICLE IN PROGRESS
           </h1>
           <p className="text-base text-muted-foreground font-normal mb-10">

@@ -1,19 +1,18 @@
 import { PackageOpen, Sparkles, BadgeCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import work1 from '@/assets/work-1.jpg';
-import work2 from '@/assets/work-2.jpg';
-import work3 from '@/assets/work-3.jpg';
-import work4 from '@/assets/work-4.jpg';
+import abstractNetwork from '@/assets/abstract-network.svg';
+import abstractWaves from '@/assets/abstract-waves.svg';
+import abstractArcs from '@/assets/abstract-arcs.svg';
+import abstractGrid from '@/assets/abstract-grid.svg';
 import whoBg from '@/assets/who-we-are-bg.jpg';
 import aboutWorkspace from '@/assets/about-workspace.png';
 import aboutTeam from '@/assets/about-team.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import AnimatedSection from '@/components/AnimatedSection';
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
   const navigate = useNavigate();
-  const { ref, isVisible } = useScrollAnimation();
   useEffect(() => {
     const handleScroll = () => {
       const aboutSection = document.getElementById('about');
@@ -42,7 +41,7 @@ const About = () => {
   const navigateToAboutPage = () => {
     navigate('/about');
   };
-  return <section id="about" ref={ref} className={`bg-background transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+  return <AnimatedSection id="about" className="bg-background">
       {/* Values Section */}
       <div className="py-16 md:py-20">
         <div className="container mx-auto px-6 lg:px-12">
@@ -52,28 +51,28 @@ const About = () => {
               <p className="text-[12px] tracking-widest uppercase text-muted-foreground mb-8">
                 We Bring Your Vision To Life
               </p>
-              <h2 className="text-[30px] font-medium tracking-tight mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">
                 YOUR PARTNERS IN DIGITAL SUCCESS
               </h2>
             </div>
 
             {/* Images Grid - Masonry Layout */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-16 max-w-6xl mx-auto">
-              {/* Image 1 - Medium portrait */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-16">
+              {/* Abstract visual 1 - node network (AI) */}
               <div className="overflow-hidden rounded-2xl h-56 lg:h-68">
-                <img src={work4} alt="Portfolio 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <img src={abstractNetwork} alt="" aria-hidden="true" loading="lazy" decoding="async" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              {/* Image 2 - Tall portrait */}
+              {/* Abstract visual 2 - flowing lines */}
               <div className="overflow-hidden rounded-2xl h-64 lg:h-80">
-                <img src={work1} alt="Portfolio 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <img src={abstractWaves} alt="" aria-hidden="true" loading="lazy" decoding="async" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              {/* Image 3 - Wide landscape */}
+              {/* Abstract visual 3 - concentric arcs */}
               <div className="overflow-hidden rounded-2xl h-48 lg:h-52">
-                <img src={work3} alt="Portfolio 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <img src={abstractArcs} alt="" aria-hidden="true" loading="lazy" decoding="async" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              {/* Image 4 - Tall portrait */}
+              {/* Abstract visual 4 - dot grid (systems) */}
               <div className="overflow-hidden rounded-2xl h-64 lg:h-80">
-                <img src={work2} alt="Portfolio 4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <img src={abstractGrid} alt="" aria-hidden="true" loading="lazy" decoding="async" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
 
@@ -106,13 +105,13 @@ const About = () => {
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               {/* Left Side - Text Content */}
               <div className="space-y-8 lg:pr-12">
-                <p className="text-[12px] tracking-widest uppercase text-background/60">
+                <p className="text-[12px] tracking-widest uppercase text-background/80">
                   WHO WE ARE
                 </p>
-                <h3 className="text-[30px] font-semibold tracking-tight text-background leading-tight">
+                <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-background leading-tight">
                   PASSIONATE<br />THINKERS
                 </h3>
-                <p className="text-[15px] md:text-[17px] text-background/70 leading-relaxed font-normal max-w-md">
+                <p className="text-[15px] md:text-[17px] text-background/90 leading-relaxed font-normal">
                   At Kinwits Tech, we believe in the power of design and technology to transform businesses. With 15+ years of experience in software development and a team of seasoned professionals, we bring a unique blend of expertise and innovation to every project. Our mission is to deliver solutions that not only meet but exceed our clients' expectations, helping them thrive in the digital world.
                 </p>
                 <Button onClick={navigateToAboutPage} variant="ghost" className="text-[11px] tracking-widest px-6 py-6 border-[0.5px] border-background text-background bg-transparent hover:bg-background hover:text-foreground transition-all">
@@ -126,7 +125,7 @@ const About = () => {
                 <div className="absolute top-0 right-0 w-[65%] h-[65%] rounded-full overflow-hidden border-[2px] border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-transform duration-100 ease-out" style={{
                 transform: `translateY(${scrollY * 20}px)`
               }}>
-                  <img src={aboutWorkspace} alt="Our workspace" className="w-full h-full object-cover" />
+                  <img src={aboutWorkspace} alt="Our workspace" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
                 </div>
                 
@@ -135,7 +134,7 @@ const About = () => {
                 transform: `translateY(${scrollY * -30}px)`
               }}>
                   <div className="relative w-full h-full rounded-3xl overflow-hidden border-[2px] border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
-                    <img src={aboutTeam} alt="Our team" className="w-full h-full object-cover" />
+                    <img src={aboutTeam} alt="Our team" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   </div>
                 </div>
@@ -147,6 +146,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </AnimatedSection>;
 };
 export default About;

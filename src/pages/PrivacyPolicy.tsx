@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
               Legal
             </p>
-            <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-4">
+            <h1 className="text-4xl/[1.1] md:text-5xl/[1.1] font-medium tracking-tight mb-4">
               PRIVACY POLICY
             </h1>
             <p className="text-sm text-muted-foreground mb-16">Last updated: June 2025</p>

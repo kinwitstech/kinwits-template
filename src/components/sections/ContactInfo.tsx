@@ -70,6 +70,7 @@ const ContactInfo = () => {
           {showMap && (
             <div className="mt-12 w-full h-[400px] bg-secondary/30 rounded-lg overflow-hidden animate-fade-in">
               <iframe
+                title="Map showing the Kinwits office in Kota, Udupi District"
                 src="https://maps.google.com/maps?q=Shivam+Tower,+1st+floor,+Kota,+Udupi+District,+KA,+INDIA+-+576221&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
@@ -126,31 +127,31 @@ const ContactInfo = () => {
             </div>
 
             {/* Navigation Links */}
-            <nav className="flex flex-wrap items-center justify-center gap-2 sm:gap-6 text-[9px] sm:text-xs tracking-widest uppercase px-4">
+            <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:gap-6 text-xs sm:text-sm tracking-widest uppercase px-4">
               <a
                 href="/#hero"
-                className="text-background/60 hover:text-background transition-colors"
+                className="text-background/80 hover:text-background transition-colors py-1"
               >
                 HOME
               </a>
               <span className="text-background/40">|</span>
               <a
                 href="mailto:info@kinwits.com"
-                className="text-background/60 hover:text-background transition-colors"
+                className="text-background/80 hover:text-background transition-colors py-1"
               >
                 SUPPORT
               </a>
               <span className="text-background/40">|</span>
               <a
                 href="/privacy"
-                className="text-background/60 hover:text-background transition-colors whitespace-nowrap"
+                className="text-background/80 hover:text-background transition-colors whitespace-nowrap py-1"
               >
                 PRIVACY POLICY
               </a>
             </nav>
 
             {/* Copyright */}
-            <p className="text-sm text-background/60 font-normal">
+            <p className="text-sm text-background/80 font-normal">
               © KINWITS TECH {new Date().getFullYear()}
             </p>
           </div>

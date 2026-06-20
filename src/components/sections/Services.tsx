@@ -6,11 +6,10 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Services = () => {
   const navigate = useNavigate();
-  const { ref, isVisible } = useScrollAnimation();
 
   const services = [
     {
@@ -47,12 +46,9 @@ const Services = () => {
   ];
 
   return (
-    <section
+    <AnimatedSection
       id="services"
-      ref={ref}
-      className={`py-16 md:py-20 bg-muted/30 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="py-16 md:py-20 bg-muted/30"
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
@@ -66,7 +62,7 @@ const Services = () => {
                   <span className="absolute -bottom-1 left-0 w-3/4 h-[1px] bg-foreground"></span>
                 </p>
               </div>
-              <h2 className="text-[30px] font-semibold tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
                 WHAT WE CAN DO FOR YOU
               </h2>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
@@ -126,7 +122,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

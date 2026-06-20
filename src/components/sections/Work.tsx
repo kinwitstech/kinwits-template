@@ -1,8 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState } from 'react';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import AnimatedSection from '@/components/AnimatedSection';
 import { useNavigate } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
 import { projects, getProjectsByCategory, type Project } from '@/data/projects';
 
 const ProjectCard = ({
@@ -12,34 +11,37 @@ const ProjectCard = ({
   project: Project;
   onClick: () => void;
 }) => (
-  <div
-    className="group relative overflow-hidden bg-secondary/10 rounded-sm h-[300px] cursor-pointer"
+  <button
+    type="button"
     onClick={onClick}
+    aria-label={`${project.externalUrl ? 'View on GitHub' : 'View case study'}: ${project.title}`}
+    className="group relative block w-full text-left overflow-hidden bg-secondary/20 rounded-sm aspect-video cursor-pointer shadow-sm hover:shadow-2xl transition-shadow duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
   >
     <img
       src={project.thumbnail}
-      alt={project.title}
-      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      alt={`${project.title} — ${project.client}`}
+      loading="lazy"
+      decoding="async"
+      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
     />
-    <div className="absolute inset-0 bg-foreground/88 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-8">
-      <div className="text-center">
-        <p className="text-[10px] tracking-widest uppercase text-background/70 mb-3">
+    <div className="absolute inset-0 flex items-end md:items-center justify-start md:justify-center p-6 md:p-8 bg-gradient-to-t from-black/85 via-black/40 to-transparent md:bg-none md:bg-black/75 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
+      <div className="text-left md:text-center">
+        <p className="text-[10px] tracking-widest uppercase text-white/80 mb-2 md:mb-3">
           {project.client}
         </p>
-        <h3 className="text-xl md:text-2xl font-medium text-background mb-3">
+        <h3 className="text-lg md:text-2xl font-medium text-white mb-3 md:mb-4">
           {project.title}
         </h3>
-        <p className="text-[10px] tracking-widest uppercase text-background/50">
+        <span className="inline-block text-[10px] tracking-widest uppercase text-white/90 border border-white/40 px-4 py-2">
           {project.externalUrl ? 'VIEW ON GITHUB →' : 'VIEW CASE STUDY →'}
-        </p>
+        </span>
       </div>
     </div>
-  </div>
+  </button>
 );
 
 const Work = () => {
   const [activeTab, setActiveTab] = useState('ai-agents');
-  const { ref, isVisible } = useScrollAnimation();
   const navigate = useNavigate();
 
   const aiProjects = getProjectsByCategory('AI & Agents');
@@ -55,12 +57,9 @@ const Work = () => {
   };
 
   return (
-    <section
+    <AnimatedSection
       id="work"
-      ref={ref}
-      className={`py-16 md:py-20 bg-background transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="py-16 md:py-20 bg-background"
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
@@ -68,26 +67,26 @@ const Work = () => {
             <p className="text-[12px] tracking-widest uppercase text-muted-foreground mb-8">
               Our Portfolio
             </p>
-            <h2 className="text-[30px] font-medium tracking-tight mb-6">SELECTED WORK</h2>
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">SELECTED WORK</h2>
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="w-full md:w-auto mx-auto mb-12 grid grid-cols-3 gap-1 h-auto p-1">
+            <TabsList className="w-full md:w-auto mx-auto mb-12 grid grid-cols-1 sm:grid-cols-3 gap-1 h-auto p-1">
               <TabsTrigger
                 value="ai-agents"
-                className="text-[9px] sm:text-xs tracking-widest px-2 py-2 whitespace-nowrap"
+                className="text-[11px] sm:text-xs tracking-widest px-3 py-2.5 whitespace-nowrap"
               >
                 AI & AGENTS
               </TabsTrigger>
               <TabsTrigger
                 value="platforms"
-                className="text-[9px] sm:text-xs tracking-widest px-2 py-2 whitespace-nowrap"
+                className="text-[11px] sm:text-xs tracking-widest px-3 py-2.5 whitespace-nowrap"
               >
                 PLATFORMS & SOFTWARE
               </TabsTrigger>
               <TabsTrigger
                 value="web-design"
-                className="text-[9px] sm:text-xs tracking-widest px-2 py-2 whitespace-nowrap"
+                className="text-[11px] sm:text-xs tracking-widest px-3 py-2.5 whitespace-nowrap"
               >
                 WEB & DESIGN
               </TabsTrigger>
@@ -134,7 +133,7 @@ const Work = () => {
           </Tabs>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

@@ -1,19 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import AnimatedSection from "@/components/AnimatedSection";
 import { PenLine } from "lucide-react";
 
 const BlogPreview = () => {
   const navigate = useNavigate();
-  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section
+    <AnimatedSection
       id="blog"
-      ref={ref}
-      className={`py-16 md:py-20 bg-muted/30 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="py-16 md:py-20 bg-muted/30"
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
@@ -29,7 +25,7 @@ const BlogPreview = () => {
                 INSIGHTS
               </p>
             </div>
-            <h2 className="text-[30px] font-medium tracking-tight mb-6">BLOG & UPDATES</h2>
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">BLOG & UPDATES</h2>
           </div>
 
           {/* Coming Soon */}
@@ -51,7 +47,7 @@ const BlogPreview = () => {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 
