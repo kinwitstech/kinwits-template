@@ -11,6 +11,8 @@ import BlogDetail from "./pages/BlogDetail";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 import JobDetail from "./pages/JobDetail";
+import ProjectDetail from "./pages/ProjectDetail";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/work/:slug" element={<ProjectDetail />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
