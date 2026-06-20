@@ -38,10 +38,10 @@ const AboutUs = () => {
   ];
 
   const stats = [
-    { number: '150+', label: 'Projects Completed' },
-    { number: '50+', label: 'Happy Clients' },
-    { number: '8+', label: 'Years Experience' },
-    { number: '15+', label: 'Team Members' }
+    { number: '5+', label: 'Projects Delivered' },
+    { number: '1+', label: 'Happy Clients' },
+    { number: '1+', label: 'Years Experience' },
+    { number: '3+', label: 'Team Members' }
   ];
 
   return (
