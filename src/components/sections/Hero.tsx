@@ -46,7 +46,7 @@ const Hero = () => {
           </h1>
         </div>
         
-        <p className="text-[11px] text-muted-foreground max-w-2xl mx-auto mb-16 opacity-0 animate-fade-in-up font-normal text-center w-full block" style={{ animationDelay: '400ms' }}>
+        <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto mb-16 opacity-0 animate-fade-in-up font-normal text-center w-full block leading-relaxed" style={{ animationDelay: '400ms' }}>
           WE CRAFT SOFTWARE, DESIGN UNIQUE DIGITAL EXPERIENCES, AND EMPOWER AI TO ELEVATE YOUR BUSINESS
         </p>
       </div>

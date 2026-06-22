@@ -22,7 +22,7 @@ const Career = () => {
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
               Join Our Team
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight mb-8">
+            <h1 className="text-4xl/[1.1] md:text-5xl/[1.1] font-medium tracking-tight mb-8">
               BUILD YOUR<br />CAREER WITH US
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed font-normal max-w-3xl mx-auto">
@@ -44,7 +44,7 @@ const Career = () => {
               <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
                 Opportunities
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">
                 OPEN POSITIONS
               </h2>
             </div>
@@ -53,14 +53,13 @@ const Career = () => {
               {jobOpenings.map((position) => (
                 <div
                   key={position.id}
-                  className={`bg-muted/20 p-8 rounded-sm transition-colors group cursor-pointer ${position.status === 'Open' ? 'hover:bg-muted/30' : 'opacity-80'}`}
-                  onClick={() => navigate(`/career/${position.id}`)}
+                  className={`bg-muted/20 p-8 rounded-sm transition-all group ${position.status === 'Open' ? 'hover:bg-muted/30 hover:shadow-md' : 'opacity-80'}`}
                 >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-4">
                         <h3 className="text-xl md:text-2xl font-medium">{position.title}</h3>
-                        <span className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full ${position.status === 'Open' ? 'bg-green-500/10 text-green-500/80' : 'bg-red-500/10 text-red-500/80 font-medium'}`}>
+                        <span className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full ${position.status === 'Open' ? 'bg-green-500/10 text-green-700' : 'bg-red-500/10 text-red-700 font-medium'}`}>
                           {position.status}
                         </span>
                       </div>
@@ -103,7 +102,7 @@ const Career = () => {
       <section className="py-32 md:py-40 bg-muted/20">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-8">
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-8">
               DON'T SEE THE RIGHT ROLE?
             </h2>
             <p className="text-base text-muted-foreground leading-relaxed font-normal mb-12 max-w-2xl mx-auto">

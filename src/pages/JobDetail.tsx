@@ -50,14 +50,14 @@ const JobDetail = () => {
             </button>
 
             <div className="flex items-center gap-4 mb-6">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight">
+              <h1 className="text-4xl/[1.1] md:text-5xl/[1.1] font-medium tracking-tight">
                 {job.title}
               </h1>
               <span
                 className={`text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full font-medium ${
                   job.status === 'Open'
-                    ? 'bg-green-500 text-white'
-                    : 'bg-red-500/10 text-red-500/80'
+                    ? 'bg-green-500/10 text-green-700'
+                    : 'bg-red-500/10 text-red-700'
                 }`}
               >
                 {job.status}

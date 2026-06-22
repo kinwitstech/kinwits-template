@@ -111,8 +111,8 @@ const Navigation = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth opacity-0 animate-fade-in-down ${
-        isScrolled ? 'bg-black backdrop-blur-sm border-b border-white/10' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-nav transition-smooth opacity-0 animate-fade-in-down ${
+        isScrolled ? 'bg-foreground backdrop-blur-sm border-b border-background/10' : 'bg-transparent'
       }`}
     >
       <nav className="w-full px-8 lg:px-16 py-6">
@@ -121,22 +121,22 @@ const Navigation = () => {
           <button
             onClick={() => scrollToSection('hero')}
             className={`text-2xl md:text-3xl font-bold tracking-[0.2em] z-10 flex-shrink-0 transition-colors ${
-              isScrolled ? 'text-white' : 'text-foreground'
+              isScrolled ? 'text-background' : 'text-foreground'
             }`}
           >
             KINWITS
           </button>
 
           {/* Desktop Navigation - Centered */}
-          <ul className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2 max-w-[calc(100%-280px)]">
+          <ul className="hidden lg:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2 max-w-[calc(100%-280px)]">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
                   onClick={() => scrollToSection(link.id, link.isPage)}
                   className={`text-[10px] tracking-widest transition-colors whitespace-nowrap ${
-                    activeSection === link.id 
-                      ? `font-semibold underline underline-offset-4 ${isScrolled ? 'text-white' : 'text-foreground'}` 
-                      : `${isScrolled ? 'text-white/60 hover:text-white' : 'text-muted-foreground hover:text-foreground'}`
+                    activeSection === link.id
+                      ? `font-semibold underline underline-offset-4 ${isScrolled ? 'text-background' : 'text-foreground'}`
+                      : `${isScrolled ? 'text-background/70 hover:text-background' : 'text-muted-foreground hover:text-foreground'}`
                   }`}
                 >
                   {link.label}
@@ -150,8 +150,8 @@ const Navigation = () => {
             onClick={() => scrollToSection('contact')}
             variant="outline"
             size="sm"
-            className={`hidden md:inline-flex text-[10px] tracking-widest px-6 z-10 flex-shrink-0 transition-colors ${
-              isScrolled ? 'bg-black border-white text-white hover:bg-white hover:text-black' : ''
+            className={`hidden lg:inline-flex text-[10px] tracking-widest px-6 z-10 flex-shrink-0 transition-colors ${
+              isScrolled ? 'bg-foreground border-background text-background hover:bg-background hover:text-foreground' : ''
             }`}
           >
             GET IN TOUCH
@@ -163,9 +163,10 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className={`md:hidden transition-colors ${isScrolled ? 'text-white hover:text-white' : ''}`}
+                aria-label="Open navigation menu"
+                className={`lg:hidden h-11 w-11 transition-colors ${isScrolled ? 'text-background hover:text-background hover:bg-background/10' : 'hover:bg-foreground/5'}`}
               >
-                <Menu className={isScrolled ? 'text-white' : ''} />
+                <Menu className={isScrolled ? 'text-background' : ''} />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">

@@ -5,6 +5,12 @@ export const useScrollAnimation = () => {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Honor reduced-motion: reveal immediately, skip the entrance animation
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

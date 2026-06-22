@@ -69,6 +69,12 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      zIndex: {
+        nav: "40",
+        button: "45",
+        overlay: "50",
+        modal: "60",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

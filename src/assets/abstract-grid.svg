@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none" role="img" aria-label="Abstract dot grid">
+  <rect width="400" height="500" fill="#1a1a1a"/>
+  <g fill="#fafafa">
+    <circle cx="60" cy="90" r="2" fill-opacity="0.25"/>
+    <circle cx="130" cy="90" r="2" fill-opacity="0.35"/>
+    <circle cx="200" cy="90" r="2" fill-opacity="0.5"/>
+    <circle cx="270" cy="90" r="2" fill-opacity="0.35"/>
+    <circle cx="340" cy="90" r="2" fill-opacity="0.25"/>
+    <circle cx="60" cy="170" r="2" fill-opacity="0.35"/>
+    <circle cx="130" cy="170" r="2.5" fill-opacity="0.6"/>
+    <circle cx="200" cy="170" r="3" fill-opacity="0.9"/>
+    <circle cx="270" cy="170" r="2.5" fill-opacity="0.6"/>
+    <circle cx="340" cy="170" r="2" fill-opacity="0.35"/>
+    <circle cx="60" cy="250" r="2" fill-opacity="0.5"/>
+    <circle cx="130" cy="250" r="3" fill-opacity="0.9"/>
+    <circle cx="200" cy="250" r="4" fill-opacity="1"/>
+    <circle cx="270" cy="250" r="3" fill-opacity="0.9"/>
+    <circle cx="340" cy="250" r="2" fill-opacity="0.5"/>
+    <circle cx="60" cy="330" r="2" fill-opacity="0.35"/>
+    <circle cx="130" cy="330" r="2.5" fill-opacity="0.6"/>
+    <circle cx="200" cy="330" r="3" fill-opacity="0.9"/>
+    <circle cx="270" cy="330" r="2.5" fill-opacity="0.6"/>
+    <circle cx="340" cy="330" r="2" fill-opacity="0.35"/>
+    <circle cx="60" cy="410" r="2" fill-opacity="0.25"/>
+    <circle cx="130" cy="410" r="2" fill-opacity="0.35"/>
+    <circle cx="200" cy="410" r="2" fill-opacity="0.5"/>
+    <circle cx="270" cy="410" r="2" fill-opacity="0.35"/>
+    <circle cx="340" cy="410" r="2" fill-opacity="0.25"/>
+  </g>
+  <g stroke="#fafafa" stroke-opacity="0.3" stroke-width="1">
+    <line x1="200" y1="170" x2="200" y2="250"/>
+    <line x1="130" y1="250" x2="200" y2="250"/>
+    <line x1="200" y1="250" x2="270" y2="250"/>
+    <line x1="200" y1="250" x2="200" y2="330"/>
+  </g>
+</svg>

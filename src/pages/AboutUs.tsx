@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Users, Target, Zap, Heart } from 'lucide-react';
-import work1 from '@/assets/work-1.jpg';
-import work2 from '@/assets/work-2.jpg';
-import work3 from '@/assets/work-3.jpg';
+import abstractNetwork from '@/assets/abstract-network.svg';
+import abstractGrid from '@/assets/abstract-grid.svg';
+import abstractWaves from '@/assets/abstract-waves.svg';
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -38,10 +38,10 @@ const AboutUs = () => {
   ];
 
   const stats = [
-    { number: '150+', label: 'Projects Completed' },
-    { number: '50+', label: 'Happy Clients' },
-    { number: '8+', label: 'Years Experience' },
-    { number: '15+', label: 'Team Members' }
+    { number: '5+', label: 'Projects Delivered' },
+    { number: '1+', label: 'Happy Clients' },
+    { number: '1+', label: 'Years Experience' },
+    { number: '10+', label: 'Team Members' }
   ];
 
   return (
@@ -55,7 +55,7 @@ const AboutUs = () => {
             <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
               About Us
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight mb-8">
+            <h1 className="text-4xl/[1.1] md:text-5xl/[1.1] font-medium tracking-tight mb-8">
               BUILDING DIGITAL<br />EXPERIENCES
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed font-normal max-w-3xl mx-auto">
@@ -91,7 +91,7 @@ const AboutUs = () => {
                 <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
                   Our Story
                 </p>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-8">
+                <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-8">
                   PASSIONATE ABOUT INNOVATION
                 </h2>
                 <p className="text-base text-muted-foreground leading-relaxed font-normal mb-6">
@@ -106,15 +106,15 @@ const AboutUs = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="aspect-square overflow-hidden rounded-sm">
-                    <img src={work1} alt="Team" className="w-full h-full object-cover" />
+                    <img src={abstractNetwork} alt="" aria-hidden="true" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square overflow-hidden rounded-sm">
-                    <img src={work2} alt="Office" className="w-full h-full object-cover" />
+                    <img src={abstractGrid} alt="" aria-hidden="true" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div className="pt-12">
                   <div className="aspect-[3/4] overflow-hidden rounded-sm">
-                    <img src={work3} alt="Workspace" className="w-full h-full object-cover" />
+                    <img src={abstractWaves} alt="" aria-hidden="true" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -131,7 +131,7 @@ const AboutUs = () => {
               <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
                 What Drives Us
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">
                 OUR CORE VALUES
               </h2>
             </div>
@@ -157,7 +157,7 @@ const AboutUs = () => {
       <section className="py-32 md:py-40">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-8">
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-8">
               LET'S BUILD SOMETHING AMAZING TOGETHER
             </h2>
             <p className="text-base text-muted-foreground leading-relaxed font-normal mb-12 max-w-2xl mx-auto">

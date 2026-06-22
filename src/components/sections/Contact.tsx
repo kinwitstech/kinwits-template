@@ -3,14 +3,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import AnimatedSection from '@/components/AnimatedSection';
 import { useState } from 'react';
 
 const LAMBDA_URL = import.meta.env.VITE_LAMBDA_URL;
 
 const Contact = () => {
   const { toast } = useToast();
-  const { ref, isVisible } = useScrollAnimation();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,14 +52,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className={`py-16 md:py-20 bg-secondary/30 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <AnimatedSection id="contact" className="py-16 md:py-20 bg-secondary/30">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-[12px] tracking-widest uppercase text-muted-foreground mb-8">
               Get In Touch
             </p>
-            <h2 className="text-[30px] font-medium tracking-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">
               LET'S WORK TOGETHER
             </h2>
             <p className="text-base text-muted-foreground font-normal">
@@ -71,40 +70,50 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
+                <label htmlFor="contact-name" className="sr-only">Name</label>
                 <Input
+                  id="contact-name"
                   type="text"
                   name="name"
                   placeholder="NAME"
                   required
-                  className="bg-background border-border text-sm"
+                  autoComplete="name"
+                  className="bg-background border-border text-base"
                 />
               </div>
               <div>
+                <label htmlFor="contact-email" className="sr-only">Email</label>
                 <Input
+                  id="contact-email"
                   type="email"
                   name="email"
                   placeholder="EMAIL"
                   required
-                  className="bg-background border-border text-sm"
+                  autoComplete="email"
+                  className="bg-background border-border text-base"
                 />
               </div>
             </div>
             <div>
+              <label htmlFor="contact-subject" className="sr-only">Subject</label>
               <Input
+                id="contact-subject"
                 type="text"
                 name="subject"
                 placeholder="SUBJECT"
                 required
-                className="bg-background border-border text-sm"
+                className="bg-background border-border text-base"
               />
             </div>
             <div>
+              <label htmlFor="contact-message" className="sr-only">Message</label>
               <Textarea
+                id="contact-message"
                 name="message"
                 placeholder="MESSAGE"
                 required
                 rows={8}
-                className="bg-background border-border text-sm resize-none"
+                className="bg-background border-border text-base resize-none"
               />
             </div>
             <div className="text-center pt-4">
@@ -119,7 +128,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

@@ -71,7 +71,7 @@ const Pricing = () => {
               <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
                 PRICING PLANS
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight mb-6">
+              <h1 className="text-4xl/[1.1] md:text-5xl/[1.1] font-medium tracking-tight mb-6">
                 CHOOSE YOUR PLAN
               </h1>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -90,8 +90,8 @@ const Pricing = () => {
                   key={index}
                   className={`relative border rounded-lg p-8 transition-all ${
                     plan.highlighted
-                      ? 'border-foreground bg-foreground text-background shadow-2xl scale-105'
-                      : 'border-border bg-background hover:border-foreground/50'
+                      ? 'border-foreground bg-foreground text-background shadow-2xl lg:scale-105'
+                      : 'border-border bg-background hover:border-foreground/50 hover:shadow-xl'
                   }`}
                 >
                   {plan.highlighted && (
@@ -107,12 +107,12 @@ const Pricing = () => {
                         {plan.price}
                       </span>
                     </div>
-                    <p className={`text-xs tracking-wider ${plan.highlighted ? 'text-background/60' : 'text-muted-foreground'}`}>
+                    <p className={`text-xs tracking-wider ${plan.highlighted ? 'text-background/80' : 'text-muted-foreground'}`}>
                       {plan.period}
                     </p>
                   </div>
 
-                  <p className={`text-sm leading-relaxed mb-8 ${plan.highlighted ? 'text-background/80' : 'text-muted-foreground'}`}>
+                  <p className={`text-base leading-relaxed mb-8 ${plan.highlighted ? 'text-background/90' : 'text-muted-foreground'}`}>
                     {plan.description}
                   </p>
 
@@ -120,7 +120,7 @@ const Pricing = () => {
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-background' : 'text-foreground'}`} />
-                        <span className={`text-sm ${plan.highlighted ? 'text-background' : 'text-foreground'}`}>
+                        <span className={`text-[15px] ${plan.highlighted ? 'text-background' : 'text-foreground'}`}>
                           {feature}
                         </span>
                       </li>
@@ -148,7 +148,7 @@ const Pricing = () => {
         <section className="py-20 border-t border-border">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">
                 NEED A CUSTOM SOLUTION?
               </h2>
               <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
