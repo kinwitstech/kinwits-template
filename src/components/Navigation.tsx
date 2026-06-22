@@ -133,7 +133,7 @@ const Navigation = () => {
               <li key={link.id}>
                 <button
                   onClick={() => scrollToSection(link.id, link.isPage)}
-                  className={`text-xs tracking-widest transition-colors whitespace-nowrap ${
+                  className={`text-[10px] tracking-widest transition-colors whitespace-nowrap ${
                     activeSection === link.id
                       ? `font-semibold underline underline-offset-4 ${isScrolled ? 'text-background' : 'text-foreground'}`
                       : `${isScrolled ? 'text-background/70 hover:text-background' : 'text-muted-foreground hover:text-foreground'}`
@@ -150,7 +150,7 @@ const Navigation = () => {
             onClick={() => scrollToSection('contact')}
             variant="outline"
             size="sm"
-            className={`hidden lg:inline-flex text-xs tracking-widest px-6 z-10 flex-shrink-0 transition-colors ${
+            className={`hidden lg:inline-flex text-[10px] tracking-widest px-6 z-10 flex-shrink-0 transition-colors ${
               isScrolled ? 'bg-foreground border-background text-background hover:bg-background hover:text-foreground' : ''
             }`}
           >
