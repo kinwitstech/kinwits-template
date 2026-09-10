@@ -151,6 +151,10 @@ html:not(.anim) .uline{ background-size:100% 3px; }
     radial-gradient(46% 40% at 10% 92%, rgba(46,124,246,.28), transparent 70%);
   box-shadow:0 30px 60px -30px rgba(22,20,29,.5);
   aspect-ratio:520/400; min-height:320px; overflow:hidden;
+  /* Without an explicit width, aspect-ratio derives width from min-height (the definite
+     side) instead of from the stretched grid column, so a narrow column can't contain it.
+     width:100% makes width the definite side instead, so min-height only affects height. */
+  width:100%; min-width:0;
 }
 .panel::before{
   content:""; position:absolute; inset:0; opacity:.4;
@@ -450,7 +454,7 @@ html.anim [data-hero]{ opacity:0; transform:translateY(24px); }
 @media (max-width: 880px){
   .nav-links, .nav-cta .btn-nav{ display:none; }
   .menu-btn{ display:inline-flex; }
-  .hero-grid{ grid-template-columns:1fr; }
+  .hero-grid{ grid-template-columns:minmax(0, 1fr); }
   .panel{ aspect-ratio:520/360; }
   .proof-grid{ grid-template-columns:1fr; }
   .caps li{ grid-template-columns:1fr; gap:8px; padding-block:20px; }
@@ -544,7 +548,7 @@ h2.display, .display-lg{ font-size:clamp(2.1rem, 4.6vw, 3.9rem); }
 .slider-dots button.on{ background:var(--royal); }
 
 /* product screenshot placeholder (hero slide 2) */
-.shotstack{ position:relative; aspect-ratio:520/400; min-height:320px; }
+.shotstack{ position:relative; aspect-ratio:520/400; min-height:320px; width:100%; min-width:0; }
 .shot{
   position:absolute; border-radius:14px; background:#fff; border:1px solid var(--line);
   box-shadow:0 26px 54px -28px rgba(22,20,29,.35); overflow:hidden;
@@ -787,6 +791,11 @@ html.anim [data-sitem]{ opacity:0; transform:translateY(30px); }
 @media (max-width: 1020px){
   .tech-grid{ grid-template-columns:repeat(3, 1fr); row-gap:30px; }
   .abt-grid{ grid-template-columns:1fr; }
+  /* Stacked cards are content-height, not stretched to a shared row height, so the desktop
+     graze (see comment above .abt .ghost) becomes a full collision with the 2-line paragraph.
+     Extra bottom padding plus a smaller glyph restores clearance without moving the text. */
+  .abt{ padding-bottom:clamp(64px, 14vw, 84px); }
+  .abt .ghost{ right:18px; bottom:-4px; font-size:3.2rem; }
   .testi-grid{ grid-template-columns:1fr; }
   .blog-grid{ grid-template-columns:1fr; }
   .acc-grid{ grid-template-columns:1fr; }
@@ -832,8 +841,12 @@ html.anim [data-sitem]{ opacity:0; transform:translateY(30px); }
 
 /* responsive reassert (must stay last) */
 @media (max-width:880px){
-  .hero-grid{ grid-template-columns:1fr; }
+  /* minmax(0,1fr), not 1fr: a bare 1fr track still floors at the row's content-based
+     min width, so .shotstack's aspect-ratio+min-height (intrinsically ~416px) pushed
+     slide 2's whole column past the viewport instead of shrinking to fit it. */
+  .hero-grid{ grid-template-columns:minmax(0, 1fr); }
   .panel{ aspect-ratio:520/360; min-height:300px; }
+  .shotstack{ min-height:220px; }
 }
 
 /* ============ article pages ============ */
