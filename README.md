@@ -1,73 +1,57 @@
-# Welcome to your Lovable project
+# Kinwits
 
-## Project info
+Marketing site for Kinwits — built with React, TypeScript, and Tailwind CSS v4.
 
-**URL**: https://lovable.dev/projects/38590238-b5bc-44cc-bc1e-7a22f49527db
+## Tech stack
 
-## How can I edit this code?
+- [Vite](https://vitejs.dev/) + [React](https://react.dev/) + TypeScript
+- [Tailwind CSS v4](https://tailwindcss.com/) with a hand-authored design system (`src/styles/kinwits-design-system.css`) alongside it
+- [shadcn/ui](https://ui.shadcn.com/) (Radix primitives) for a few lower-level UI pieces (toasts, tooltips)
+- [React Router](https://reactrouter.com/) for routing
+- [GSAP](https://gsap.com/) for scroll reveals and the homepage hero animation
+- [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) for the contact form
 
-There are several ways of editing your application.
+## Getting started
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/38590238-b5bc-44cc-bc1e-7a22f49527db) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requires Node.js 18+ and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The dev server runs at `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Environment variables
 
-**Use GitHub Codespaces**
+The contact form (`src/components/ContactForm.tsx`) posts to an AWS Lambda endpoint:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+VITE_LAMBDA_URL=https://your-lambda-url.on.aws/
+```
 
-## What technologies are used for this project?
+Set this in `.env` to a real endpoint to test the form locally. In production it's set via Netlify's build environment (`netlify.toml`).
 
-This project is built with:
+## Scripts
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the local dev server |
+| `npm run build` | Production build to `dist/` |
+| `npm run build:dev` | Build in development mode (unminified, useful for debugging a build issue) |
+| `npm run preview` | Preview a production build locally |
+| `npm run lint` | Run ESLint |
 
-## How can I deploy this project?
+## Project structure
 
-Simply open [Lovable](https://lovable.dev/projects/38590238-b5bc-44cc-bc1e-7a22f49527db) and click on Share -> Publish.
+- `src/pages/` — one file per route; `src/App.tsx` has the full route table
+- `src/components/layout/` — shared `Layout`, `SiteHeader`, `Footer`, `MobileMenu`
+- `src/components/home/` — homepage-only sections
+- `src/components/ui/` — shadcn primitives (only the ones actually in use — this folder is pruned, not the full shadcn default set)
+- `src/components/ui-kinwits/` — this site's own small primitives (`Reveal`/`RevealGroup` for scroll animations, `Btn`, `ChipList`)
+- `src/data/` — content for case studies and insight articles, consumed by their respective page templates
+- `src/styles/kinwits-design-system.css` — the site's actual visual design system (typography, buttons, section/card layouts, etc.); `src/index.css` holds design tokens and the Tailwind/shadcn token mapping on top of it
 
-## Can I connect a custom domain to my Lovable project?
+## Deployment
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Deploys to Netlify (`netlify.toml`) — pushes to the branch connected in Netlify trigger a build automatically. `main` is production.

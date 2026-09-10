@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kinwits — Build What's Next</title>
-    <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122 80" fill="none"><polyline points="10,8 44,40 10,72" stroke="%238E939E" stroke-width="15"/><polyline points="46,8 80,40 46,72" stroke="%2316141D" stroke-width="15"/><polygon points="101,26 115,40 101,54 87,40" fill="%23FF7A1A"/></svg>' />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content="Kinwits helps growing companies design, build, and scale the software products that move their business forward. From business problem to production-ready technology." />
     <meta name="author" content="Kinwits Technologies" />
     <link rel="canonical" href="https://www.kinwits.com/" />
@@ -15,13 +19,20 @@
     <meta property="og:title" content="Kinwits — Build What's Next" />
     <meta property="og:description" content="Kinwits helps growing companies design, build, and scale the software products that move their business forward. From business problem to production-ready technology." />
     <meta property="og:image" content="https://www.kinwits.com/kinwits-logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Kinwits logo" />
     <meta property="og:site_name" content="Kinwits Technologies" />
 
-    <!-- Twitter / X Card -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Twitter / X Card — "summary" (not summary_large_image): og:image is a square
+         512x512 logo mark, not a landscape banner, so the large-image card would letterbox
+         or shrink it oddly. Revisit if a proper ~1200x630 banner gets designed later. -->
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Kinwits — Build What's Next" />
     <meta name="twitter:description" content="Kinwits helps growing companies design, build, and scale the software products that move their business forward. From business problem to production-ready technology." />
     <meta name="twitter:image" content="https://www.kinwits.com/kinwits-logo.png" />
+    <meta name="twitter:image:alt" content="Kinwits logo" />
 
     <!-- JSON-LD Organization -->
     <script type="application/ld+json">
