@@ -1,82 +1,213 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+/* layer(components): Tailwind v4 declares `@layer theme, base, components, utilities;` — putting the
+   ported design-system CSS in `components` (instead of leaving it unlayered) means Tailwind utility
+   classes can still override it, matching normal Tailwind conventions for hand-authored component CSS.
+   Unlayered CSS would otherwise beat ALL layered rules regardless of source order or specificity. */
+@import "./styles/kinwits-design-system.css" layer(components);
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@custom-variant dark (&:is(.dark *));
 
-@layer base {
-  :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
-    --primary: 0 0% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 10%;
-    --radius: 0rem;
-    --heading-primary: 0 0% 10%;
-    --text-subtle: 0 0% 40%;
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+/* ============================================================
+   KINWITS — DESIGN TOKENS (v36)
+   Palette: ink & paper carry structure · royal = brand ·
+   cobalt = motion · ember = the production moment (use sparingly)
+   ============================================================ */
+:root {
+  --ink: #16141d;
+  --ink-soft: #57536b;
+  --paper: #ffffff;
+  --mist: #f6f5fa;
+  --line: #e9e7f1;
+  --royal: #4433cc;
+  --royal-deep: #191434;
+  --cobalt: #2e7cf6;
+  --ember: #ff7a1a;
+  --steel: #8e939e;
+  --lav: #edeafb;
+  --cream: #fcf4d6;
+
+  --r-lg: 22px;
+  --r-md: 14px;
+
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Spline Sans Mono", ui-monospace, monospace;
+
+  /* shadcn/Radix primitives (Toast, Sonner, etc.) remapped onto the v36 palette
+     so anything still built on these tokens matches the new design rather than
+     looking like a foreign leftover. */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--royal);
+  --primary-foreground: var(--paper);
+  --secondary: var(--mist);
+  --secondary-foreground: var(--ink);
+  --muted: var(--mist);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--lav);
+  --accent-foreground: var(--ink);
+  --destructive: #dc2626;
+  --destructive-foreground: var(--paper);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--royal);
+  --radius: 0.875rem;
+
+  --chart-1: var(--royal);
+  --chart-2: var(--cobalt);
+  --chart-3: var(--ember);
+  --chart-4: var(--steel);
+  --chart-5: var(--royal-deep);
+
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--royal);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: var(--lav);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--line);
+  --sidebar-ring: var(--royal);
+}
+
+/* No dark-mode design exists in the v36 spec (only per-section .sec-dark bands) —
+   this stays a no-op mirror of :root purely so the standard shadcn `dark:` variant
+   doesn't render broken if something ever toggles it. */
+.dark {
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--royal);
+  --primary-foreground: var(--paper);
+  --secondary: var(--mist);
+  --secondary-foreground: var(--ink);
+  --muted: var(--mist);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--lav);
+  --accent-foreground: var(--ink);
+  --destructive: #dc2626;
+  --destructive-foreground: var(--paper);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--royal);
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--royal);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: var(--lav);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--line);
+  --sidebar-ring: var(--royal);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* v36 raw palette, exposed as real Tailwind utilities (bg-royal, text-ink-soft, border-line, ...) */
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-line: var(--line);
+  --color-royal: var(--royal);
+  --color-royal-deep: var(--royal-deep);
+  --color-cobalt: var(--cobalt);
+  --color-ember: var(--ember);
+  --color-steel: var(--steel);
+  --color-lav: var(--lav);
+  --color-cream: var(--cream);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* v36's own breakpoints don't match Tailwind's defaults and the ported
+     design-system CSS uses raw @media queries directly, but these are handy
+     for new component glue (kw-lg: / max-kw-lg: etc.), namespaced so they
+     never collide with the default sm/md/lg/xl/2xl scale. */
+  --breakpoint-kw-sm: 620px;
+  --breakpoint-kw-md: 880px;
+  --breakpoint-kw-lg: 1020px;
+  --breakpoint-kw-xl: 1680px;
+
+  /* z-index scale carried over from the previous config; still consumed by
+     Navigation.tsx/ScrollToTopButton.tsx until Phase 2/7 retire them. */
+  --z-index-nav: 40;
+  --z-index-button: 45;
+  --z-index-overlay: 50;
+  --z-index-modal: 60;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
   }
-
-  .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 10%;
-
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 0 0% 25%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 85%;
-
-    --heading-primary: 0 0% 98%;
-    --text-subtle: 0 0% 60%;
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: "kern" 1;
-    font-size: 16px;
-    font-weight: 400;
+    @apply bg-background text-foreground;
   }
 
   html {
@@ -98,102 +229,6 @@ All colors MUST be HSL.
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
-    }
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-[hsl(var(--heading-primary))];
-    letter-spacing: 0.02em;
-    font-weight: 500;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  }
-
-  .animate-fade-in-down {
-    animation: fadeInDown 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes scrollUp {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    15% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    85% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-  }
-
-  .animate-scroll-up {
-    animation: scrollUp 3s ease-in-out forwards;
-    opacity: 1;
-  }
-
-  .animate-float {
-    animation: float 2s ease-in-out infinite;
-  }
-
-  .animate-fade-float {
-    animation: fadeInUp 0.8s ease-out forwards, float 2s ease-in-out 0.8s infinite;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
     }
   }
 }
