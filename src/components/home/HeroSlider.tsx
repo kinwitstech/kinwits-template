@@ -74,13 +74,11 @@ export function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Kinwits introduction"
       ref={sectionRef}
-      onMouseEnter={pause}
-      onMouseLeave={arm}
     >
       <div className="slides" style={{ transform: `translateX(-${idx * 100}%)` }}>
         {/* SLIDE 1 */}
         <div className="slide">
-          <div className="wrap hero-grid">
+          <div className="wrap hero-grid" onMouseEnter={pause} onMouseLeave={arm}>
             <div>
               <p className="eyebrow" data-hero>
                 AI · Product Engineering · Cloud · Integration
@@ -169,7 +167,7 @@ export function HeroSlider() {
 
         {/* SLIDE 2 — proof (product screenshots drop into the frames when approved) */}
         <div className="slide">
-          <div className="wrap hero-grid">
+          <div className="wrap hero-grid" onMouseEnter={pause} onMouseLeave={arm}>
             <div>
               <p className="eyebrow">Proof · In Production</p>
               <h1 className="display">
@@ -226,7 +224,14 @@ export function HeroSlider() {
       </div>
 
       <div className="wrap">
-        <div className="slider-nav">
+        {/* Deviation from source: pause-on-hover moved from the full-viewport .hero.slider
+            section to just the two content pieces someone would actually be reading/using —
+            each slide's .hero-grid (text column + diagram panel) and this nav cluster. The
+            source pauses on hovering the whole section, but that section is min-height:100vh —
+            any mouse movement across the page reset the 9s countdown, so autoplay could stall
+            indefinitely for anyone actively using the page. This keeps "don't jump while I'm
+            reading or interacting" without that. */}
+        <div className="slider-nav" onMouseEnter={pause} onMouseLeave={arm}>
           <button
             className="slider-btn sl-prev"
             aria-label="Previous slide"

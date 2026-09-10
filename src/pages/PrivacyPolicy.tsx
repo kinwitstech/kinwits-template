@@ -1,16 +1,15 @@
-import Navigation from '@/components/Navigation';
+import { Layout } from '@/components/layout/Layout';
 import { useSeo } from '@/hooks/useSeo';
 
 const PrivacyPolicy = () => {
   useSeo({
-    title: 'Privacy Policy',
+    title: 'Privacy Policy — Kinwits',
     description: 'Privacy policy for Kinwits Technologies — how we collect, use, and protect your information.',
+    canonicalPath: '/privacy',
   });
 
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
-
+    <Layout>
       <section className="pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mx-auto">
@@ -133,7 +132,7 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </section>
-    </main>
+    </Layout>
   );
 };
 

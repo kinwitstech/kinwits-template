@@ -400,6 +400,15 @@ html:not(.anim) .step-live::before{ border-color:var(--ember); background:var(--
   font-size:.8rem; letter-spacing:.26em; color:#8B87B0;
 }
 .brandline em{ font-style:normal; color:var(--ember); }
+/* Addition beyond source: v36's own brandline links have no hover state at all — just an
+   inline style="color:inherit; text-decoration:none" and nothing else, no feedback that
+   they're clickable. That default is moved here (inline styles beat plain CSS :hover
+   regardless of specificity, so a hover rule can't take effect while it stays inline) —
+   the JSX no longer sets it directly. --ember matches the accent already designated for
+   this element (see .brandline em above) and reads clearly in both places .brandline
+   appears: the dark .cta-panel and the plain white Contact page background. */
+.brandline a{ color:inherit; text-decoration:none; transition:color .15s ease; }
+.brandline a:hover{ color:var(--ember); }
 
 /* ---------- footer ---------- */
 footer{ background:var(--ink); color:#B9B6CC; }

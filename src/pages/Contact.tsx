@@ -62,11 +62,11 @@ export default function Contact() {
           </Reveal>
           <ContactForm />
           <Reveal as="p" className="brandline" style={{ color: "var(--ink-soft)", marginTop: 40 }}>
-            <Link to="/careers" style={{ color: "inherit", textDecoration: "none" }}>
+            <Link to="/careers">
               CAREERS AT KINWITS →
             </Link>
             &nbsp;·&nbsp;
-            <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: "inherit", textDecoration: "none" }}>
+            <a href={`mailto:${CONTACT_EMAIL}`}>
               CONTACT THE TEAM →
             </a>
           </Reveal>

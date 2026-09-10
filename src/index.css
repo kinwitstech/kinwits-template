@@ -210,8 +210,14 @@
     @apply bg-background text-foreground;
   }
 
+  /* 24px, not the 72px header height: every anchor target is a .sec section with its own
+     clamp(72px, 9vw, 118px) top padding, which already clears the fixed header on its own
+     (even at the clamp's 72px floor, matching the header exactly) — stacking the full header
+     height on top of that padding as well (the old app's value here was 80px) doubled up and
+     left an oversized gap between the header and each section's actual content. This just adds
+     a small safety margin for the floor case. */
   html {
-    scroll-padding-top: 80px;
+    scroll-padding-top: 64px;
   }
 
   @media (prefers-reduced-motion: no-preference) {

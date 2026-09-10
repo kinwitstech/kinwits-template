@@ -16,6 +16,9 @@ interface ChipListProps {
   variant?: ChipVariant;
   className?: string;
   style?: CSSProperties;
+  /** Passthrough for things like aria-label, which a couple of source instances carry directly
+   * on the .chips element. */
+  [prop: string]: unknown;
 }
 
 /**
@@ -24,9 +27,9 @@ interface ChipListProps {
  * `.case-hero .chips span`) into four named variants — modifier classes
  * defined alongside `.chips` in kinwits-design-system.css.
  */
-export function ChipList({ items, variant = "onDark", className, style }: ChipListProps) {
+export function ChipList({ items, variant = "onDark", className, style, ...rest }: ChipListProps) {
   return (
-    <div className={cn("chips", VARIANT_CLASS[variant], className)} style={style}>
+    <div className={cn("chips", VARIANT_CLASS[variant], className)} style={style} {...rest}>
       {items.map((item) => (
         <span key={item}>{item}</span>
       ))}

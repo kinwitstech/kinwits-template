@@ -27,11 +27,11 @@ export function ContactCtaSection() {
             </a>
           </div>
           <p className="brandline">
-            <Link to="/careers" style={{ color: "inherit", textDecoration: "none" }}>
+            <Link to="/careers">
               CAREERS AT KINWITS →
             </Link>
             {"  ·  "}
-            <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: "inherit", textDecoration: "none" }}>
+            <a href={`mailto:${CONTACT_EMAIL}`}>
               CONTACT THE TEAM →
             </a>
           </p>
