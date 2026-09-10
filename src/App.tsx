@@ -1,44 +1,43 @@
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import AboutUs from "./pages/AboutUs";
-import Career from "./pages/Career";
-import Blog from "./pages/Blog";
-import BlogDetail from "./pages/BlogDetail";
-import Pricing from "./pages/Pricing";
-import NotFound from "./pages/NotFound";
-import JobDetail from "./pages/JobDetail";
-import ProjectDetail from "./pages/ProjectDetail";
+import Home from "./pages/Home";
+import Work from "./pages/Work";
+import CaseStudy from "./pages/CaseStudy";
+import Insights from "./pages/Insights";
+import ClinicalAiPastTheDemo from "./pages/insights/ClinicalAiPastTheDemo";
+import EmrIntegration from "./pages/insights/EmrIntegration";
+import HipaaAiAwsArchitecture from "./pages/insights/HipaaAiAwsArchitecture";
+import Contact from "./pages/Contact";
+import Careers from "./pages/Careers";
+import Healthcare from "./pages/Healthcare";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const queryClient = new QueryClient();
-
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/career/:id" element={<JobDetail />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogDetail />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/work/:slug" element={<ProjectDetail />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <TooltipProvider>
+    <Toaster />
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/work/:slug" element={<CaseStudy />} />
+        <Route path="/insights" element={<Insights />} />
+        <Route path="/insights/clinical-ai-past-the-demo" element={<ClinicalAiPastTheDemo />} />
+        <Route path="/insights/emr-integration" element={<EmrIntegration />} />
+        <Route path="/insights/hipaa-ai-aws-architecture" element={<HipaaAiAwsArchitecture />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/careers" element={<Careers />} />
+        {/* Off-nav, matching source — only reachable via Home's hero slide 2 CTA. */}
+        <Route path="/healthcare" element={<Healthcare />} />
+        {/* No v36 design exists for this — kept live for now (legal/compliance), pending a design pass. */}
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  </TooltipProvider>
 );
 
 export default App;

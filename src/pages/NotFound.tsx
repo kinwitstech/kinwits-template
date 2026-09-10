@@ -1,14 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import Navigation from "@/components/Navigation";
+import { Layout } from "@/components/layout/Layout";
 
 const NotFound = () => {
   const navigate = useNavigate();
 
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
-      <div className="flex min-h-screen items-center justify-center">
+    <Layout>
+      <div className="flex min-h-[70vh] items-center justify-center">
         <div className="text-center px-6">
           <p className="text-[10px] tracking-widest uppercase text-muted-foreground mb-8">
             Error 404
@@ -27,7 +26,7 @@ const NotFound = () => {
           </Button>
         </div>
       </div>
-    </main>
+    </Layout>
   );
 };
 
