@@ -24,6 +24,11 @@ body{
 img, svg{ display:block; }
 a{ color:inherit; }
 :focus-visible{ outline:2px solid var(--royal); outline-offset:3px; border-radius:4px; }
+/* Royal sits too close to --royal-deep to read as a focus ring on the dark
+   surfaces, so keyboard focus borrows the light accent those surfaces already
+   use for eyebrows. Without this the ring is effectively invisible on the
+   capabilities band, the testimonial, and the royal case-study hero. */
+.sec-dark :focus-visible, .band :focus-visible, .bg-royal :focus-visible{ outline-color:#B9AFFA; }
 
 .wrap{ max-width:1360px; margin-inline:auto; padding-inline:clamp(20px, 4vw, 40px); }
 .skip{
@@ -67,7 +72,7 @@ a{ color:inherit; }
   background:var(--royal); color:#fff; border:1.5px solid var(--royal);
   transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
 }
-.btn:hover{ transform:translateY(-2px); box-shadow:0 12px 28px -12px rgba(68,51,204,.55); }
+.btn:hover{ transform:translateY(-2px); box-shadow:0 12px 28px -12px rgba(42,33,99,.55); }
 .btn .arr{ transition:transform .18s ease; }
 .btn:hover .arr{ transform:translateX(4px); }
 .btn-ghost{
