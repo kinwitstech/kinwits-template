@@ -1,34 +1,6 @@
 import { Reveal, RevealGroup } from "@/components/ui-kinwits/Reveal";
-import { Tile, type TileProps } from "@/components/home/Tile";
-
-const WORK_TILES: TileProps[] = [
-  {
-    variant: "lav",
-    wide: true,
-    eyebrow: "Confidential · US Health & Wellness",
-    title: "AI-Powered Clinical Workflow",
-    description:
-      "Transforming fragmented clinical and administrative processes into a connected, AI-assisted workflow.",
-    chips: ["HEALTHCARE", "AI AGENTS", "WORKFLOW AUTOMATION", "SYSTEMS INTEGRATION"],
-    href: "/work/clinical-workflow",
-  },
-  {
-    variant: "cream",
-    eyebrow: "AI · Automation",
-    title: "Intelligent Workflow Platform",
-    description: "Connected systems. Automated workflows. Less manual effort.",
-    chips: ["AUTOMATION", "INTEGRATION", "AI", "CLOUD"],
-    href: "/work/intelligent-workflow",
-  },
-  {
-    variant: "royal",
-    eyebrow: "Platform · Cloud",
-    title: "Digital Business Platform",
-    description: "A scalable digital platform designed around the needs of users, teams, and business operations.",
-    chips: ["PLATFORM", "CLOUD", "DESIGN SYSTEMS"],
-    href: "/work/digital-platform",
-  },
-];
+import { Tile } from "@/components/home/Tile";
+import { workTiles } from "@/data/caseStudies";
 
 export function WorkBentoSection() {
   return (
@@ -45,7 +17,7 @@ export function WorkBentoSection() {
         </Reveal>
 
         <RevealGroup className="bento">
-          {WORK_TILES.map((tile) => (
+          {workTiles.map((tile) => (
             <Tile key={tile.href} {...tile} />
           ))}
         </RevealGroup>

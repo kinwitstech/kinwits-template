@@ -46,62 +46,85 @@ function CaseStudyView({ caseStudy }: { caseStudy: NonNullable<ReturnType<typeof
         </div>
       </section>
 
-      <section className="sec" style={{ paddingTop: "clamp(24px,3vw,40px)" }}>
-        <div className="wrap">
-          <Reveal as="div" className="crow" style={{ borderTop: 0 }}>
-            <h2>The Challenge</h2>
-            <div className="body">
-              <p>{caseStudy.challenge}</p>
-            </div>
-          </Reveal>
-          <Reveal as="div" className="crow">
-            <h2>Context</h2>
-            <div className="body">
-              <p>{caseStudy.context}</p>
-            </div>
-          </Reveal>
-          <Reveal as="div" className="crow">
-            <h2>The Solution</h2>
-            <div className="body">
-              <p>{caseStudy.solutionIntro}</p>
-              <div className="sol-list">
-                {caseStudy.solutionList.map((item) => (
-                  <div key={item.title}>
-                    <b>{item.title}</b>
-                    <p>{item.description}</p>
+      {caseStudy.copyPending ? (
+        <section className="sec" style={{ paddingTop: "clamp(24px,3vw,40px)" }}>
+          <div className="wrap">
+            <Reveal as="div" className="crow" style={{ borderTop: 0 }}>
+              <h2>Copy pending</h2>
+              <div className="body">
+                <p>
+                  The write-up for this project is still being finalized. In the meantime, we're happy to walk you
+                  through the work directly.
+                </p>
+                <div className="sec-cta">
+                  <a className="btn" {...bookingLinkProps()}>
+                    Book an Intro <span className="arr">→</span>
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      ) : (
+        <>
+          <section className="sec" style={{ paddingTop: "clamp(24px,3vw,40px)" }}>
+            <div className="wrap">
+              <Reveal as="div" className="crow" style={{ borderTop: 0 }}>
+                <h2>The Challenge</h2>
+                <div className="body">
+                  <p>{caseStudy.challenge}</p>
+                </div>
+              </Reveal>
+              <Reveal as="div" className="crow">
+                <h2>Context</h2>
+                <div className="body">
+                  <p>{caseStudy.context}</p>
+                </div>
+              </Reveal>
+              <Reveal as="div" className="crow">
+                <h2>The Solution</h2>
+                <div className="body">
+                  <p>{caseStudy.solutionIntro}</p>
+                  <div className="sol-list">
+                    {caseStudy.solutionList.map((item) => (
+                      <div key={item.title}>
+                        <b>{item.title}</b>
+                        <p>{item.description}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              </Reveal>
+              <Reveal as="div" className="crow">
+                <h2>Built for Production</h2>
+                <div className="body">
+                  <p className="eyebrow" style={{ marginBottom: 12 }}>
+                    Technology
+                  </p>
+                  <ChipList items={caseStudy.techChips} variant="onLight" style={{ marginTop: 0 }} />
+                  <p className="eyebrow" style={{ margin: "26px 0 12px" }}>
+                    Architecture
+                  </p>
+                  <div className="arch-list">
+                    <p>{caseStudy.architecture}</p>
+                  </div>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
-          <Reveal as="div" className="crow">
-            <h2>Built for Production</h2>
-            <div className="body">
-              <p className="eyebrow" style={{ marginBottom: 12 }}>
-                Technology
-              </p>
-              <ChipList items={caseStudy.techChips} variant="onLight" style={{ marginTop: 0 }} />
-              <p className="eyebrow" style={{ margin: "26px 0 12px" }}>
-                Architecture
-              </p>
-              <div className="arch-list">
-                <p>{caseStudy.architecture}</p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+          </section>
 
-      <section className={`band-tile ${caseStudy.outcomeTint}`}>
-        <div className="wrap">
-          <Reveal as="h2" className="display display-lg">
-            Outcome<span className="t-ember">.</span>
-          </Reveal>
-          <Reveal as="p" className="lede">
-            {caseStudy.outcomeLede}
-          </Reveal>
-        </div>
-      </section>
+          <section className={`band-tile ${caseStudy.outcomeTint}`}>
+            <div className="wrap">
+              <Reveal as="h2" className="display display-lg">
+                Outcome<span className="t-ember">.</span>
+              </Reveal>
+              <Reveal as="p" className="lede">
+                {caseStudy.outcomeLede}
+              </Reveal>
+            </div>
+          </section>
+        </>
+      )}
 
       <section className="sec">
         <div className="wrap">

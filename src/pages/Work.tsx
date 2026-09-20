@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Reveal, RevealGroup } from "@/components/ui-kinwits/Reveal";
 import { Tile } from "@/components/home/Tile";
+import { workTiles } from "@/data/caseStudies";
 import { useSeo } from "@/hooks/useSeo";
 
 export default function Work() {
@@ -32,31 +33,9 @@ export default function Work() {
       <section className="sec" style={{ paddingTop: "clamp(10px,2vw,20px)" }}>
         <div className="wrap">
           <RevealGroup className="bento">
-            <Tile
-              variant="lav"
-              wide
-              eyebrow="Confidential · US Health & Wellness"
-              title="AI-Powered Clinical Workflow"
-              description="Transforming fragmented clinical and administrative processes into a connected, AI-assisted workflow."
-              chips={["HEALTHCARE", "AI AGENTS", "WORKFLOW AUTOMATION", "SYSTEMS INTEGRATION"]}
-              href="/work/clinical-workflow"
-            />
-            <Tile
-              variant="cream"
-              eyebrow="AI · Automation"
-              title="Intelligent Workflow Platform"
-              description="Connected business systems and automated complex workflows to reduce manual operational effort."
-              chips={["AUTOMATION", "INTEGRATION", "AI", "CLOUD"]}
-              href="/work/intelligent-workflow"
-            />
-            <Tile
-              variant="royal"
-              eyebrow="Platform · Cloud"
-              title="Digital Business Platform"
-              description="A scalable digital platform designed around the needs of users, teams, and business operations."
-              chips={["PLATFORM", "CLOUD", "DESIGN SYSTEMS"]}
-              href="/work/digital-platform"
-            />
+            {workTiles.map((tile) => (
+              <Tile key={tile.href} {...tile} />
+            ))}
           </RevealGroup>
           <Reveal className="bridge">
             <h2 className="display display-lg">

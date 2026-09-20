@@ -22,12 +22,12 @@ export function AboutSection() {
           About Kinwits
         </Reveal>
         <Reveal as="h2" id="aboutTitle" className="display" display>
-          We Build the Technology
+          Building Technology
           <br />
-          Behind Growing Businesses<span className="t-royal">.</span>
+          For Growth<span className="t-royal">.</span>
         </Reveal>
         <Reveal as="p" className="lede">
-          Kinwits is a product engineering company built around a simple idea: growing companies deserve
+          Kinwits is a product engineering company built around a simple idea: growing businesses deserve
           enterprise-grade engineering without the enterprise overhead. We bring together product thinking,
           engineering, AI, and cloud expertise to build technology businesses can grow on.
         </Reveal>

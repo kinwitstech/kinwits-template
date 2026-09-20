@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import { BrandMark } from "./BrandMark";
 import { CONTACT_EMAIL, bookingLinkProps } from "@/lib/constants";
+import { workTiles } from "@/data/caseStudies";
 
-const CASE_STUDIES = [
-  { label: "AI-Powered Clinical Workflow", href: "/work/clinical-workflow" },
-  { label: "Intelligent Workflow Platform", href: "/work/intelligent-workflow" },
-  { label: "Digital Business Platform", href: "/work/digital-platform" },
-];
+const CASE_STUDIES = workTiles.map((tile) => ({ label: tile.title, href: tile.href }));
 
 export function Footer() {
   return (
