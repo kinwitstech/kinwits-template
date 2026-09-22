@@ -6,6 +6,16 @@
   VITE_LAMBDA_URL = "https://m2uddrfmcilo4k7oimuix7mply0ydavy.lambda-url.us-west-2.on.aws/"
 
 [[redirects]]
+  from = "/work/intelligent-workflow"
+  to = "/work/patient-portal"
+  status = 301
+
+[[redirects]]
+  from = "/work/digital-platform"
+  to = "/work/scheduling"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/"
   status = 200

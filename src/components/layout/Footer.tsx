@@ -1,12 +1,7 @@
 import { Link } from "react-router-dom";
 import { BrandMark } from "./BrandMark";
 import { CONTACT_EMAIL, bookingLinkProps } from "@/lib/constants";
-
-const CASE_STUDIES = [
-  { label: "AI-Powered Clinical Workflow", href: "/work/clinical-workflow" },
-  { label: "Intelligent Workflow Platform", href: "/work/intelligent-workflow" },
-  { label: "Digital Business Platform", href: "/work/digital-platform" },
-];
+import { workTiles } from "@/data/caseStudies";
 
 export function Footer() {
   return (
@@ -43,9 +38,9 @@ export function Footer() {
           <div>
             <h4>Work</h4>
             <ul>
-              {CASE_STUDIES.map((cs) => (
-                <li key={cs.href}>
-                  <Link to={cs.href}>{cs.label}</Link>
+              {workTiles.map((tile) => (
+                <li key={tile.href}>
+                  <Link to={tile.href}>{tile.title}</Link>
                 </li>
               ))}
             </ul>

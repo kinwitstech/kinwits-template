@@ -1,6 +1,8 @@
+import type { TileProps, TileVariant } from "@/components/home/Tile";
+
 export type CaseStudyTint = "bg-lav" | "bg-cream" | "bg-royal";
 
-export interface CaseStudy {
+interface CaseStudyBase {
   slug: string;
   pageTitle: string;
   description: string;
@@ -10,6 +12,11 @@ export interface CaseStudy {
   chips: string[];
   heroTint: CaseStudyTint;
   outcomeTint: Exclude<CaseStudyTint, "bg-royal">;
+  /** Source's `.tile-wide` — spans both bento columns. One tile per grid, at most. */
+  tileWide?: boolean;
+}
+
+interface CaseStudyBody {
   challenge: string;
   context: string;
   solutionIntro: string;
@@ -19,113 +26,181 @@ export interface CaseStudy {
   outcomeLede: string;
 }
 
+/**
+ * A case study either carries its full body copy, or is flagged `copyPending`
+ * and renders a visible notice in place of it — so unwritten copy can't ship
+ * unnoticed behind plausible-looking filler.
+ */
+export type CaseStudy =
+  | (CaseStudyBase & CaseStudyBody & { copyPending?: false })
+  | (CaseStudyBase & { copyPending: true });
+
 // Order matters: each case study's "More work" cross-links are every OTHER entry,
 // in this array's order — matches the source's fixed cross-link pattern exactly.
 export const caseStudies: CaseStudy[] = [
   {
     slug: "clinical-workflow",
-    pageTitle: "AI-Powered Clinical Workflow — Kinwits",
+    pageTitle: "AI. From Data to Decisions — Kinwits",
     description:
       "Transforming fragmented clinical and administrative processes into a connected, AI-assisted workflow for a US health and wellness organization.",
     eyebrow: "Confidential · US Health & Wellness",
-    titleLines: ["AI-Powered", "Clinical Workflow"],
+    titleLines: ["AI.", "From Data to Decisions"],
     lede: "Transforming fragmented clinical and administrative processes into a connected, AI-assisted workflow.",
     chips: ["HEALTHCARE", "AI AGENTS", "WORKFLOW AUTOMATION", "SYSTEMS INTEGRATION"],
     heroTint: "bg-lav",
     outcomeTint: "bg-cream",
+    tileWide: true,
     challenge:
-      "Disconnected systems and manual handoffs slowed critical workflows and made processes difficult to track and audit.",
+      "Clinicians spent hours reviewing patient records, lab results, assessments, medications, supplements, and prior visits to create personalized treatment plans — while checking dosages, interactions, and clinical guidelines. This manual process was time-intensive and made it easy to miss important information.",
     context: "A US health & wellness organization with complex workflows, strict privacy requirements, and multiple systems.",
     solutionIntro:
-      "Kinwits built an intelligent workflow layer that connects systems, applies AI where it adds value, and keeps people in control.",
+      "Kinwits built an AI-powered clinical workflow that reviews patient records, applies clinical protocols, generates personalized treatment plans, and keeps clinicians in control.",
     solutionList: [
       {
-        title: "AI-powered Extraction",
-        description: "Surfaces key information from unstructured documents, reducing manual review and data handling.",
+        title: "AI-Powered Clinical Analysis",
+        description: "Combines labs, assessments, medications, supplements, and visit history.",
       },
       {
-        title: "Workflow Orchestration",
-        description: "Automates routing, tasks, and approvals with a complete audit trail.",
+        title: "Personalized Treatment Plans",
+        description:
+          "Recommends supplements and dosages, checks interactions, and generates complete plans in minutes.",
       },
       {
-        title: "Systems Integration",
-        description: "Connects existing clinical and administrative systems to keep data flowing seamlessly.",
+        title: "Clinical AI Assistant",
+        description: "Helps clinicians find patient information and answer clinical questions in plain English.",
       },
       {
-        title: "Human-centered Interfaces",
-        description: "Puts the right information in front of reviewers at the right moment.",
+        title: "Clinician Review & Approval",
+        description: "Ensures every plan is reviewed and approved by a clinician.",
+      },
+      {
+        title: "Third-Party Integration",
+        description: "Sends approved plans to connected systems as chart notes with one click.",
       },
     ],
     techChips: ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "AWS", "LLMs", "RAG"],
     architecture:
-      "A secure, reliable cloud setup that processes AI tasks efficiently, keeps data isolated, and provides clear visibility into how the system is running.",
-    outcomeLede: "Connected workflows. Less manual work. Smarter decisions. Human judgement where it matters.",
+      "A secure, reliable cloud setup that processes AI tasks efficiently, keeps data isolated, and provides clear visibility into system activity.",
+    outcomeLede:
+      "Hours of manual review reduced to minutes. Personalized plans generated faster. Clinicians stay in control.",
   },
   {
-    slug: "intelligent-workflow",
-    pageTitle: "Intelligent Workflow Platform — Kinwits",
-    description: "Connecting business systems and automating complex workflows to reduce manual operational effort.",
-    eyebrow: "AI · Automation",
-    titleLines: ["Intelligent", "Workflow Platform"],
-    lede: "Connecting business systems and automating complex workflows to reduce manual operational effort.",
-    chips: ["AUTOMATION", "INTEGRATION", "AI", "CLOUD"],
+    slug: "patient-portal",
+    pageTitle: "One Patient. One Workflow. — Kinwits",
+    description: "Connecting clinical, billing, and patient workflows through one integrated platform.",
+    eyebrow: "Healthcare · Platform",
+    titleLines: ["One Patient.", "One Workflow."],
+    lede: "Connecting clinical, billing, and patient workflows through one integrated platform.",
+    chips: ["HEALTHCARE", "PRODUCT ENGINEERING", "SYSTEMS INTEGRATION", "WORKFLOW AUTOMATION"],
     heroTint: "bg-cream",
     outcomeTint: "bg-lav",
-    challenge: "Operations relied on spreadsheets and email, making work difficult to track, measure, and manage across teams.",
-    context: "A growing US business using multiple SaaS platforms without a unified view of its operations.",
-    solutionIntro: "Kinwits turned a fragmented manual process into a connected, measurable workflow.",
+    challenge:
+      "Patient information, appointments, forms, lab results, billing, and support were spread across multiple systems. Patients had to navigate different processes, while clinic teams relied on disconnected systems to manage the patient journey.",
+    context:
+      "A US healthcare and wellness organization using third-party portals for clinical records, billing, and marketing, with complex patient workflows and strict privacy requirements.",
+    solutionIntro:
+      "Kinwits built a patient portal that connects third-party portals and the patient — bringing information and workflows together in one place and keeping systems synchronized in real time.",
     solutionList: [
-      {
-        title: "Process Automation",
-        description: "Mapped operational steps, ownership, and exceptions into a structured workflow.",
-      },
       {
         title: "Systems Integration",
-        description: "Connected the CRM and third-party platforms through bidirectional integrations.",
+        description:
+          "Connects clinical, billing, and patient-facing systems so information flows between them automatically.",
       },
       {
-        title: "AI-assisted Decisions",
-        description: "Applied AI to summarize, classify, and draft where it adds value.",
+        title: "Patient Onboarding",
+        description:
+          "Automatically invites new patients from third-party portals and guides them through secure sign-in, onboarding, and profile setup.",
       },
       {
-        title: "Operational Visibility",
-        description: "Built dashboards that show where work sits, what needs attention, and where processes slow down.",
+        title: "Appointments, Forms & Consents",
+        description:
+          "Keeps appointments up to date, sends reminders, and surfaces the right forms and consents based on the patient's workflow.",
+      },
+      {
+        title: "Lab Results & AI",
+        description:
+          "Uses AI to read incoming lab reports, extract key markers, and present results with reference ranges and clear status indicators.",
+      },
+      {
+        title: "Patient Support & Billing",
+        description:
+          "Brings support requests and billing information into the portal while triggering the right workflows across connected systems.",
       },
     ],
-    techChips: ["TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "AWS Lambda"],
+    techChips: ["React", "TypeScript", "AWS", "AWS Cognito", "AI Vision"],
     architecture:
-      "A reliable cloud setup that keeps work moving, handles failures automatically, and provides a single, accurate view of every process.",
-    outcomeLede: "Less coordination. Greater visibility. A measurable operation.",
+      "A secure, real-time integration layer connecting clinical, billing, and patient-facing systems. Designed to keep information synchronized, maintain clear data flows, and support reliable patient workflows across the platform.",
+    outcomeLede:
+      "Connected systems. Simpler patient workflows. Real-time information. Less manual coordination.",
   },
   {
-    slug: "digital-platform",
-    pageTitle: "Digital Business Platform — Kinwits",
-    description: "A scalable digital platform designed around the needs of users, teams, and business operations.",
-    eyebrow: "Platform · Cloud",
-    titleLines: ["Digital Business", "Platform"],
-    lede: "A scalable digital platform designed around the needs of users, teams, and business operations.",
-    chips: ["PLATFORM", "CLOUD", "DESIGN SYSTEMS"],
+    slug: "scheduling",
+    pageTitle: "One Clinic. One Schedule. — Kinwits",
+    description:
+      "A sophisticated scheduling platform that orchestrates patients, staff, rooms, equipment, and clinical protocols with precision.",
+    eyebrow: "Healthcare · Optimization",
+    titleLines: ["One Clinic.", "One Schedule."],
+    lede: "A sophisticated scheduling platform that orchestrates patients, staff, rooms, equipment, and clinical protocols with precision.",
+    chips: ["WORKFLOW AUTOMATION", "PRODUCT ENGINEERING", "SYSTEMS INTEGRATION"],
     heroTint: "bg-royal",
     outcomeTint: "bg-cream",
-    challenge: "An ageing application couldn't keep up with new business needs, making every change risky and slowing growth.",
-    context: "A mid-sized company modernizing its platform without disrupting day-to-day operations.",
+    challenge:
+      "Manually scheduling a busy clinic meant coordinating patients, providers, rooms, equipment, and treatment requirements across dozens of clinical rules. With treatments requiring specific sequences, spacing, and shared resources, creating a conflict-free schedule was time-consuming and prone to clashes.",
+    context:
+      "A US healthcare and wellness organization running multiple treatment programs with shared providers, rooms, equipment, group sessions, and patient-specific scheduling requirements.",
     solutionIntro:
-      "Kinwits modernized the platform incrementally, creating a scalable foundation without disrupting ongoing operations.",
+      "Kinwits built a scheduling engine that generates complete weekly schedules based on patient needs, available resources, and clinical rules.",
     solutionList: [
-      { title: "Modular Architecture", description: "Rebuilt the platform with clear, scalable components." },
-      { title: "Consistent Experiences", description: "Created a shared design system and component library." },
       {
-        title: "Incremental Migration",
-        description: "Introduced the new platform alongside the existing system, enabling a gradual transition.",
+        title: "Constraint-Based Scheduling",
+        description:
+          "Applies 36 rules covering treatment timing, sequencing, spacing, resource limits, and patient requirements.",
       },
-      { title: "Secure Access and Reporting", description: "Added role-based access and operational reporting." },
+      {
+        title: "Multi-Patient Scheduling",
+        description:
+          "Schedules multiple patients in one run while coordinating shared providers, rooms, equipment, and sessions.",
+      },
+      {
+        title: "Conflict-Aware Scheduling",
+        description: "Accounts for existing bookings to prevent double-booking patients, staff, and resources.",
+      },
+      {
+        title: "Flexible Program Scheduling",
+        description: "Supports multi-week programs, flexible schedules, group sessions, and couples scheduling.",
+      },
+      {
+        title: "Third-Party Integration",
+        description: "Pushes completed schedules directly to the clinic's calendar.",
+      },
     ],
-    techChips: ["React", "Next.js", "TypeScript", "FastAPI", "PostgreSQL", "ECS/Fargate", "Terraform"],
+    techChips: ["Python", "OR-Tools CP-SAT", "EMR Integration", "React", "TypeScript", "AWS"],
     architecture:
-      "A modern cloud setup that supports reliable deployments, gradual migration, and consistent environments from development through production.",
-    outcomeLede: "A platform built to evolve. Faster releases. Fewer workarounds.",
+      "A constraint-based scheduling engine that processes multiple inputs and rules to generate conflict-free schedules in seconds. The system integrates with a third-party platform to read existing bookings and publish completed schedules to the clinic calendar.",
+    outcomeLede: "Manual scheduling reduced to seconds. Fewer conflicts. Schedules ready to use.",
   },
 ];
+
+const TILE_VARIANT: Record<CaseStudyTint, TileVariant> = {
+  "bg-lav": "lav",
+  "bg-cream": "cream",
+  "bg-royal": "royal",
+};
+
+/**
+ * Single source for the bento tiles on Home and `/work`, and the footer's Work
+ * links — derived from `caseStudies` so tile copy can never drift from the page
+ * it links to. Never hardcode tile copy in a component.
+ */
+export const workTiles: TileProps[] = caseStudies.map((cs) => ({
+  variant: TILE_VARIANT[cs.heroTint],
+  wide: cs.tileWide,
+  eyebrow: cs.eyebrow,
+  title: cs.titleLines.join(" "),
+  description: cs.lede,
+  chips: cs.chips,
+  href: `/work/${cs.slug}`,
+}));
 
 export function getCaseStudyBySlug(slug: string | undefined): CaseStudy | undefined {
   return caseStudies.find((cs) => cs.slug === slug);
