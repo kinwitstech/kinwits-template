@@ -27,8 +27,10 @@ a{ color:inherit; }
 /* Royal sits too close to --royal-deep to read as a focus ring on the dark
    surfaces, so keyboard focus borrows the light accent those surfaces already
    use for eyebrows. Without this the ring is effectively invisible on the
-   capabilities band, the testimonial, and the royal case-study hero. */
-.sec-dark :focus-visible, .band :focus-visible, .bg-royal :focus-visible{ outline-color:#B9AFFA; }
+   capabilities band, the testimonial, the royal case-study hero, the royal
+   work tile, and the final CTA panel. */
+.sec-dark :focus-visible, .band :focus-visible, .bg-royal :focus-visible,
+.tile-royal:focus-visible, .cta-panel :focus-visible{ outline-color:#B9AFFA; }
 
 .wrap{ max-width:1360px; margin-inline:auto; padding-inline:clamp(20px, 4vw, 40px); }
 .skip{
@@ -152,7 +154,7 @@ html:not(.anim) .uline{ background-size:100% 3px; }
 .panel{
   position:relative; border-radius:var(--r-lg); background:var(--royal-deep);
   background-image:
-    radial-gradient(58% 46% at 82% 12%, rgba(68,51,204,.55), transparent 70%),
+    radial-gradient(58% 46% at 82% 12%, rgba(42,33,99,.55), transparent 70%),
     radial-gradient(46% 40% at 10% 92%, rgba(46,124,246,.28), transparent 70%);
   box-shadow:0 30px 60px -30px rgba(22,20,29,.5);
   aspect-ratio:520/400; min-height:320px; overflow:hidden;
@@ -234,7 +236,7 @@ html:not(.anim) .uline{ background-size:100% 3px; }
 }
 .outcome::before{
   content:""; position:absolute; inset:0;
-  background:radial-gradient(70% 60% at 90% 0%, rgba(68,51,204,.5), transparent 70%);
+  background:radial-gradient(70% 60% at 90% 0%, rgba(42,33,99,.5), transparent 70%);
 }
 .outcome > *{ position:relative; }
 .badge-live{
@@ -306,7 +308,7 @@ html:not(.anim) .uline{ background-size:100% 3px; }
 /* ---------- fold 6 · process (dark) ---------- */
 .sec-dark::before{
   content:""; position:absolute; inset:0; pointer-events:none;
-  background:radial-gradient(52% 60% at 88% 0%, rgba(68,51,204,.4), transparent 70%),
+  background:radial-gradient(52% 60% at 88% 0%, rgba(42,33,99,.4), transparent 70%),
              radial-gradient(40% 46% at 4% 100%, rgba(46,124,246,.18), transparent 70%);
 }
 .sec-dark .wrap{ position:relative; }
@@ -397,7 +399,7 @@ html:not(.anim) .step-live::before{ border-color:var(--ember); background:var(--
 }
 .cta-panel::before{
   content:""; position:absolute; inset:0;
-  background:radial-gradient(60% 70% at 50% 0%, rgba(68,51,204,.55), transparent 72%),
+  background:radial-gradient(60% 70% at 50% 0%, rgba(42,33,99,.55), transparent 72%),
              radial-gradient(38% 44% at 88% 100%, rgba(46,124,246,.22), transparent 70%);
 }
 .cta-panel > *{ position:relative; }
@@ -501,7 +503,7 @@ html.anim [data-hero]{ opacity:0; transform:translateY(24px); }
 .value-list svg{ flex:none; margin-top:5px; }
 .band{ background:var(--royal-deep); color:#fff; position:relative; overflow:hidden; }
 .band::before{ content:""; position:absolute; inset:0;
-  background:radial-gradient(56% 70% at 85% 0%, rgba(68,51,204,.5), transparent 70%); }
+  background:radial-gradient(56% 70% at 85% 0%, rgba(42,33,99,.5), transparent 70%); }
 .band .wrap{ position:relative; }
 .story{ max-width:52em; }
 .story h2{ font-family:var(--font-display); font-weight:800; font-size:1.4rem; letter-spacing:-0.01em; margin:34px 0 10px; }
@@ -635,7 +637,7 @@ h2.display, .display-lg{ font-size:clamp(2.1rem, 4.6vw, 3.9rem); }
 .abt p{ color:var(--ink-soft); font-weight:500; }
 .abt-1{ background:var(--lav); } .abt-2{ background:var(--cream); }
 .abt-3{ background:var(--royal-deep); color:#fff;
-  background-image:radial-gradient(70% 60% at 88% 0%, rgba(68,51,204,.55), transparent 70%); }
+  background-image:radial-gradient(70% 60% at 88% 0%, rgba(42,33,99,.55), transparent 70%); }
 .abt-3 p{ color:#C6C2E4; } .abt-3 .no{ color:#B9AFFA; }
 /* Deviation from source: at the original 6.2rem/bottom:-18px, this card's fixed height (content-
    driven via grid stretch) leaves the glyph's top edge well inside the card, so solid paragraph
@@ -668,7 +670,7 @@ h2.display, .display-lg{ font-size:clamp(2.1rem, 4.6vw, 3.9rem); }
 .tile-lav{ background:var(--lav); }
 .tile-cream{ background:var(--cream); }
 .tile-royal{ background:var(--royal-deep); color:#fff;
-  background-image:radial-gradient(60% 60% at 88% 0%, rgba(68,51,204,.55), transparent 70%); }
+  background-image:radial-gradient(60% 60% at 88% 0%, rgba(42,33,99,.55), transparent 70%); }
 .tile .eyebrow{ margin-bottom:14px; }
 .tile-royal .eyebrow{ color:#B9AFFA; } .tile-royal .eyebrow::before{ background:#B9AFFA; }
 .tile h3{ font-family:var(--font-display); font-weight:800; letter-spacing:-0.015em;
@@ -693,7 +695,7 @@ h2.display, .display-lg{ font-size:clamp(2.1rem, 4.6vw, 3.9rem); }
   display:flex; align-items:center; justify-content:center;
 }
 .video-ph::before{ content:""; position:absolute; inset:0;
-  background:radial-gradient(60% 80% at 30% 20%, rgba(68,51,204,.5), transparent 70%); }
+  background:radial-gradient(60% 80% at 30% 20%, rgba(42,33,99,.5), transparent 70%); }
 .play{ position:relative; width:74px; height:74px; border-radius:50%; background:rgba(255,255,255,.1);
   border:1.5px solid rgba(255,255,255,.4); display:flex; align-items:center; justify-content:center; }
 .play::after{ content:""; border-style:solid; border-width:11px 0 11px 18px;
@@ -763,7 +765,7 @@ h2.display, .display-lg{ font-size:clamp(2.1rem, 4.6vw, 3.9rem); }
 .bg-lav{ background:var(--lav); }
 .bg-cream{ background:var(--cream); }
 .bg-royal{ background:var(--royal-deep); color:#fff;
-  background-image:radial-gradient(60% 60% at 88% 0%, rgba(68,51,204,.5), transparent 70%); }
+  background-image:radial-gradient(60% 60% at 88% 0%, rgba(42,33,99,.5), transparent 70%); }
 .bg-royal .lede{ color:#C6C2E4; }
 .bg-royal .back{ color:#B7B3D4; }
 .bg-royal .back:hover{ color:#fff; }

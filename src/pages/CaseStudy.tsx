@@ -46,25 +46,27 @@ function CaseStudyView({ caseStudy }: { caseStudy: NonNullable<ReturnType<typeof
         </div>
       </section>
 
-      {caseStudy.copyPending ? (
-        <section className="sec" style={{ paddingTop: "clamp(24px,3vw,40px)" }}>
-          <div className="wrap">
-            <Reveal as="div" className="crow" style={{ borderTop: 0 }}>
-              <h2>Copy pending</h2>
-              <div className="body">
-                <p>
-                  The write-up for this project is still being finalized. In the meantime, we're happy to walk you
-                  through the work directly.
-                </p>
-                <div className="sec-cta">
-                  <a className="btn" {...bookingLinkProps()}>
-                    Book an Intro <span className="arr">→</span>
-                  </a>
+      {caseStudy.copyPending === true ? (
+        <>
+          <section className="sec" style={{ paddingTop: "clamp(24px,3vw,40px)" }}>
+            <div className="wrap">
+              <Reveal as="div" className="crow" style={{ borderTop: 0 }}>
+                <h2>Copy pending</h2>
+                <div className="body">
+                  <p>
+                    The write-up for this project is still being finalized. In the meantime, we're happy to walk you
+                    through the work directly.
+                  </p>
+                  <div className="sec-cta">
+                    <a className="btn" {...bookingLinkProps()}>
+                      Book an Intro <span className="arr">→</span>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </Reveal>
-          </div>
-        </section>
+              </Reveal>
+            </div>
+          </section>
+        </>
       ) : (
         <>
           <section className="sec" style={{ paddingTop: "clamp(24px,3vw,40px)" }}>
