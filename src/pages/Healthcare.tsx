@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Reveal } from "@/components/ui-kinwits/Reveal";
 import { ChipList } from "@/components/ui-kinwits/ChipList";
-import { bookingLinkProps } from "@/lib/constants";
+import { BookIntroButton } from "@/components/ui-kinwits/BookIntroButton";
 import { useSeo } from "@/hooks/useSeo";
 
 const STORY = [
@@ -71,9 +71,7 @@ export default function Healthcare() {
             intelligent capabilities into production.
           </p>
           <div className="hero-ctas" data-hero>
-            <a className="btn" {...bookingLinkProps()}>
-              Book an Intro <span className="arr">→</span>
-            </a>
+            <BookIntroButton className="btn" />
           </div>
         </div>
       </section>
@@ -163,9 +161,7 @@ export default function Healthcare() {
             <h2 className="h2">See the live clinical AI agent.</h2>
             <p className="lede">A quick demonstration of real, in-production work — and a conversation about your workflow.</p>
             <div className="cta-actions">
-              <a className="btn btn-light" {...bookingLinkProps()}>
-                Book an Intro <span className="arr">→</span>
-              </a>
+              <BookIntroButton className="btn btn-light" />
             </div>
           </Reveal>
         </div>

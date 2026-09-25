@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/ui-kinwits/Reveal";
-import { bookingLinkProps, CONTACT_EMAIL } from "@/lib/constants";
+import { CONTACT_EMAIL } from "@/lib/constants";
+import { BookIntroButton } from "@/components/ui-kinwits/BookIntroButton";
 
 export function ContactCtaSection() {
   return (
@@ -21,10 +22,8 @@ export function ContactCtaSection() {
               Start a Conversation <span className="arr">→</span>
             </Link>
             {/* Source's `js-demo` class was the vanilla-JS hook that swapped in the real
-                booking URL — bookingLinkProps() is its React replacement. */}
-            <a className="btn btn-ghost-dark" {...bookingLinkProps()}>
-              Book an Intro <span className="arr">→</span>
-            </a>
+                booking URL — BookIntroButton is its React replacement. */}
+            <BookIntroButton className="btn btn-ghost-dark" />
           </div>
           <p className="brandline">
             <Link to="/careers">

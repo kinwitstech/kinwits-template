@@ -1,10 +1,7 @@
 export const CONTACT_EMAIL = "hello@kinwits.com";
 
-/** One swap point for the real meeting-booking link — mirrors the source's
- * single JS variable. Until it's set, "Book an Intro" CTAs fall back to /contact. */
-export const BOOKING_URL = "#TODO-REPLACE-WITH-BOOKING-LINK";
-
-export function bookingLinkProps(): { href: string; target?: "_blank"; rel?: "noopener" } {
-  const isSet = !BOOKING_URL.startsWith("#TODO");
-  return isSet ? { href: BOOKING_URL, target: "_blank", rel: "noopener" } : { href: "/contact" };
-}
+/** Real meeting-booking link, supplied per environment via VITE_BOOKING_URL.
+ * While it is empty, every Intro CTA falls back to /contact and no Calendly
+ * asset is requested. Always render Intro CTAs through <BookIntroButton>,
+ * which owns that fallback and the popup. */
+export const BOOKING_URL = import.meta.env.VITE_BOOKING_URL ?? "";

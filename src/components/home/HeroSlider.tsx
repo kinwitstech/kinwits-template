@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
-import { bookingLinkProps } from "@/lib/constants";
+import { BookIntroButton } from "@/components/ui-kinwits/BookIntroButton";
 
 const AUTOPLAY_MS = 9000;
 const SLIDE_COUNT = 2;
@@ -98,9 +98,7 @@ export function HeroSlider() {
                 business forward.
               </p>
               <div className="hero-ctas" data-hero>
-                <a className="btn" {...bookingLinkProps()}>
-                  Book an Intro <span className="arr">→</span>
-                </a>
+                <BookIntroButton className="btn" />
               </div>
             </div>
             <div
