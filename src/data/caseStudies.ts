@@ -40,7 +40,7 @@ export type CaseStudy =
 export const caseStudies: CaseStudy[] = [
   {
     slug: "clinical-workflow",
-    pageTitle: "AI. From Data to Decisions — Kinwits",
+    pageTitle: "AI. From Data to Decisions | Kinwits",
     description:
       "Transforming fragmented clinical and administrative processes into a connected, AI-assisted workflow for a US health and wellness organization.",
     eyebrow: "Confidential · US Health & Wellness",
@@ -51,7 +51,7 @@ export const caseStudies: CaseStudy[] = [
     outcomeTint: "bg-cream",
     tileWide: true,
     challenge:
-      "Clinicians spent hours reviewing patient records, lab results, assessments, medications, supplements, and prior visits to create personalized treatment plans — while checking dosages, interactions, and clinical guidelines. This manual process was time-intensive and made it easy to miss important information.",
+      "Clinicians spent hours reviewing patient records, lab results, assessments, medications, supplements, and prior visits to create personalized treatment plans, while checking dosages, interactions, and clinical guidelines. This manual process was time-intensive and made it easy to miss important information.",
     context: "A US health & wellness organization with complex workflows, strict privacy requirements, and multiple systems.",
     solutionIntro:
       "Kinwits built an AI-powered clinical workflow that reviews patient records, applies clinical protocols, generates personalized treatment plans, and keeps clinicians in control.",
@@ -86,7 +86,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "patient-portal",
-    pageTitle: "One Patient. One Workflow. — Kinwits",
+    pageTitle: "One Patient. One Workflow. | Kinwits",
     description: "Connecting clinical, billing, and patient workflows through one integrated platform.",
     eyebrow: "Healthcare · Platform",
     titleLines: ["One Patient.", "One Workflow."],
@@ -99,7 +99,7 @@ export const caseStudies: CaseStudy[] = [
     context:
       "A US healthcare and wellness organization using third-party portals for clinical records, billing, and marketing, with complex patient workflows and strict privacy requirements.",
     solutionIntro:
-      "Kinwits built a patient portal that connects third-party portals and the patient — bringing information and workflows together in one place and keeping systems synchronized in real time.",
+      "Kinwits built a patient portal that connects third-party portals and the patient, bringing information and workflows together in one place and keeping systems synchronized in real time.",
     solutionList: [
       {
         title: "Systems Integration",
@@ -135,7 +135,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "scheduling",
-    pageTitle: "One Clinic. One Schedule. — Kinwits",
+    pageTitle: "One Clinic. One Schedule. | Kinwits",
     description:
       "A sophisticated scheduling platform that orchestrates patients, staff, rooms, equipment, and clinical protocols with precision.",
     eyebrow: "Healthcare · Optimization",

@@ -34,8 +34,8 @@ export default function HipaaAiAwsArchitecture() {
       </p>
       <h2>Decision two: what you are allowed to log</h2>
       <p>
-        This is where well-intentioned teams get hurt. Standard observability practice is to log liberally — request
-        payloads, model inputs, full responses — and figure out retention later. In a clinical system, that default
+        This is where well-intentioned teams get hurt. Standard observability practice is to log liberally (request
+        payloads, model inputs, full responses) and figure out retention later. In a clinical system, that default
         writes protected health information into every log sink you own, including the ones a third-party vendor
         operates.
       </p>
@@ -70,7 +70,7 @@ export default function HipaaAiAwsArchitecture() {
       </p>
       <h2>Decision four: what persists, and for how long</h2>
       <p>
-        Language model systems accumulate intermediate state — retrieved context, tool call results, partial
+        Language model systems accumulate intermediate state: retrieved context, tool call results, partial
         generations, evaluation traces. Each of these is a place clinical data can settle, and none of them are
         obvious in an architecture diagram.
       </p>
