@@ -3,8 +3,6 @@ import { BrandMark } from "./BrandMark";
 import { CONTACT_EMAIL, bookingLinkProps } from "@/lib/constants";
 import { workTiles } from "@/data/caseStudies";
 
-const CASE_STUDIES = workTiles.map((tile) => ({ label: tile.title, href: tile.href }));
-
 export function Footer() {
   return (
     <footer>
@@ -40,9 +38,9 @@ export function Footer() {
           <div>
             <h4>Work</h4>
             <ul>
-              {CASE_STUDIES.map((cs) => (
-                <li key={cs.href}>
-                  <Link to={cs.href}>{cs.label}</Link>
+              {workTiles.map((tile) => (
+                <li key={tile.href}>
+                  <Link to={tile.href}>{tile.title}</Link>
                 </li>
               ))}
             </ul>
