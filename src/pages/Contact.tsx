@@ -47,7 +47,7 @@ export default function Contact() {
             <div className="cta-actions" style={{ justifyContent: "flex-start" }}>
               <BookIntroButton
                 className="btn btn-light"
-                fallbackHref={`mailto:${CONTACT_EMAIL}?subject=Intro%%20call`}
+                fallbackHref={`mailto:${CONTACT_EMAIL}?subject=Intro%20call`}
               />
             </div>
           </Reveal>

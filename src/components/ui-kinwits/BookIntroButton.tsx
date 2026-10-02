@@ -22,21 +22,50 @@ function loadCalendlyAssets(): Promise<void> {
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = WIDGET_CSS;
-    document.head.appendChild(link);
 
     const script = document.createElement("script");
     script.src = WIDGET_JS;
     script.async = true;
-    script.onload = () => resolve();
-    script.onerror = () => {
-      // Let the next click retry rather than caching the failure forever.
+
+    /** Take both nodes back out and clear the cache, so a retry starts clean
+     * instead of stacking a second <link>/<script> onto the failed pair. */
+    const cleanup = () => {
+      link.remove();
+      script.remove();
       assetsPromise = null;
+    };
+
+    // Resolve only once BOTH have loaded; the stylesheet has to be applied
+    // before the popup opens or it flashes unstyled.
+    let pending = 2;
+    const settle = () => {
+      pending -= 1;
+      if (pending === 0) resolve();
+    };
+
+    link.onload = settle;
+    script.onload = settle;
+    link.onerror = () => {
+      cleanup();
+      reject(new Error("Calendly stylesheet failed to load"));
+    };
+    script.onerror = () => {
+      cleanup();
       reject(new Error("Calendly widget failed to load"));
     };
+
+    document.head.appendChild(link);
     document.head.appendChild(script);
   });
 
   return assetsPromise;
+}
+
+/** Same-tab navigation rather than window.open: by the time a load failure is
+ * known the click gesture has expired, and Safari and Firefox block the popup,
+ * which would leave the button doing nothing at all. */
+function openBookingDirectly() {
+  window.location.assign(BOOKING_URL);
 }
 
 /** Calendly posts this to the opener once a booking completes. One listener
@@ -51,7 +80,7 @@ function listenForBooking() {
     if (e.origin !== "https://calendly.com") return;
     const data = e.data as { event?: string } | null;
     if (data?.event !== "calendly.event_scheduled") return;
-    toast({ title: "You're booked. Check your email for the Teams invite." });
+    toast({ title: "You're booked. Check your email for the confirmation." });
   });
 }
 
@@ -89,9 +118,9 @@ export function BookIntroButton({
     loadCalendlyAssets()
       .then(() => {
         if (window.Calendly) window.Calendly.initPopupWidget({ url: BOOKING_URL });
-        else window.open(BOOKING_URL, "_blank", "noopener");
+        else openBookingDirectly();
       })
-      .catch(() => window.open(BOOKING_URL, "_blank", "noopener"));
+      .catch(openBookingDirectly);
   }, []);
 
   if (!BOOKING_URL) {
