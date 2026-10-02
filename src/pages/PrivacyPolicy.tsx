@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
               <div>
                 <h2 className="text-lg font-medium tracking-wide text-foreground mb-4">1. Who We Are</h2>
                 <p>
-                  Kinwits Technologies ("Kinwits", "we", "us", or "our") is a software and AI agency headquartered at Shivam Tower, 1st floor, Kota, Udupi District, Karnataka, India, 576221. We can be reached at{' '}
+                  Kinwits Technologies ("Kinwits", "we", "us", or "our") is a software and AI agency headquartered at Shivam Tower, 1st floor, Kota, Udupi District, Karnataka 576221, India. We can be reached at{' '}
                   <a href="mailto:info@kinwits.com" className="text-foreground underline underline-offset-4">
                     info@kinwits.com
                   </a>.
@@ -125,7 +125,7 @@ const PrivacyPolicy = () => {
                   <a href="mailto:info@kinwits.com" className="text-foreground underline underline-offset-4">
                     info@kinwits.com
                   </a>{' '}
-                  or write to us at Shivam Tower, 1st floor, Kota, Udupi District, KA, India, 576221.
+                  or write to us at Shivam Tower, 1st floor, Kota, Udupi District, KA 576221, India.
                 </p>
               </div>
             </div>

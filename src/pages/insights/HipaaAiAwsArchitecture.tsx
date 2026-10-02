@@ -22,7 +22,7 @@ export default function HipaaAiAwsArchitecture() {
         you need that model to sit inside a boundary you control and a vendor relationship that covers it.
       </p>
       <p>
-        Practically that means a managed service inside your own account under a signed BAA — for us, Bedrock —
+        Practically that means a managed service inside your own account under a signed BAA (for us, Bedrock)
         rather than a public API endpoint outside it. Not because the public endpoint is careless, but because the
         compliance boundary is the thing you have to be able to describe, and “our data went to a third party over
         the internet” is a much harder sentence to defend than “inference happened inside our VPC.”
@@ -45,7 +45,7 @@ export default function HipaaAiAwsArchitecture() {
         requirements.
       </p>
       <ul>
-        <li>Operational logs: identifiers, timings, error classes, model and version — no clinical content</li>
+        <li>Operational logs: identifiers, timings, error classes, model and version (no clinical content)</li>
         <li>Clinical audit trail: encrypted, access-controlled, retained deliberately, queryable by patient and by reviewer</li>
         <li>Never the same store, never the same retention policy, never the same access grants</li>
       </ul>

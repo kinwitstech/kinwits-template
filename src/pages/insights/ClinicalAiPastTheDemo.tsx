@@ -18,7 +18,7 @@ export default function ClinicalAiPastTheDemo() {
       </p>
       <h2>The demo runs on data that does not exist</h2>
       <p>
-        Every clinical demo we have seen — including our own early ones — runs on a clean patient record. Complete
+        Every clinical demo we have seen, including our own early ones, runs on a clean patient record. Complete
         history, structured medications, labs with units and reference ranges, no contradictions. That record was
         either handcrafted or cherry-picked, and it is nothing like what comes out of a live EMR.
       </p>
@@ -77,7 +77,7 @@ export default function ClinicalAiPastTheDemo() {
       </p>
       <p>
         Retrofitting this is expensive and often means rebuilding. Deciding it upfront costs very little. The
-        uncomfortable part is that it constrains your options early, when constraining options feels premature — but
+        uncomfortable part is that it constrains your options early, when constraining options feels premature, but
         the alternative is discovering in month four that your observability stack has been writing patient data to
         a log aggregator.
       </p>

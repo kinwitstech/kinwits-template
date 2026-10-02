@@ -11,7 +11,7 @@ const STORY = [
   },
   {
     heading: "What we built",
-    body: "A clinical AI agent developed with a US healthcare client. Designed around a real workflow, not a generic AI use case, and engineered through to production.",
+    body: "A clinical AI agent developed with a US healthcare client, designed around a real workflow, not a generic AI use case, and engineered through to production.",
   },
   {
     heading: "What it does",
