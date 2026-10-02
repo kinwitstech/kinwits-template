@@ -59,7 +59,7 @@ export function InsightArticleLayout({ insight, children }: InsightArticleLayout
           </Reveal>
           <Reveal as="div" className="sec-cta">
             <Link className="link-arrow" to="/insights">
-              More Insights <span className="arr">→</span>
+              More Insights
             </Link>
           </Reveal>
         </div>
