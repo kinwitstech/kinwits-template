@@ -19,7 +19,7 @@ export function ContactCtaSection() {
           <p className="lede">Tell us what you're solving. We'll bring the thinking, engineering, and ownership to build it right.</p>
           <div className="cta-actions">
             <Link className="btn btn-light" to="/contact">
-              Start a Conversation <span className="arr">→</span>
+              Start a Conversation
             </Link>
             {/* Source's `js-demo` class was the vanilla-JS hook that swapped in the real
                 booking URL — BookIntroButton is its React replacement. */}

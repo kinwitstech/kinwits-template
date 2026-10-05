@@ -87,7 +87,7 @@ export function ContactForm() {
           {errors.email ? (
             <span style={{ color: "#DC2626" }}>{errors.email.message}</span>
           ) : (
-            "Any email works — no work address required."
+            "Any email works. No work address required."
           )}
         </p>
       </div>
@@ -110,7 +110,7 @@ export function ContactForm() {
       </div>
       <div>
         <button className="btn" type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Sending…" : "Start a Conversation"} <span className="arr">→</span>
+          {isSubmitting ? "Sending…" : "Start a Conversation"}
         </button>
       </div>
     </Reveal>

@@ -9,7 +9,7 @@ interface SeoOptions {
   canonicalPath?: string;
 }
 
-const DEFAULT_TITLE = "Kinwits — Build What's Next";
+const DEFAULT_TITLE = "Kinwits | Build What's Next";
 const DEFAULT_DESCRIPTION =
   "Kinwits helps growing companies design, build, and scale the software products that move their business forward. From business problem to production-ready technology.";
 const SITE_ORIGIN = "https://www.kinwits.com";

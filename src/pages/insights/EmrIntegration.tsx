@@ -39,7 +39,7 @@ export default function EmrIntegration() {
       <p>
         Every write path needs to answer: what happens if this fires twice? What happens if it half-succeeds? How
         does a human tell, afterwards, what the system did and why? Idempotency and audit trails are not
-        sophistication here — they are the minimum bar for touching a medical record at all.
+        sophistication here. They are the minimum bar for touching a medical record at all.
       </p>
       <p className="pull">
         Reading bad data gives you bad output. Writing bad data gives you a clinical record that is wrong, and no
@@ -51,8 +51,8 @@ export default function EmrIntegration() {
         scheduling tool. Sometimes a spreadsheet that is load-bearing for a workflow nobody documented.
       </p>
       <p>
-        Each of these has its own idea of who a patient is. Reconciling those identities — deciding what makes two
-        records the same person, and what to do when the systems disagree — is a genuinely hard problem that gets
+        Each of these has its own idea of who a patient is. Reconciling those identities (deciding what makes two
+        records the same person, and what to do when the systems disagree) is a genuinely hard problem that gets
         scoped as a mapping table.
       </p>
       <h2>How to scope it honestly</h2>

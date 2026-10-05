@@ -10,7 +10,7 @@ import { useSeo } from "@/hooks/useSeo";
 
 export default function Home() {
   useSeo({
-    title: "Kinwits — Build What's Next",
+    title: "Kinwits | Build What's Next",
     description:
       "Kinwits helps growing companies design, build, and scale the software products that move their business forward. From business problem to production-ready technology.",
     canonicalPath: "/",

@@ -14,15 +14,15 @@ const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       "Kinwits understood our workflow before they wrote a line of code. What they built is now part of how we operate every day.",
-    cite: "CLIENT NAME · CLINICAL OPERATIONS — REPLACE",
+    cite: "CLIENT NAME · CLINICAL OPERATIONS (REPLACE)",
   },
   {
     quote: "Direct access to the people doing the work changed everything. Decisions that used to take weeks happen in a call.",
-    cite: "CLIENT NAME · FOUNDER — REPLACE",
+    cite: "CLIENT NAME · FOUNDER (REPLACE)",
   },
   {
     quote: "They pushed back on what we asked for and built what we actually needed. That's the difference.",
-    cite: "CLIENT NAME · PRODUCT DIRECTOR — REPLACE",
+    cite: "CLIENT NAME · PRODUCT DIRECTOR (REPLACE)",
   },
 ];
 
@@ -59,7 +59,7 @@ export function TestimonialSection() {
         </Reveal>
         <Reveal as="div" className="testi-top">
           <div className="video-ph" role="img" aria-label="Client video testimonial placeholder">
-            <span className="sample-chip">SAMPLE — VIDEO SLOT</span>
+            <span className="sample-chip">SAMPLE (VIDEO SLOT)</span>
             <span className="play" aria-hidden="true" />
           </div>
         </Reveal>
@@ -88,7 +88,7 @@ export function TestimonialSection() {
             layer than the ported design-system CSS) reproduces the same rule instead. */}
         <Reveal as="div" className="sec-cta text-center">
           <a className="btn btn-ghost-dark" href="#capabilities">
-            See What We Can Build <span className="arr">→</span>
+            See What We Can Build
           </a>
         </Reveal>
       </div>

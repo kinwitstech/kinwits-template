@@ -175,12 +175,12 @@ export function HeroSlider() {
               </h1>
               <p className="tagline">Where AI meets the complexity of real clinical work.</p>
               <p className="lede">
-                Our AI turns complex clinical information into actionable insights — streamlining documentation and
+                Our AI turns complex clinical information into actionable insights, streamlining documentation and
                 giving physicians more time for what matters most: patient care.
               </p>
               <div className="hero-ctas">
                 <Link className="btn" to="/healthcare">
-                  See Our Work <span className="arr">→</span>
+                  See Our Work
                 </Link>
               </div>
             </div>
@@ -215,7 +215,7 @@ export function HeroSlider() {
                   <span />
                 </div>
               </div>
-              <span className="shot-note">PRODUCT SCREENSHOTS — PENDING APPROVAL</span>
+              <span className="shot-note">PRODUCT SCREENSHOTS (PENDING APPROVAL)</span>
             </div>
           </div>
         </div>

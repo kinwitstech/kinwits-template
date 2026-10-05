@@ -87,7 +87,7 @@ function listenForBooking() {
 export interface BookIntroButtonProps {
   /** Left undefined for the footer's bare text link. */
   className?: string;
-  /** Defaults to the labelled arrow CTA; the footer passes plain text. */
+  /** Defaults to the "Book an Intro" label. */
   children?: ReactNode;
   /** Where to go while BOOKING_URL is empty. */
   fallbackHref?: string;
@@ -103,11 +103,7 @@ export interface BookIntroButtonProps {
  */
 export function BookIntroButton({
   className,
-  children = (
-    <>
-      Book an Intro <span className="arr">&rarr;</span>
-    </>
-  ),
+  children = "Book an Intro",
   fallbackHref = "/contact",
 }: BookIntroButtonProps) {
   const onClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {

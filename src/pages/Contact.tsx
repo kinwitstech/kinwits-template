@@ -8,7 +8,7 @@ import { useSeo } from "@/hooks/useSeo";
 
 export default function Contact() {
   useSeo({
-    title: "Let's Build Something Useful — Kinwits",
+    title: "Let's Build Something Useful | Kinwits",
     description:
       "Tell us what you're solving. We'll bring the thinking, engineering, and ownership to build it right.",
     canonicalPath: "/contact",
