@@ -7,11 +7,11 @@ import { useSeo } from "@/hooks/useSeo";
 const STORY = [
   {
     heading: "The problem",
-    body: "Healthcare and wellness practices run on complex workflows, disconnected systems and growing administrative demands — the day-to-day work that pulls teams away from patients.",
+    body: "Healthcare and wellness practices run on complex workflows, disconnected systems and growing administrative demands: the day-to-day work that pulls teams away from patients.",
   },
   {
     heading: "What we built",
-    body: "A clinical AI agent developed with a US healthcare client — designed around a real workflow, not a generic AI use case, and engineered through to production.",
+    body: "A clinical AI agent developed with a US healthcare client, designed around a real workflow, not a generic AI use case, and engineered through to production.",
   },
   {
     heading: "What it does",
@@ -26,7 +26,7 @@ const STORY = [
 const PILLARS = [
   {
     title: "Partnership",
-    body: "We work as an extension of your team — from understanding the workflow to owning the solution.",
+    body: "We work as an extension of your team, from understanding the workflow to owning the solution.",
   },
   {
     title: "Agility & Access",
@@ -34,7 +34,7 @@ const PILLARS = [
   },
   {
     title: "Senior Expertise",
-    body: "Experienced product and technology professionals who take solutions into production — and keep improving them.",
+    body: "Experienced product and technology professionals who take solutions into production and keep improving them.",
   },
 ];
 
@@ -49,7 +49,7 @@ const PILLARS = [
  */
 export default function Healthcare() {
   useSeo({
-    title: "AI Agents for Healthcare and Wellness Practices — Kinwits",
+    title: "AI Agents for Healthcare and Wellness Practices | Kinwits",
     description:
       "Practical AI and software built around the workflows healthcare and wellness teams actually use. A real clinical AI system, in production.",
     canonicalPath: "/healthcare",
@@ -67,12 +67,12 @@ export default function Healthcare() {
           </h1>
           <p className="lede" data-hero>
             We build practical AI and software solutions around the workflows healthcare and wellness teams
-            actually use — helping practices reduce manual work, improve operational efficiency and bring
+            actually use, helping practices reduce manual work, improve operational efficiency and bring
             intelligent capabilities into production.
           </p>
           <div className="hero-ctas" data-hero>
             <a className="btn" {...bookingLinkProps()}>
-              Book an Intro <span className="arr">→</span>
+              Book an Intro
             </a>
           </div>
         </div>
@@ -161,10 +161,10 @@ export default function Healthcare() {
         <div className="wrap">
           <Reveal className="cta-panel">
             <h2 className="h2">See the live clinical AI agent.</h2>
-            <p className="lede">A quick demonstration of real, in-production work — and a conversation about your workflow.</p>
+            <p className="lede">A quick demonstration of real, in-production work, and a conversation about your workflow.</p>
             <div className="cta-actions">
               <a className="btn btn-light" {...bookingLinkProps()}>
-                Book an Intro <span className="arr">→</span>
+                Book an Intro
               </a>
             </div>
           </Reveal>

@@ -14,13 +14,13 @@ const CAPABILITIES: CapabilityItem[] = [
   {
     no: "01",
     title: "AI Agents & Intelligent Workflows",
-    body: "Build AI into real business workflows — from production-ready agents and LLM applications to intelligent automation, with the integrations and controls needed to operate reliably.",
+    body: "Build AI into real business workflows, from production-ready agents and LLM applications to intelligent automation, with the integrations and controls needed to operate reliably.",
     tags: ["AI AGENTS", "LLMS", "RAG", "LANGGRAPH", "AI INTEGRATION"],
   },
   {
     no: "02",
     title: "Product Engineering",
-    body: "Build and evolve customer-facing and internal products — from problem definition and architecture through engineering, deployment, and iteration.",
+    body: "Build and evolve customer-facing and internal products, from problem definition and architecture through engineering, deployment, and iteration.",
     tags: ["WEB", "MOBILE", "APIS", "PLATFORMS", "PRODUCT ENGINEERING"],
   },
   {
@@ -149,7 +149,7 @@ export function CapabilitiesTechnology() {
               Product thinking. Strong Engineering. Technology that delivers.
             </Reveal>
             <Reveal as="p" className="lede">
-              Five capabilities. One team. We take ownership of architecture, engineering, and delivery — then stay
+              Five capabilities. One team. We take ownership of architecture, engineering, and delivery, then stay
               for what happens after launch.
             </Reveal>
           </div>
@@ -196,7 +196,7 @@ export function CapabilitiesTechnology() {
             Technology we work with
           </Reveal>
           <Reveal as="p" className="lede">
-            We choose technology based on the problem — not the other way around.
+            We choose technology based on the problem, not the other way around.
           </Reveal>
           <div className="tech-grid">
             {TECH_COLUMNS.map((col) => (

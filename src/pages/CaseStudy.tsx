@@ -59,7 +59,7 @@ function CaseStudyView({ caseStudy }: { caseStudy: NonNullable<ReturnType<typeof
                   </p>
                   <div className="sec-cta">
                     <a className="btn" {...bookingLinkProps()}>
-                      Book an Intro <span className="arr">→</span>
+                      Book an Intro
                     </a>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ function CaseStudyView({ caseStudy }: { caseStudy: NonNullable<ReturnType<typeof
           </div>
           <Reveal className="sec-cta">
             <a className="btn" {...bookingLinkProps()}>
-              Book an Intro <span className="arr">→</span>
+              Book an Intro
             </a>
           </Reveal>
         </div>

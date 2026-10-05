@@ -6,7 +6,7 @@ import { useSeo } from "@/hooks/useSeo";
 
 export default function Insights() {
   useSeo({
-    title: "Built. Learned. Shared. — Kinwits Insights",
+    title: "Built. Learned. Shared. | Kinwits Insights",
     description: "Practical insights from the problems we solve and the products we build.",
     canonicalPath: "/insights",
   });

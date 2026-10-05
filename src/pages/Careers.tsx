@@ -5,7 +5,7 @@ import { useSeo } from "@/hooks/useSeo";
 
 export default function Careers() {
   useSeo({
-    title: "Come Build With Us — Careers at Kinwits",
+    title: "Come Build With Us | Careers at Kinwits",
     description:
       "We're building a small, ambitious engineering company where people have the opportunity to make a real impact.",
     canonicalPath: "/careers",
@@ -46,7 +46,7 @@ export default function Careers() {
               <span>IMPACT</span>
             </div>
             <p style={{ marginTop: 26, maxWidth: "36em", fontWeight: 500 }}>
-              No open roles are listed right now — but we always want to hear from strong engineers and product
+              No open roles are listed right now, but we always want to hear from strong engineers and product
               thinkers. Tell us what you'd build.
             </p>
             <div className="sec-cta">
@@ -55,7 +55,7 @@ export default function Careers() {
                 style={{ background: "var(--ink)", borderColor: "var(--ink)" }}
                 href={`mailto:${CONTACT_EMAIL}?subject=Careers%20at%20Kinwits`}
               >
-                Write to Us <span className="arr">→</span>
+                Write to Us
               </a>
             </div>
           </Reveal>

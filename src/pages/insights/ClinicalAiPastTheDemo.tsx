@@ -18,7 +18,7 @@ export default function ClinicalAiPastTheDemo() {
       </p>
       <h2>The demo runs on data that does not exist</h2>
       <p>
-        Every clinical demo we have seen — including our own early ones — runs on a clean patient record. Complete
+        Every clinical demo we have seen, including our own early ones, runs on a clean patient record. Complete
         history, structured medications, labs with units and reference ranges, no contradictions. That record was
         either handcrafted or cherry-picked, and it is nothing like what comes out of a live EMR.
       </p>
@@ -29,7 +29,7 @@ export default function ClinicalAiPastTheDemo() {
       </p>
       <p>
         The first real thing that happens when you connect an agent to production data is that your beautiful
-        prompt starts receiving garbage, and the model — being a language model — produces confident output anyway.
+        prompt starts receiving garbage, and the model, being a language model, produces confident output anyway.
         That is the failure mode that matters. Not refusal. Confident nonsense built on a field somebody mistyped in
         2019.
       </p>
@@ -70,14 +70,14 @@ export default function ClinicalAiPastTheDemo() {
       <p>When we scope this work now, we assume the agent logic is the smaller half.</p>
       <h2>Compliance is an architecture decision, not a checkbox</h2>
       <p>
-        Teams tend to treat HIPAA as something you add near the end — a BAA, an encryption setting, a policy
+        Teams tend to treat HIPAA as something you add near the end: a BAA, an encryption setting, a policy
         document. In practice it determines your architecture from the first commit: which model you can call,
         where inference happens, what gets logged, how long anything persists, who can see what and under which
         role.
       </p>
       <p>
         Retrofitting this is expensive and often means rebuilding. Deciding it upfront costs very little. The
-        uncomfortable part is that it constrains your options early, when constraining options feels premature — but
+        uncomfortable part is that it constrains your options early, when constraining options feels premature, but
         the alternative is discovering in month four that your observability stack has been writing patient data to
         a log aggregator.
       </p>
@@ -87,7 +87,7 @@ export default function ClinicalAiPastTheDemo() {
         a provider review step. Getting there was not a breakthrough. It was a sequence of unglamorous decisions:
       </p>
       <ul>
-        <li>Scope narrow enough that being wrong was cheap — one condition, one workflow, one clinic</li>
+        <li>Scope narrow enough that being wrong was cheap: one condition, one workflow, one clinic</li>
         <li>Build against production data early, not clean fixtures</li>
         <li>Design the review surface before optimizing the generation</li>
         <li>Decide the compliance posture in week one, not month four</li>

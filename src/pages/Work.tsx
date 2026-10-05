@@ -7,7 +7,7 @@ import { useSeo } from "@/hooks/useSeo";
 
 export default function Work() {
   useSeo({
-    title: "Work That Shipped — Kinwits",
+    title: "Work That Shipped | Kinwits",
     description: "Some client names stay confidential. The engineering doesn't.",
     canonicalPath: "/work",
   });
@@ -47,7 +47,7 @@ export default function Work() {
             </p>
             <div className="sec-cta">
               <Link className="btn" to="/contact">
-                Start a Conversation <span className="arr">→</span>
+                Start a Conversation
               </Link>
             </div>
           </Reveal>

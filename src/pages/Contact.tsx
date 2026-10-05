@@ -7,7 +7,7 @@ import { useSeo } from "@/hooks/useSeo";
 
 export default function Contact() {
   useSeo({
-    title: "Let's Build Something Useful — Kinwits",
+    title: "Let's Build Something Useful | Kinwits",
     description:
       "Tell us what you're solving. We'll bring the thinking, engineering, and ownership to build it right.",
     canonicalPath: "/contact",
@@ -45,7 +45,7 @@ export default function Contact() {
             </p>
             <div className="cta-actions" style={{ justifyContent: "flex-start" }}>
               <a className="btn btn-light" href={`mailto:${CONTACT_EMAIL}?subject=Intro%20call`}>
-                Book an Intro <span className="arr">→</span>
+                Book an Intro
               </a>
             </div>
           </Reveal>

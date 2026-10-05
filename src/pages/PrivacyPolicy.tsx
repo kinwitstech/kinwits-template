@@ -3,8 +3,8 @@ import { useSeo } from '@/hooks/useSeo';
 
 const PrivacyPolicy = () => {
   useSeo({
-    title: 'Privacy Policy — Kinwits',
-    description: 'Privacy policy for Kinwits Technologies — how we collect, use, and protect your information.',
+    title: 'Privacy Policy | Kinwits',
+    description: 'Privacy policy for Kinwits Technologies: how we collect, use, and protect your information.',
     canonicalPath: '/privacy',
   });
 
@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
               <div>
                 <h2 className="text-lg font-medium tracking-wide text-foreground mb-4">1. Who We Are</h2>
                 <p>
-                  Kinwits Technologies ("Kinwits", "we", "us", or "our") is a software and AI agency headquartered at Shivam Tower, 1st floor, Kota, Udupi District, Karnataka, India — 576221. We can be reached at{' '}
+                  Kinwits Technologies ("Kinwits", "we", "us", or "our") is a software and AI agency headquartered at Shivam Tower, 1st floor, Kota, Udupi District, Karnataka 576221, India. We can be reached at{' '}
                   <a href="mailto:info@kinwits.com" className="text-foreground underline underline-offset-4">
                     info@kinwits.com
                   </a>.
@@ -74,16 +74,16 @@ const PrivacyPolicy = () => {
                 <p className="mb-4">Our website uses the following third-party services:</p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>
-                    <strong className="text-foreground font-medium">Google Fonts</strong> — to serve the Unbounded typeface. Google may collect limited technical data per their{' '}
+                    <strong className="text-foreground font-medium">Google Fonts</strong>: to serve the Unbounded typeface. Google may collect limited technical data per their{' '}
                     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4">
                       privacy policy
                     </a>.
                   </li>
                   <li>
-                    <strong className="text-foreground font-medium">Google Maps</strong> — displayed when you click "See on the Map". Google's privacy policy applies when the embed is loaded.
+                    <strong className="text-foreground font-medium">Google Maps</strong>: displayed when you click "See on the Map". Google's privacy policy applies when the embed is loaded.
                   </li>
                   <li>
-                    <strong className="text-foreground font-medium">AWS (contact form backend)</strong> — contact form submissions are processed via an AWS Lambda function. Data is transmitted securely over HTTPS and not stored in AWS beyond delivery.
+                    <strong className="text-foreground font-medium">AWS (contact form backend)</strong>: contact form submissions are processed via an AWS Lambda function. Data is transmitted securely over HTTPS and not stored in AWS beyond delivery.
                   </li>
                 </ul>
               </div>
@@ -125,7 +125,7 @@ const PrivacyPolicy = () => {
                   <a href="mailto:info@kinwits.com" className="text-foreground underline underline-offset-4">
                     info@kinwits.com
                   </a>{' '}
-                  or write to us at Shivam Tower, 1st floor, Kota, Udupi District, KA, India — 576221.
+                  or write to us at Shivam Tower, 1st floor, Kota, Udupi District, KA 576221, India.
                 </p>
               </div>
             </div>
