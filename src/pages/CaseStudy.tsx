@@ -2,7 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Reveal } from "@/components/ui-kinwits/Reveal";
 import { ChipList } from "@/components/ui-kinwits/ChipList";
-import { bookingLinkProps } from "@/lib/constants";
+import { BookIntroButton } from "@/components/ui-kinwits/BookIntroButton";
 import { getCaseStudyBySlug, getOtherCaseStudies } from "@/data/caseStudies";
 import { useSeo } from "@/hooks/useSeo";
 
@@ -58,9 +58,7 @@ function CaseStudyView({ caseStudy }: { caseStudy: NonNullable<ReturnType<typeof
                     through the work directly.
                   </p>
                   <div className="sec-cta">
-                    <a className="btn" {...bookingLinkProps()}>
-                      Book an Intro
-                    </a>
+                    <BookIntroButton className="btn" />
                   </div>
                 </div>
               </Reveal>
@@ -149,9 +147,7 @@ function CaseStudyView({ caseStudy }: { caseStudy: NonNullable<ReturnType<typeof
             ))}
           </div>
           <Reveal className="sec-cta">
-            <a className="btn" {...bookingLinkProps()}>
-              Book an Intro
-            </a>
+            <BookIntroButton className="btn" />
           </Reveal>
         </div>
       </section>

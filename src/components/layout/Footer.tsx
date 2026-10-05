@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BrandMark } from "./BrandMark";
-import { CONTACT_EMAIL, bookingLinkProps } from "@/lib/constants";
+import { CONTACT_EMAIL } from "@/lib/constants";
+import { BookIntroButton } from "@/components/ui-kinwits/BookIntroButton";
 import { workTiles } from "@/data/caseStudies";
 
 export function Footer() {
@@ -57,7 +58,7 @@ export function Footer() {
                 <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               </li>
               <li>
-                <a {...bookingLinkProps()}>Book an Intro</a>
+                <BookIntroButton>Book an Intro</BookIntroButton>
               </li>
             </ul>
           </div>

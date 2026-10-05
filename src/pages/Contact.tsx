@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Reveal } from "@/components/ui-kinwits/Reveal";
 import { ContactForm } from "@/components/ContactForm";
 import { CONTACT_EMAIL } from "@/lib/constants";
+import { BookIntroButton } from "@/components/ui-kinwits/BookIntroButton";
 import { useSeo } from "@/hooks/useSeo";
 
 export default function Contact() {
@@ -44,9 +45,10 @@ export default function Contact() {
               The quickest way to see whether Kinwits is the right partner for what you're building.
             </p>
             <div className="cta-actions" style={{ justifyContent: "flex-start" }}>
-              <a className="btn btn-light" href={`mailto:${CONTACT_EMAIL}?subject=Intro%20call`}>
-                Book an Intro
-              </a>
+              <BookIntroButton
+                className="btn btn-light"
+                fallbackHref={`mailto:${CONTACT_EMAIL}?subject=Intro%20call`}
+              />
             </div>
           </Reveal>
         </div>

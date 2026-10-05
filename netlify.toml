@@ -4,6 +4,9 @@
 
 [build.environment]
   VITE_LAMBDA_URL = "https://m2uddrfmcilo4k7oimuix7mply0ydavy.lambda-url.us-west-2.on.aws/"
+  # Live Calendly link behind every "Book an Intro" CTA. Empty it to fall back
+  # to /contact and stop requesting any Calendly asset.
+  VITE_BOOKING_URL = "https://calendly.com/kinwits-info/intro-call"
 
 [[redirects]]
   from = "/work/intelligent-workflow"

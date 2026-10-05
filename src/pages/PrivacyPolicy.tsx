@@ -85,6 +85,12 @@ const PrivacyPolicy = () => {
                   <li>
                     <strong className="text-foreground font-medium">AWS (contact form backend)</strong>: contact form submissions are processed via an AWS Lambda function. Data is transmitted securely over HTTPS and not stored in AWS beyond delivery.
                   </li>
+                  <li>
+                    <strong className="text-foreground font-medium">Calendly (scheduling)</strong>: used when you book an intro call. Your name, email address and anything you add on the booking form go to Calendly so it can schedule the meeting and email your confirmation. Calendly's{' '}
+                    <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4">
+                      privacy policy
+                    </a>{' '}applies to that data. Their script loads only when you click a booking link, so nothing reaches Calendly if you never book.
+                  </li>
                 </ul>
               </div>
 
