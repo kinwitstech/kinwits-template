@@ -12,53 +12,41 @@ const WIDGET_JS = "https://assets.calendly.com/assets/external/widget.js";
 const WIDGET_CSS = "https://assets.calendly.com/assets/external/widget.css";
 
 /** Injected on first click only, so nothing reaches Calendly until someone
- * actually books. Shared across every button on the page. */
-let assetsPromise: Promise<void> | null = null;
+ * actually books. One cached load per asset, so a failure retries only the
+ * asset that failed and never re-injects one that already loaded. */
+const loads: { css?: Promise<void>; js?: Promise<void> } = {};
 
-function loadCalendlyAssets(): Promise<void> {
-  if (assetsPromise) return assetsPromise;
-
-  assetsPromise = new Promise<void>((resolve, reject) => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = WIDGET_CSS;
-
-    const script = document.createElement("script");
-    script.src = WIDGET_JS;
-    script.async = true;
-
-    /** Take both nodes back out and clear the cache, so a retry starts clean
-     * instead of stacking a second <link>/<script> onto the failed pair. */
-    const cleanup = () => {
-      link.remove();
-      script.remove();
-      assetsPromise = null;
+function loadAsset(kind: "css" | "js", make: () => HTMLElement): Promise<void> {
+  loads[kind] ??= new Promise<void>((resolve, reject) => {
+    const node = make();
+    node.onload = () => resolve();
+    node.onerror = () => {
+      node.remove();
+      delete loads[kind];
+      reject(new Error(`Calendly ${kind} failed to load`));
     };
-
-    // Resolve only once BOTH have loaded; the stylesheet has to be applied
-    // before the popup opens or it flashes unstyled.
-    let pending = 2;
-    const settle = () => {
-      pending -= 1;
-      if (pending === 0) resolve();
-    };
-
-    link.onload = settle;
-    script.onload = settle;
-    link.onerror = () => {
-      cleanup();
-      reject(new Error("Calendly stylesheet failed to load"));
-    };
-    script.onerror = () => {
-      cleanup();
-      reject(new Error("Calendly widget failed to load"));
-    };
-
-    document.head.appendChild(link);
-    document.head.appendChild(script);
+    document.head.appendChild(node);
   });
+  return loads[kind]!;
+}
 
-  return assetsPromise;
+// Resolve only once BOTH have loaded; the stylesheet has to be applied before
+// the popup opens or it flashes unstyled.
+function loadCalendlyAssets(): Promise<void> {
+  return Promise.all([
+    loadAsset("css", () => {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = WIDGET_CSS;
+      return link;
+    }),
+    loadAsset("js", () => {
+      const script = document.createElement("script");
+      script.src = WIDGET_JS;
+      script.async = true;
+      return script;
+    }),
+  ]).then(() => undefined);
 }
 
 /** Same-tab navigation rather than window.open: by the time a load failure is
@@ -71,6 +59,10 @@ function openBookingDirectly() {
 /** Calendly posts this to the opener once a booking completes. One listener
  * serves every button, and it lives for the page's lifetime. */
 let listening = false;
+
+/** True from the first click until the popup opens, so a second click on any
+ * Book an Intro button during the load can't open a second popup. */
+let opening = false;
 
 function listenForBooking() {
   if (listening) return;
@@ -110,13 +102,18 @@ export function BookIntroButton({
     // Let the browser handle new-tab/modified clicks itself.
     if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     e.preventDefault();
+    if (opening) return;
+    opening = true;
     listenForBooking();
     loadCalendlyAssets()
       .then(() => {
         if (window.Calendly) window.Calendly.initPopupWidget({ url: BOOKING_URL });
         else openBookingDirectly();
       })
-      .catch(openBookingDirectly);
+      .catch(openBookingDirectly)
+      .finally(() => {
+        opening = false;
+      });
   }, []);
 
   if (!BOOKING_URL) {
