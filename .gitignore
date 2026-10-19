@@ -23,7 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
-package-lock.json
+# npm is the package manager (package-lock.json is committed); keep other managers' lockfiles out
 yarn.lock
+pnpm-lock.yaml
+bun.lockb
+bun.lock
 
 .claude
